@@ -1,0 +1,555 @@
+{
+  "prova": "Simulado SEBRAE 2026 - Parte 1 (Geral e Específicas)",
+  "questoes": [
+    {
+      "id": 1,
+      "tipo": "multipla_escolha",
+      "enunciado": "No que tange à gestão de projetos segundo as metodologias do PMI, o documento que autoriza formalmente a existência do projeto e confere ao gerente de projetos a autoridade para aplicar recursos organizacionais é denominado:",
+      "alternativas": [
+        "Estrutura Analítica do Projeto (EAP).",
+        "Termo de Abertura do Projeto (Project Charter).",
+        "Plano de Gerenciamento do Projeto.",
+        "Declaração de Escopo do Projeto."
+      ],
+      "correta": 1,
+      "explicacao": "O Termo de Abertura do Projeto (TAP) ou Project Charter é o documento emitido pelo iniciador ou patrocinador que autoriza formalmente a existência de um projeto.",
+      "tema": "Gestão de Projetos",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 2,
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre as certificações no agronegócio, o protocolo 'GlobalGap' tem como foco principal:",
+      "alternativas": [
+        "Apenas a qualidade visual dos produtos agrícolas.",
+        "A garantia exclusiva de produtos orgânicos.",
+        "O estabelecimento de Boas Práticas Agrícolas (BPA), segurança alimentar e sustentabilidade.",
+        "A certificação religiosa para consumo judaico."
+      ],
+      "correta": 2,
+      "explicacao": "O GlobalGap é um referencial normativo para Boas Práticas Agrícolas (BPA), focando em segurança alimentar, proteção ambiental e bem-estar dos trabalhadores.",
+      "tema": "Conhecimentos Específicos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 3,
+      "tipo": "multipla_escolha",
+      "enunciado": "A certificação 'Rainforest Alliance' é frequentemente associada a produtos do agronegócio. Sua principal característica é:",
+      "alternativas": [
+        "Focar na redução de custos logísticos.",
+        "Garantir produto geneticamente modificado.",
+        "Promover a sustentabilidade ambiental, conservação da biodiversidade e meios de vida sustentáveis.",
+        "Atestar isenção de processamento industrial."
+      ],
+      "correta": 2,
+      "explicacao": "A Rainforest Alliance foca na sustentabilidade, conservação da biodiversidade e melhoria dos meios de vida dos agricultores.",
+      "tema": "Conhecimentos Específicos",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 4,
+      "tipo": "multipla_escolha",
+      "enunciado": "Considerando os conceitos de ESG, uma ação do Sebrae voltada para o pilar 'S' (Social) seria:",
+      "alternativas": [
+        "Adoção de sistemas de compliance.",
+        "Programas de eficiência energética.",
+        "Fomento ao empreendedorismo feminino e inclusão produtiva.",
+        "Digitalização de processos para reduzir papel."
+      ],
+      "correta": 2,
+      "explicacao": "O pilar Social (S) envolve o relacionamento com pessoas e comunidades. O fomento ao empreendedorismo feminino ataca questões sociais de desigualdade.",
+      "tema": "ESG",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 5,
+      "tipo": "multipla_escolha",
+      "enunciado": "Na gestão de projetos (PMI), a 'Estrutura Analítica do Projeto' (EAP) tem a função de:",
+      "alternativas": [
+        "Definir o cronograma detalhado.",
+        "Decompor hierarquicamente o escopo total do trabalho.",
+        "Listar os riscos.",
+        "Autorizar o início do projeto."
+      ],
+      "correta": 1,
+      "explicacao": "A EAP é a decomposição hierárquica orientada às entregas do trabalho a ser executado.",
+      "tema": "Gestão de Projetos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 6,
+      "tipo": "multipla_escolha",
+      "enunciado": "O 'Sebraetec' é um produto/serviço do Sebrae que visa:",
+      "alternativas": [
+        "Oferecer empréstimos bancários.",
+        "Conectar pequenos negócios a soluções tecnológicas e de inovação, subsidiando custos.",
+        "Realizar feiras de negócios.",
+        "Fornecer mão de obra operacional."
+      ],
+      "correta": 1,
+      "explicacao": "O Sebraetec aproxima os pequenos negócios de prestadores de serviços tecnológicos, subsidiando parte do valor.",
+      "tema": "Produtos Sebrae",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 7,
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre a LGPD (Lei 13.709/2018) no contexto do Sebrae, é correto afirmar:",
+      "alternativas": [
+        "O Sebrae está isento da LGPD.",
+        "Dados sensíveis podem ser tratados livremente.",
+        "O tratamento de dados deve obedecer a princípios como finalidade, adequação e necessidade.",
+        "Protege apenas dados de pessoas jurídicas."
+      ],
+      "correta": 2,
+      "explicacao": "A LGPD aplica-se ao Sebrae e exige respeito aos princípios de finalidade, adequação e necessidade no tratamento de dados pessoais.",
+      "tema": "Legislação",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 8,
+      "tipo": "multipla_escolha",
+      "enunciado": "Assinale a opção com correta concordância verbal:",
+      "alternativas": [
+        "Faziam anos que o projeto estava parado.",
+        "Houveram muitos problemas.",
+        "Aluga-se salas para treinamento.",
+        "Tratam-se de questões complexas."
+      ],
+      "correta": 3,
+      "explicacao": "'Tratar-se de' é verbo com índice de indeterminação do sujeito, fica no singular. As outras opções contêm erros clássicos de concordância.",
+      "tema": "Língua Portuguesa",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 9,
+      "tipo": "multipla_escolha",
+      "enunciado": "O ciclo PDCA é uma ferramenta de gestão da qualidade. A sigla significa:",
+      "alternativas": [
+        "Plan, Do, Check, Act.",
+        "Process, Design, Calculate, Analyze.",
+        "Program, Develop, Control, Adjust.",
+        "Plan, Direct, Coordinate, Audit."
+      ],
+      "correta": 0,
+      "explicacao": "PDCA: Plan (Planejar), Do (Executar), Check (Verificar), Act (Agir/Corrigir).",
+      "tema": "Gestão de Qualidade",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 10,
+      "tipo": "multipla_escolha",
+      "enunciado": "A certificação de 'Produtos Orgânicos' no Brasil exige:",
+      "alternativas": [
+        "Uso moderado de agrotóxicos.",
+        "Rastreabilidade da cadeia e não uso de transgênicos.",
+        "Apenas autodeclaração.",
+        "Embalagem verde."
+      ],
+      "correta": 1,
+      "explicacao": "A agricultura orgânica proíbe transgênicos e agrotóxicos sintéticos, exigindo rastreabilidade e certificação.",
+      "tema": "Conhecimentos Específicos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 11,
+      "tipo": "multipla_escolha",
+      "enunciado": "Na gestão de riscos, a estratégia de 'Mitigar' significa:",
+      "alternativas": [
+        "Eliminar a ameaça.",
+        "Transferir o risco (seguro).",
+        "Reduzir a probabilidade e/ou o impacto.",
+        "Aceitar o risco."
+      ],
+      "correta": 2,
+      "explicacao": "Mitigar é agir para reduzir a probabilidade ou impacto do risco. Eliminar é Evitar; Transferir é passar a terceiros.",
+      "tema": "Gestão de Projetos",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 12,
+      "tipo": "multipla_escolha",
+      "enunciado": "O Sebrae foi criado como:",
+      "alternativas": [
+        "Empresa Pública.",
+        "Autarquia Especial.",
+        "Serviço Social Autônomo (Direito Privado).",
+        "Sociedade de Economia Mista."
+      ],
+      "correta": 2,
+      "explicacao": "O Sebrae é um Serviço Social Autônomo, pessoa jurídica de direito privado, sem fins lucrativos.",
+      "tema": "Conhecimentos Sebrae",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 13,
+      "tipo": "multipla_escolha",
+      "enunciado": "No cronograma, o 'Caminho Crítico' é:",
+      "alternativas": [
+        "O caminho mais curto.",
+        "A sequência de atividades sem folga que determina a duração do projeto.",
+        "A lista de atividades menos importantes.",
+        "O caminho de menor custo."
+      ],
+      "correta": 1,
+      "explicacao": "Caminho Crítico é a sequência de atividades que, se atrasar, atrasa o projeto todo. É o caminho mais longo em duração.",
+      "tema": "Gestão de Projetos",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 14,
+      "tipo": "multipla_escolha",
+      "enunciado": "A 'Matriz RACI' é utilizada para:",
+      "alternativas": [
+        "Calcular ROI.",
+        "Definir papéis e responsabilidades.",
+        "Mapear riscos.",
+        "Organizar layout."
+      ],
+      "correta": 1,
+      "explicacao": "RACI define quem Executa (R), Aprova (A), é Consultado (C) e Informado (I).",
+      "tema": "Gestão de Projetos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 15,
+      "tipo": "multipla_escolha",
+      "enunciado": "Em relação à ortografia oficial e acentuação gráfica (Língua Portuguesa), assinale a opção correta:",
+      "alternativas": [
+        "A palavra 'ideia' continua sendo acentuada após o Novo Acordo Ortográfico.",
+        "O uso do hífen é obrigatório em 'micro-empresa'.",
+        "A palavra 'agronegócio' é escrita junta, sem hífen.",
+        "O verbo 'ter' na terceira pessoa do plural do presente do indicativo escreve-se 'teem'."
+      ],
+      "correta": 2,
+      "explicacao": "Agronegócio escreve-se junto. Ideia perdeu o acento (ditongo aberto 'ei' em paroxítona). Microempresa escreve-se junto (vogais diferentes: o + e). Têm (plural) leva acento circunflexo, não dobra o 'e'.",
+      "tema": "Língua Portuguesa",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 16,
+      "tipo": "multipla_escolha",
+      "enunciado": "No gerenciamento do escopo de um projeto (PMI), o processo de 'Validar o Escopo' difere de 'Controlar a Qualidade' pois:",
+      "alternativas": [
+        "Validar o Escopo preocupa-se com a aceitação das entregas pelo cliente, enquanto Controlar a Qualidade preocupa-se com a correção das entregas.",
+        "Validar o Escopo é feito internamente pela equipe, enquanto Controlar a Qualidade é feito pelo cliente.",
+        "Não há diferença, são sinônimos.",
+        "Validar o Escopo ocorre apenas no encerramento do projeto."
+      ],
+      "correta": 0,
+      "explicacao": "Controle da Qualidade verifica se o produto está correto tecnicamente. Validar o Escopo é o processo de formalizar a aceitação das entregas concluídas pelo cliente ou patrocinador.",
+      "tema": "Gestão de Projetos (PMI)",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 17,
+      "tipo": "multipla_escolha",
+      "enunciado": "Quanto ao emprego do sinal indicativo de crase, assinale a alternativa correta:",
+      "alternativas": [
+        "O analista foi à uma reunião importante.",
+        "O Sebrae oferece apoio à micro e pequena empresa.",
+        "O projeto visa à atender as demandas rurais.",
+        "O documento foi enviado à Vossa Senhoria."
+      ],
+      "correta": 1,
+      "explicacao": "Em 'apoio à micro e pequena empresa', ocorre crase (apoio a + a microempresa). A) Crase proibida antes de artigo indefinido 'uma'. C) Crase proibida antes de verbo 'atender'. D) Crase proibida antes de pronome de tratamento (exceto senhora/senhorita).",
+      "tema": "Língua Portuguesa",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 18,
+      "tipo": "multipla_escolha",
+      "enunciado": "O conceito de 'Bem-estar animal' em certificações agropecuárias envolve as chamadas 'Cinco Liberdades'. Qual das opções abaixo NÃO é uma delas?",
+      "alternativas": [
+        "Livre de fome e sede.",
+        "Livre de dor, lesões e doenças.",
+        "Livre para reproduzir-se descontroladamente.",
+        "Livre para expressar seu comportamento natural."
+      ],
+      "correta": 2,
+      "explicacao": "As 5 liberdades são: 1. Fome/sede; 2. Desconforto; 3. Dor/doença; 4. Expressar comportamento natural; 5. Medo/estresse. A reprodução descontrolada não é uma das liberdades preconizadas.",
+      "tema": "Conhecimentos Específicos - Certificações",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 19,
+      "tipo": "multipla_escolha",
+      "enunciado": "No contexto do Sebrae, as 'Normativas Internas' (como as citadas INS 41, 51 e 36) regulam procedimentos administrativos. A gestão de contratos tipicamente exige:",
+      "alternativas": [
+        "Pagamento antecipado integral antes da entrega do serviço.",
+        "Designação de um gestor ou fiscal de contrato para acompanhar a execução.",
+        "Inexistência de formalização por escrito para valores baixos.",
+        "Renovação automática indefinida sem avaliação de desempenho."
+      ],
+      "correta": 1,
+      "explicacao": "Uma prática padrão de gestão de contratos (e exigida em regulamentos do Sistema S) é a designação formal de um gestor/fiscal para acompanhar a execução técnica e financeira antes do pagamento.",
+      "tema": "Conhecimentos Específicos - Contratos",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 20,
+      "tipo": "multipla_escolha",
+      "enunciado": "Assinale a opção que apresenta correta concordância verbal:",
+      "alternativas": [
+        "Faziam anos que o projeto estava parado.",
+        "Houveram muitos problemas na execução do contrato.",
+        "Aluga-se salas para treinamento.",
+        "Tratam-se de questões complexas de logística."
+      ],
+      "correta": 3,
+      "explicacao": "D) 'Tratar-se de' é verbo com índice de indeterminação do sujeito, fica no singular. A) Fazer (tempo) é impessoal: Fazia anos. B) Haver (existir) é impessoal: Houve muitos problemas. C) 'Salas' é sujeito passivo: Alugam-se salas.",
+      "tema": "Língua Portuguesa",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 21,
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre a pontuação, assinale a alternativa correta:",
+      "alternativas": [
+        "O projeto, que foi aprovado ontem será iniciado hoje.",
+        "O gerente disse: que o prazo acabou.",
+        "Os recursos financeiros, conforme previsto no orçamento, foram liberados.",
+        "Brasília 09 de janeiro, de 2026."
+      ],
+      "correta": 2,
+      "explicacao": "A oração intercalada 'conforme previsto no orçamento' deve vir entre vírgulas. A) Falta vírgula após 'ontem'. B) Não se usa dois pontos entre verbo e oração subordinada integrante. D) Falta vírgula após Brasília.",
+      "tema": "Língua Portuguesa",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 22,
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre os pronomes de tratamento, para se dirigir formalmente a um Diretor do Sebrae em um relatório, o mais adequado seria:",
+      "alternativas": [
+        "Vossa Excelência.",
+        "Vossa Senhoria.",
+        "Vossa Magnificência.",
+        "Vossa Santidade."
+      ],
+      "correta": 1,
+      "explicacao": "Vossa Senhoria é utilizado para autoridades que não possuem título específico de Excelência (como deputados, juízes, ministros). Para cargos de direção em empresas e autarquias (exceto Ministros de Estado), usa-se Vossa Senhoria.",
+      "tema": "Língua Portuguesa - Redação Oficial",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 23,
+      "tipo": "multipla_escolha",
+      "enunciado": "Um 'Termo de Referência' (TR) na aquisição de bens e serviços pelo Sebrae deve conter, obrigatoriamente:",
+      "alternativas": [
+        "A definição do objeto, a justificativa e os critérios de aceitação.",
+        "O nome da empresa vencedora antes da licitação.",
+        "O pagamento antecipado de 50% do valor.",
+        "A dispensa de nota fiscal."
+      ],
+      "correta": 0,
+      "explicacao": "O TR é o documento que baliza a licitação/contratação, devendo detalhar o que será comprado (objeto), por que (justificativa) e como será avaliado (critérios de aceitação).",
+      "tema": "Conhecimentos Específicos - Contratos/TR",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 24,
+      "tipo": "multipla_escolha",
+      "enunciado": "O conceito de 'Stakeholder' em um projeto refere-se a:",
+      "alternativas": [
+        "Apenas aos investidores financeiros.",
+        "Apenas ao gerente do projeto.",
+        "Qualquer pessoa ou organização que possa afetar, ser afetada ou perceber-se afetada por uma decisão, atividade ou resultado do projeto.",
+        "Aos concorrentes da empresa."
+      ],
+      "correta": 2,
+      "explicacao": "Stakeholders são as partes interessadas. O conceito é amplo e engloba equipe, clientes, patrocinadores, comunidade, governo, etc.",
+      "tema": "Gestão de Projetos (PMI)",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 25,
+      "tipo": "multipla_escolha",
+      "enunciado": "A substituição do termo sublinhado em 'O Sebrae *fomenta* o empreendedorismo' por um sinônimo adequado e que mantenha o sentido original seria:",
+      "alternativas": [
+        "O Sebrae *restringe* o empreendedorismo.",
+        "O Sebrae *estimula* o empreendedorismo.",
+        "O Sebrae *analisa* o empreendedorismo.",
+        "O Sebrae *oculta* o empreendedorismo."
+      ],
+      "correta": 1,
+      "explicacao": "Fomentar significa promover, estimular, incentivar, impulsionar.",
+      "tema": "Língua Portuguesa - Semântica",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 26,
+      "tipo": "multipla_escolha",
+      "enunciado": "Em um projeto ágil (Agile), diferentemente do modelo tradicional (Cascata), as entregas ocorrem:",
+      "alternativas": [
+        "Apenas no final do projeto, de uma só vez.",
+        "De forma incremental e iterativa, em ciclos curtos (Sprints).",
+        "Sem planejamento algum.",
+        "Sem documentação."
+      ],
+      "correta": 1,
+      "explicacao": "Metodologias ágeis valorizam entregas frequentes e incrementais para obter feedback rápido, diferente do modelo cascata onde a entrega é geralmente única ao final.",
+      "tema": "Gestão de Projetos (PMI/Ágil)",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 27,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para um produto obter a certificação de 'Indicação Geográfica' (IG), ele deve:",
+      "alternativas": [
+        "Ser produzido em qualquer lugar do Brasil com a mesma técnica.",
+        "Possuir qualidades ou reputação vinculadas essencialmente à sua origem geográfica (região específica).",
+        "Ser o mais barato do mercado.",
+        "Ser industrializado em larga escala."
+      ],
+      "correta": 1,
+      "explicacao": "Indicação Geográfica (IG) reconhece produtos que possuem características específicas devido ao seu local de origem (Terroir) ou fama da região.",
+      "tema": "Conhecimentos Específicos - Certificações",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 28,
+      "tipo": "multipla_escolha",
+      "enunciado": "Nos termos da Constituição Federal (citada no edital), o Sebrae tem proteção contra interferência estatal em seu funcionamento, exceto:",
+      "alternativas": [
+        "O Sebrae é totalmente imune a qualquer fiscalização.",
+        "O Sebrae submete suas contas ao Tribunal de Contas da União (TCU).",
+        "O Sebrae pode criar leis.",
+        "O Sebrae é um órgão do Poder Executivo."
+      ],
+      "correta": 1,
+      "explicacao": "Embora seja privado, o Sebrae gere recursos parafiscais (contribuições compulsórias) e, portanto, deve prestar contas ao TCU (Súmula do STF). O edital menciona 'proteção contra interferência', mas a jurisprudência mantém a fiscalização finalística do TCU.",
+      "tema": "Conhecimentos do Sebrae",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 29,
+      "tipo": "multipla_escolha",
+      "enunciado": "O 'Termo de Encerramento do Contrato' tem como objetivo principal:",
+      "alternativas": [
+        "Iniciar uma nova licitação imediatamente.",
+        "Formalizar que as obrigações de ambas as partes foram cumpridas e não há pendências.",
+        "Aumentar o valor do contrato em 25%.",
+        "Demitir os funcionários da empresa contratada."
+      ],
+      "correta": 1,
+      "explicacao": "O encerramento formal do contrato (Termo de Recebimento Definitivo/Encerramento) serve para atestar que o objeto foi entregue conforme o combinado e liberar as garantias, encerrando o vínculo jurídico.",
+      "tema": "Conhecimentos Específicos - Contratos",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 30,
+      "tipo": "discursiva",
+      "enunciado": "Estudo de Caso: Você é Analista Técnico I do Sebrae e foi designado para gerenciar um projeto de fomento à fruticultura no Vale do São Francisco. O projeto visa certificar 50 pequenos produtores com o selo GlobalGap para exportação. No entanto, no terceiro mês, identifica-se que 40% dos produtores não possuem infraestrutura básica de saneamento, requisito obrigatório para a certificação. \n\nCom base no PMBOK, descreva:\n1) Qual processo de gerenciamento deve ser acionado para lidar com esse imprevisto?\n2) Proponha uma ação corretiva e uma preventiva para o projeto.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Espera-se que o candidato cite o 'Gerenciamento de Riscos' (identificação tardia) ou 'Controle Integrado de Mudanças'. Ação Corretiva: Revisar o cronograma para incluir a adequação sanitária ou buscar parcerias para financiamento da infraestrutura. Ação Preventiva: Realizar diagnóstico prévio (checklist) mais rigoroso nos próximos grupos de produtores antes da entrada no projeto.",
+      "tema": "Gestão de Projetos - Estudo de Caso",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 31,
+      "tipo": "discursiva",
+      "enunciado": "Explique a importância do Termo de Referência (TR) na contratação de serviços de consultoria para o Sebraetec e cite dois elementos essenciais que devem constar nesse documento para evitar falhas na entrega do produto.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "O TR define o escopo do serviço. Sem ele claro, o consultor não sabe o que entregar e o Sebrae não sabe o que cobrar. Elementos: Detalhamento dos produtos (entregáveis) e Critérios de Aceitação (métricas de qualidade).",
+      "tema": "Gestão de Contratos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 32,
+      "tipo": "discursiva",
+      "enunciado": "Disserte sobre a relação entre as exigências de certificações internacionais (como Rainforest Alliance) e os princípios de ESG, explicando como o Sebrae pode apoiar o pequeno produtor nessa adequação.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "As certificações materializam o ESG: Ambiental (preservação), Social (trabalho justo) e Governança (gestão da propriedade). O Sebrae apoia via consultorias (Sebraetec), capacitação e subsídios para implementação das normas.",
+      "tema": "Conhecimentos Específicos - ESG/Agro",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 33,
+      "tipo": "discursiva",
+      "enunciado": "Defina o que é 'Escopo' de um projeto e explique a diferença entre 'Escopo do Produto' e 'Escopo do Projeto'.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Escopo é o trabalho necessário. Escopo do Produto: características e funções do bem/serviço (ex: maçã orgânica calibrada). Escopo do Projeto: trabalho para entregar o produto (ex: treinamento, auditoria, reuniões).",
+      "tema": "Gestão de Projetos",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 34,
+      "tipo": "discursiva",
+      "enunciado": "Um contrato de prestação de serviços continuados do Sebrae está chegando ao fim da vigência. O gestor do contrato percebeu que ainda há saldo financeiro e o serviço é essencial. Quais passos devem ser tomados para realizar um aditivo de prazo, considerando as boas práticas de gestão contratual?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "1. Verificar previsão legal/normativa para prorrogação. 2. Justificativa técnica da necessidade e vantajosidade. 3. Anuência da contratada. 4. Formalização do Termo Aditivo ANTES do término da vigência original.",
+      "tema": "Gestão de Contratos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 35,
+      "tipo": "discursiva",
+      "enunciado": "Em um projeto de inovação no agronegócio, quais seriam três Stakeholders (partes interessadas) típicos e qual a importância de gerenciá-los?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Exemplos: Produtores Rurais (beneficiários), Sindicatos Rurais (parceiros), Prefeitura Local (regulador/apoio). Gerenciá-los é vital para garantir engajamento, reduzir resistências e alinhar expectativas.",
+      "tema": "Gestão de Projetos",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 36,
+      "tipo": "discursiva",
+      "enunciado": "O que é a LGPD e como ela impacta a coleta de dados de produtores rurais em um projeto do Sebrae?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "LGPD regula tratamento de dados pessoais. Impacto: O Sebrae deve coletar apenas dados necessários (minimização), informar a finalidade (transparência), obter base legal (ex: consentimento ou execução de contrato) e garantir segurança dessas informações.",
+      "tema": "Legislação - LGPD",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 37,
+      "tipo": "discursiva",
+      "enunciado": "Descreva o conceito de 'Tripla Restrição' em gerenciamento de projetos e como a alteração em um dos lados afeta os outros.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Tripla Restrição: Escopo, Tempo e Custo (com Qualidade ao centro). Se aumentar o Escopo, provavelmente aumentará o Tempo ou Custo (ou cairá a Qualidade). Se reduzir o Tempo, aumentará o Custo ou reduzirá o Escopo.",
+      "tema": "Gestão de Projetos",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 38,
+      "tipo": "discursiva",
+      "enunciado": "Explique o que são 'Lições Aprendidas' em um projeto e qual sua utilidade para a organização.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Registro do que funcionou e do que não funcionou durante o projeto. Utilidade: Gestão do Conhecimento Institucional, evitando repetir erros em projetos futuros e replicando sucessos.",
+      "tema": "Gestão de Projetos",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 39,
+      "tipo": "discursiva",
+      "enunciado": "Qual a diferença entre Auditoria Interna e Auditoria Externa em um processo de certificação como o GlobalGap?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Auditoria Interna: Realizada pelo próprio produtor ou grupo (autoavaliação) para verificar prontidão. Auditoria Externa: Realizada por terceira parte independente (Organismo Certificador) para conceder o selo.",
+      "tema": "Conhecimentos Específicos - Certificações",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 40,
+      "tipo": "multipla_escolha",
+      "enunciado": "A certificação 'Kosher' é um requisito importante para acesso a determinados nichos de mercado. Ela atesta que:",
+      "alternativas": [
+        "O produto obedece às normas dietéticas judaicas ortodoxas.",
+        "O produto é isento de glúten e lactose.",
+        "O produto foi cultivado sem uso de trabalho escravo.",
+        "O produto segue os preceitos da lei islâmica (Halal)."
+      ],
+      "correta": 0,
+      "explicacao": "Kosher (ou Kasher) refere-se a alimentos que obedecem à lei judaica (kashrut). É distinto do Halal (islâmico) e de certificações de alérgenos.",
+      "tema": "Conhecimentos Específicos - Certificações",
+      "dificuldade": "Fácil"
+    }
+  ]
+}
