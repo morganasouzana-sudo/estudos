@@ -1,0 +1,545 @@
+{
+  "prova": "Simulado SEBRAE 2026 - Parte 2 (Licitações)",
+  "questoes": [
+    {
+      "id": 41,
+      "tipo": "multipla_escolha",
+      "enunciado": "Segundo a Resolução CDN nº 493/2024, as licitações no âmbito do Sistema Sebrae regem-se por regulamento próprio, dada a sua natureza jurídica de:",
+      "alternativas": [
+        "Empresa Pública, sujeita estritamente à Lei 14.133/2021.",
+        "Sociedade de Economia Mista, sujeita à Lei das Estatais.",
+        "Serviço Social Autônomo, pessoa jurídica de direito privado, sem fins lucrativos.",
+        "Autarquia Federal, sujeita ao regime jurídico de direito público."
+      ],
+      "correta": 2,
+      "explicacao": "O Sebrae é um Serviço Social Autônomo, ente paraestatal de cooperação, com personalidade jurídica de direito privado. Embora observe princípios da administração pública, possui regulamento próprio (Art. 2º).",
+      "tema": "Licitações - Natureza",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 42,
+      "tipo": "multipla_escolha",
+      "enunciado": "Dentre as modalidades de licitação previstas no Regulamento do Sebrae (Res. 493/2024), NÃO se encontra:",
+      "alternativas": [
+        "Tomada de Preços.",
+        "Diálogo Competitivo.",
+        "Desafio da Inovação.",
+        "Convite."
+      ],
+      "correta": 0,
+      "explicacao": "Art. 7º. As modalidades são: Concorrência, Concurso, Leilão, Pregão, Convite, Diálogo Competitivo e Desafio da Inovação. A Tomada de Preços não consta no novo regulamento.",
+      "tema": "Licitações - Modalidades",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 43,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para a contratação de obras e serviços de engenharia, a modalidade 'Convite' pode ser utilizada pelo Sebrae até o limite de:",
+      "alternativas": [
+        "R$ 166.000,00.",
+        "R$ 826.000,00.",
+        "R$ 2.465.000,00.",
+        "R$ 395.000,00."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 8º, I, 'a'. Para obras e serviços de engenharia, o Convite é até R$ 2.465.000,00. Acima disso, usa-se Concorrência.",
+      "tema": "Licitações - Limites",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 44,
+      "tipo": "multipla_escolha",
+      "enunciado": "É hipótese de DISPENSA de licitação no Sistema Sebrae a contratação de obras e serviços de engenharia até o valor de:",
+      "alternativas": [
+        "R$ 50.000,00.",
+        "R$ 92.000,00.",
+        "R$ 166.000,00.",
+        "R$ 330.000,00."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 13, II. A licitação é dispensável para obras e serviços de engenharia até R$ 166.000,00. Para compras e demais serviços, o limite é R$ 92.000,00 (inciso I).",
+      "tema": "Licitações - Dispensa",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 45,
+      "tipo": "multipla_escolha",
+      "enunciado": "A contratação de profissional de qualquer setor artístico, diretamente ou por meio de empresário exclusivo, desde que consagrado pela crítica especializada ou pela opinião pública, é hipótese de:",
+      "alternativas": [
+        "Dispensa de licitação em razão do valor.",
+        "Inexigibilidade de licitação.",
+        "Credenciamento.",
+        "Pré-qualificação."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 14, III. A contratação de artista consagrado configura inviabilidade de competição, caracterizando Inexigibilidade de Licitação.",
+      "tema": "Licitações - Inexigibilidade",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 46,
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre os contratos no âmbito do Sebrae, é correto afirmar que podem ser acrescidos (aditivos de valor) em até:",
+      "alternativas": [
+        "25% do valor inicial atualizado.",
+        "50% do valor inicial atualizado.",
+        "25% para compras e 50% para reformas.",
+        "100% mediante justificativa da diretoria."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 41. Os contratos poderão ser acrescidos em até 50% do valor global atualizado do contrato, mediante justificativa e termo aditivo.",
+      "tema": "Licitações - Aditivos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 47,
+      "tipo": "multipla_escolha",
+      "enunciado": "A modalidade de licitação destinada à contratação de pessoas físicas ou jurídicas com experiência no campo da inovação, para teste de soluções inovadoras, com ou sem risco tecnológico, denomina-se:",
+      "alternativas": [
+        "Diálogo Competitivo.",
+        "Concurso.",
+        "Desafio de Inovação.",
+        "Encomenda Tecnológica."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 5º, XXXII e Art. 7º, VII. Desafio de Inovação é a modalidade específica para teste de soluções inovadoras.",
+      "tema": "Licitações - Inovação",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 48,
+      "tipo": "multipla_escolha",
+      "enunciado": "No que se refere à vigência dos contratos, a regra geral é que tenham prazo determinado, não podendo ultrapassar, inclusive com prorrogações, o limite máximo de:",
+      "alternativas": [
+        "60 meses (5 anos).",
+        "12 meses.",
+        "10 anos.",
+        "35 anos."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 36. Os contratos terão prazo determinado, não podendo ultrapassar, inclusive com suas eventuais prorrogações, o limite máximo de 10 anos (regra geral).",
+      "tema": "Contratos - Vigência",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 49,
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre o Registro de Preços no Sebrae, o prazo de vigência da Ata, incluindo eventuais prorrogações, NÃO poderá exceder:",
+      "alternativas": [
+        "12 meses.",
+        "24 meses.",
+        "36 meses.",
+        "60 meses."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 48, § 2º. As atas de registro de preço, mesmo com as eventuais prorrogações, não poderão exceder o limite máximo de 36 (trinta e seis) meses.",
+      "tema": "Licitações - SRP",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 50,
+      "tipo": "multipla_escolha",
+      "enunciado": "É assegurado tratamento favorecido às Microempresas (ME) e Empresas de Pequeno Porte (EPP). Nas licitações para aquisição de bens de natureza divisível, acima de R$ 80.000,00, deve ser estabelecida cota exclusiva de até:",
+      "alternativas": [
+        "10%.",
+        "25%.",
+        "50%.",
+        "100%."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 60, IV. Será estabelecida cota exclusiva de até 25% destinada à MPE em certames para aquisição de bens de natureza divisível acima de R$ 80.000,00.",
+      "tema": "Licitações - MPE",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 51,
+      "tipo": "multipla_escolha",
+      "enunciado": "No julgamento das propostas, considera-se empate ficto para MPEs (Micro e Pequenas Empresas) quando a proposta destas for igual ou superior à do primeiro colocado em até:",
+      "alternativas": [
+        "5% em qualquer modalidade.",
+        "10% em qualquer modalidade.",
+        "10% no pregão e 5% nas demais.",
+        "10% nas modalidades convite/concorrência e 5% no pregão."
+      ],
+      "correta": 3,
+      "explicacao": "Art. 63, Parágrafo único (10% para convite/concorrência) e Art. 66 (5% para pregão).",
+      "tema": "Licitações - MPE",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 52,
+      "tipo": "multipla_escolha",
+      "enunciado": "A modalidade de licitação 'Pregão' no Sebrae deve adotar como critérios de julgamento:",
+      "alternativas": [
+        "Menor preço ou Melhor técnica.",
+        "Menor preço ou Maior desconto.",
+        "Técnica e preço ou Maior lance.",
+        "Melhor solução inovadora ou Maior retorno econômico."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 10, § 3º. Nas licitações na modalidade pregão só serão admitidos os critérios de julgamento de menor preço ou maior desconto.",
+      "tema": "Licitações - Pregão",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 53,
+      "tipo": "multipla_escolha",
+      "enunciado": "Quando o objeto da licitação envolver inovação ou impossibilidade de definição precisa das especificações técnicas pela contratante, a modalidade adequada que permite debates prévios com licitantes selecionados é:",
+      "alternativas": [
+        "Concorrência.",
+        "Credenciamento.",
+        "Diálogo Competitivo.",
+        "Pré-qualificação."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 11. O diálogo competitivo é restrito a contratações que envolvam inovação ou impossibilidade de satisfação sem adaptação, permitindo diálogo para identificar soluções.",
+      "tema": "Licitações - Modalidades",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 54,
+      "tipo": "multipla_escolha",
+      "enunciado": "Nas contratações diretas por INEXIGIBILIDADE, é requisito essencial a demonstração de:",
+      "alternativas": [
+        "Valor baixo da contratação.",
+        "Inviabilidade de competição.",
+        "Urgência ou emergência.",
+        "Ausência de interessados em licitação anterior."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 14. A licitação será inexigível quando houver inviabilidade de competição (ex: fornecedor exclusivo, notória especialização).",
+      "tema": "Licitações - Inexigibilidade",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 55,
+      "tipo": "multipla_escolha",
+      "enunciado": "O 'Credenciamento' é um procedimento que pode ser utilizado em casos de contratação paralela e não excludente. Sobre ele, é correto afirmar:",
+      "alternativas": [
+        "É uma modalidade de licitação para obras de grande vulto.",
+        "Seleciona apenas um fornecedor para exclusividade.",
+        "Pode ser alterado, suspenso ou cancelado a qualquer tempo e admite denúncia por qualquer das partes.",
+        "Gera vínculo empregatício com os credenciados."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 23, III e IV. Admite denúncia pelas partes e pode ser alterado/cancelado a qualquer tempo. Visa ter vários prestadores aptos (ex: instrutoria).",
+      "tema": "Licitações - Credenciamento",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 56,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para a regularização fiscal de Microempresas e EPPs vencedoras da licitação, o regulamento assegura o prazo de:",
+      "alternativas": [
+        "2 dias úteis, improrrogáveis.",
+        "5 dias úteis, prorrogáveis por igual período.",
+        "30 dias corridos.",
+        "Imediato, sob pena de desclassificação."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 61, § 2º. Será assegurado prazo de cinco dias úteis, prorrogável por igual período, para comprovação da regularidade fiscal da MPE.",
+      "tema": "Licitações - MPE",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 57,
+      "tipo": "multipla_escolha",
+      "enunciado": "A prestação de garantia contratual, quando exigida, é limitada a qual percentual do valor do contrato?",
+      "alternativas": [
+        "5%.",
+        "10%.",
+        "30%.",
+        "50%."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 37. A prestação de garantia do contrato, quando prevista, é limitada a 30% do valor do contrato.",
+      "tema": "Contratos - Garantias",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 58,
+      "tipo": "multipla_escolha",
+      "enunciado": "A 'Matriz de Risco' é cláusula contratual obrigatória em qual das situações abaixo?",
+      "alternativas": [
+        "Em todas as compras de bens comuns.",
+        "Nos contratos de limpeza e conservação.",
+        "Nas contratações que envolvam risco tecnológico e regimes de contratação integrada/semi-integrada.",
+        "Apenas em dispensas de licitação."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 5º, XXXVII. Obrigatória em: obras > 20x valor concorrência, contratação integrada/semi-integrada e risco tecnológico.",
+      "tema": "Contratos - Matriz de Risco",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 59,
+      "tipo": "multipla_escolha",
+      "enunciado": "Qual o prazo para interposição de recurso da decisão de declaração de licitante vencedor?",
+      "alternativas": [
+        "2 dias úteis.",
+        "3 dias úteis.",
+        "5 dias úteis.",
+        "10 dias corridos."
+      ],
+      "correta": 0,
+      "explicacao": "Art. 32. Caberá recurso da decisão da declaração de licitante vencedor no prazo de 2 (dois) dias úteis.",
+      "tema": "Licitações - Recursos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 60,
+      "tipo": "multipla_escolha",
+      "enunciado": "A contratação de serviços técnicos especializados de natureza predominantemente intelectual com profissionais de notória especialização (ex: pareceres, treinamentos) é caso de:",
+      "alternativas": [
+        "Dispensa de licitação.",
+        "Inexigibilidade de licitação.",
+        "Pregão obrigatório.",
+        "Concurso."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 14, II. Serviços técnicos especializados com notória especialização configuram Inexigibilidade.",
+      "tema": "Licitações - Inexigibilidade",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 61,
+      "tipo": "multipla_escolha",
+      "enunciado": "O critério de julgamento 'Maior Retorno Econômico' é utilizado exclusivamente para:",
+      "alternativas": [
+        "Contratos de publicidade.",
+        "Contratos de eficiência.",
+        "Aquisição de imóveis.",
+        "Alienação de bens inservíveis."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 10, § 7º. Utilizado exclusivamente para a celebração de contrato de eficiência (remuneração baseada na economia gerada).",
+      "tema": "Licitações - Julgamento",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 62,
+      "tipo": "multipla_escolha",
+      "enunciado": "Nas licitações exclusivas para MPEs (Micro e Pequenas Empresas), o valor máximo de contratação para aplicação deste benefício é:",
+      "alternativas": [
+        "R$ 50.000,00.",
+        "R$ 80.000,00.",
+        "R$ 100.000,00.",
+        "R$ 166.000,00."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 60, I. Serão realizadas licitações destinadas exclusivamente a MPEs nas contratações de até R$ 80.000,00.",
+      "tema": "Licitações - MPE",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 63,
+      "tipo": "multipla_escolha",
+      "enunciado": "A licitação fracassada (quando não surgem interessados ou propostas válidas) permite a contratação direta por Dispensa, desde que a licitação anterior tenha sido realizada há menos de:",
+      "alternativas": [
+        "6 meses.",
+        "1 ano.",
+        "2 anos.",
+        "5 anos."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 13, IV. Dispensa permitida se mantidas as condições e licitação realizada há menos de 1 ano.",
+      "tema": "Licitações - Dispensa",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 64,
+      "tipo": "multipla_escolha",
+      "enunciado": "O regime de contratação em que o contratado é responsável por elaborar e desenvolver os projetos básico e executivo, além de executar a obra, é chamado de:",
+      "alternativas": [
+        "Empreitada por preço unitário.",
+        "Empreitada por preço global.",
+        "Contratação Semi-integrada.",
+        "Contratação Integrada."
+      ],
+      "correta": 3,
+      "explicacao": "Art. 5º, XXI. Contratação Integrada inclui Projetos Básico e Executivo + Obras. (A Semi-integrada inclui apenas o Executivo + Obras).",
+      "tema": "Contratos - Regimes",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 65,
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre a participação em licitações do Sebrae, é expressamente VEDADA a participação de:",
+      "alternativas": [
+        "Cooperativas.",
+        "Consórcios de empresas.",
+        "Empresas em recuperação judicial (se apresentarem plano acolhido).",
+        "Pessoas jurídicas que tenham em seus quadros societários empregados ou diretores do Sebrae."
+      ],
+      "correta": 3,
+      "explicacao": "Art. 73. Não poderão participar empregado, diretor ou pessoas jurídicas que tenham em seus quadros societários empregados ou diretores do Sistema Sebrae.",
+      "tema": "Licitações - Vedações",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 66,
+      "tipo": "multipla_escolha",
+      "enunciado": "A 'Encomenda Tecnológica' é definida como:",
+      "alternativas": [
+        "Compra de computadores prontos.",
+        "Compra direta de serviços de P&D para obtenção de solução determinada com risco tecnológico.",
+        "Licitação para software de prateleira.",
+        "Contratação de internet banda larga."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 5º, XXXIV. É a compra direta de serviços de Pesquisa & Desenvolvimento... existindo risco tecnológico.",
+      "tema": "Licitações - Inovação",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 67,
+      "tipo": "multipla_escolha",
+      "enunciado": "O prazo máximo de vigência de contratos que prevejam operação continuada de sistemas estruturantes de TI (Tecnologia da Informação) é de:",
+      "alternativas": [
+        "5 anos.",
+        "10 anos.",
+        "15 anos.",
+        "Indeterminado."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 36, § 3º. Sistemas estruturantes de TI podem ser prorrogados até o limite de 15 anos.",
+      "tema": "Contratos - Vigência",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 68,
+      "tipo": "multipla_escolha",
+      "enunciado": "A 'Garantia de Proposta' (pré-habilitação) não poderá ser superior a:",
+      "alternativas": [
+        "1% do valor estimado.",
+        "5% do valor estimado.",
+        "10% do valor estimado.",
+        "30% do valor estimado."
+      ],
+      "correta": 0,
+      "explicacao": "Art. 38, § 1º. A garantia de proposta não poderá ser superior a 1% do valor estimado.",
+      "tema": "Licitações - Garantia",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 69,
+      "tipo": "discursiva",
+      "enunciado": "Explique a diferença entre 'Fracionamento de Despesas' (vedado) e 'Parcelamento do Objeto' (permitido) segundo o regulamento do Sebrae.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Parcelamento (Art. 5º, XXVIII) é dividir o objeto em lotes para ampliar competitividade e aproveitar mercado, sem perda de escala. Fracionamento (Art. 5º, XXVII) é dividir indevidamente a aquisição em vários certames menores ou dispensas para fugir da modalidade de licitação correta (de maior valor).",
+      "tema": "Licitações - Conceitos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 70,
+      "tipo": "discursiva",
+      "enunciado": "Cite três hipóteses em que o Sebrae pode realizar contratação direta por 'Dispensa de Licitação'.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Exemplos (Art. 13): 1) Valor (até 92k bens/serviços, 166k obras); 2) Emergência ou calamidade; 3) Licitação anterior fracassada (menos de 1 ano); 4) Gêneros alimentícios perecíveis; 5) Peças originais para veículos/equipamentos.",
+      "tema": "Licitações - Dispensa",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 71,
+      "tipo": "discursiva",
+      "enunciado": "O que é o 'Termo de Encerramento do Contrato' e qual sua finalidade principal?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "É o documento que formaliza o fim das obrigações contratuais. Serve para atestar que o objeto foi entregue conforme o combinado, não há pendências e liberar as garantias prestadas.",
+      "tema": "Contratos - Encerramento",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 72,
+      "tipo": "discursiva",
+      "enunciado": "Defina 'Credenciamento' e cite uma situação em que ele é vantajoso para o Sebrae.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Procedimento para convocar interessados a prestar serviços sob condições padronizadas (sem exclusividade). Vantajoso para contratação paralela e não excludente (ex: rede de consultores e instrutores), permitindo ampla oferta.",
+      "tema": "Licitações - Credenciamento",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 73,
+      "tipo": "discursiva",
+      "enunciado": "Qual a diferença entre os critérios de julgamento 'Menor Preço' e 'Maior Desconto'?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Menor Preço: O licitante oferta o valor final do item. Vence quem cobrar menos. Maior Desconto: A administração fixa um preço máximo ou tabela de referência e o licitante oferta um percentual de desconto sobre esse valor. Vence quem der mais desconto.",
+      "tema": "Licitações - Julgamento",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 74,
+      "tipo": "discursiva",
+      "enunciado": "Em que consiste a 'Pré-qualificação Permanente' e qual sua validade?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Procedimento técnico-administrativo para selecionar previamente licitantes ou bens que atendam exigências técnicas. Fica permanentemente aberta. A validade do registro da pré-qualificação é de até 2 anos.",
+      "tema": "Licitações - Pré-qualificação",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 75,
+      "tipo": "discursiva",
+      "enunciado": "Como funciona o 'Reajuste' de preços em um contrato e qual sua periodicidade mínima?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Reajuste é a atualização monetária do valor contratual aplicando índices de preços previstos no contrato (ex: IPCA, IGP-M). A periodicidade mínima é de 12 meses (interregno mínimo).",
+      "tema": "Contratos - Reajuste",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 76,
+      "tipo": "discursiva",
+      "enunciado": "O que é 'Apostilamento' e cite duas situações em que ele pode ser usado para alterar o contrato sem termo aditivo.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Registro administrativo simples no contrato. Situações: 1) Reajuste de preços previsto; 2) Correção de erro material; 3) Mudança de razão social do contratado; 4) Alteração do fiscal do contrato.",
+      "tema": "Contratos - Apostilamento",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 77,
+      "tipo": "discursiva",
+      "enunciado": "Explique o conceito de 'Carona' (Adesão) em Atas de Registro de Preços e qual o limite para o órgão aderente.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "É quando um órgão que não participou da licitação original aproveita a Ata de Registro de Preços de outro órgão (Gerenciador). O limite para o Aderente (Carona) não pode ultrapassar 100% dos quantitativos previstos no edital para aquele item.",
+      "tema": "Licitações - SRP",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 78,
+      "tipo": "discursiva",
+      "enunciado": "O que ocorre se o licitante convocado se recusar injustificadamente a assinar o contrato?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Caracteriza descumprimento total da obrigação. Penalidades: 1) Perda do direito à contratação; 2) Perda da garantia de proposta (se houver); 3) Suspensão do direito de licitar com o Sebrae por até 3 anos.",
+      "tema": "Contratos - Sanções",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 79,
+      "tipo": "discursiva",
+      "enunciado": "Descreva o procedimento de 'Diálogo Competitivo' e para que tipo de objeto ele é indicado.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Modalidade onde o Sebrae dialoga com licitantes pré-selecionados para identificar soluções capazes de atender suas necessidades, antes da fase de propostas finais. Indicado para objetos complexos, inovadores ou quando as especificações não podem ser definidas com precisão suficiente.",
+      "tema": "Licitações - Inovação",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 80,
+      "tipo": "discursiva",
+      "enunciado": "Quais são as sanções administrativas previstas para quem cometer fraude fiscal ou apresentar documento falso na licitação?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Impedimento do direito de licitar e contratar com abrangência nacional, por prazo mínimo de 4 e máximo de 6 anos (Art. 43).",
+      "tema": "Licitações - Sanções",
+      "dificuldade": "Difícil"
+    }
+  ]
+}
