@@ -3,498 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Estudos SEBRAE 2026</title>
+    <title>Sistema de Estudos SEBRAE 2026 - Completo</title>
     <style>
-        :root {
-            --primary: #005DAA;
-            --primary-dark: #004580;
-            --secondary: #FFD200;
-            --text: #333;
-            --text-light: #666;
-            --bg: #f4f7f6;
-            --card-bg: #ffffff;
-            --success: #28a745;
-            --error: #dc3545;
-            --border-radius: 12px;
-            --shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+        :root { --primary: #005DAA; --primary-dark: #004580; --secondary: #FFD200; --text: #333; --bg: #f4f7f6; --success: #28a745; --error: #dc3545; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background: var(--bg); color: var(--text); padding: 20px; display: flex; justify-content: center; }
+        .container { width: 100%; max-width: 900px; background: white; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; display: flex; flex-direction: column; min-height: 80vh; }
+        
+        /* Header */
+        header { background: var(--primary); color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .header-controls button { background: rgba(255,255,255,0.2); border: none; color: white; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; margin-left: 5px; }
+        .header-controls button:hover { background: rgba(255,255,255,0.3); }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
-
-        .container {
-            width: 100%; max-width: 800px; background: var(--card-bg); border-radius: var(--border-radius);
-            box-shadow: var(--shadow); overflow: hidden; min-height: 600px; display: flex; flex-direction: column; position: relative;
-        }
-
-        header { background: var(--primary); color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        h1 { font-size: 1.2rem; font-weight: 600; }
-        .badge { background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; }
-
-        .screen { display: none; flex-direction: column; flex: 1; padding: 20px; animation: fadeIn 0.3s ease; }
+        /* Screens */
+        .screen { display: none; padding: 20px; flex: 1; flex-direction: column; }
         .screen.active { display: flex; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Setup Screen (Upload) */
-        .upload-area {
-            border: 2px dashed #ccc; padding: 40px; text-align: center; border-radius: 12px;
-            margin: 20px 0; cursor: pointer; transition: 0.2s; background: #fafafa;
-        }
-        .upload-area:hover { border-color: var(--primary); background: #eef5fa; }
-        .upload-area p { color: var(--text-light); margin-top: 10px; }
-        .file-list { margin-bottom: 20px; font-size: 0.9rem; color: #555; text-align: left; }
-        .file-item { padding: 5px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
+        /* Home */
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px; }
+        .stat-box { background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #eee; }
+        .stat-num { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .stat-label { font-size: 0.85rem; color: #666; }
 
-        /* Home Screen */
-        .stats-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 30px; }
-        .stat-card { background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #e0e0e0; }
-        .stat-value { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
-        .stat-label { font-size: 0.8rem; color: var(--text-light); }
-        .filters { margin-bottom: 20px; display: flex; flex-direction: column; gap: 15px; }
-        select, button, input[type="file"] { padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; width: 100%; }
-        button { background: var(--primary); color: white; border: none; cursor: pointer; transition: background 0.2s; font-weight: 600; }
-        button:hover { background: var(--primary-dark); }
-        button.secondary { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
-        button.secondary:hover { background: #eef5fa; }
-        .mode-toggle { display: flex; gap: 10px; margin-bottom: 20px; }
-        .mode-btn { flex: 1; opacity: 0.6; }
-        .mode-btn.selected { opacity: 1; border: 2px solid var(--primary); background: #eef5fa; color: var(--primary); }
-
-        /* Quiz Screen */
-        .progress-bar { height: 6px; background: #e0e0e0; border-radius: 3px; margin-bottom: 20px; overflow: hidden; }
-        .progress-fill { height: 100%; background: var(--success); width: 0%; transition: width 0.3s ease; }
-        .question-meta { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 0.9rem; color: var(--text-light); }
-        .question-text { font-size: 1.2rem; line-height: 1.6; margin-bottom: 25px; }
+        .control-panel { background: #f0f4f8; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; }
+        select, button { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem; }
+        button.primary { background: var(--primary); color: white; border: none; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        button.primary:hover { background: var(--primary-dark); }
+        
+        /* Quiz */
+        .progress-bar { height: 8px; background: #eee; border-radius: 4px; margin-bottom: 20px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--success); width: 0%; transition: 0.3s; }
+        .q-meta { display: flex; justify-content: space-between; color: #666; font-size: 0.9rem; margin-bottom: 10px; }
+        .q-text { font-size: 1.2rem; margin-bottom: 20px; line-height: 1.5; }
         .options { display: flex; flex-direction: column; gap: 10px; }
-        .option-btn { background: white; border: 1px solid #ddd; color: var(--text); text-align: left; padding: 15px; transition: all 0.2s; position: relative; }
-        .option-btn:hover:not(:disabled) { background: #f0f0f0; border-color: #bbb; }
-        .option-btn.correct { background: #d4edda; border-color: var(--success); color: #155724; }
-        .option-btn.wrong { background: #f8d7da; border-color: var(--error); color: #721c24; }
-        .feedback-area { margin-top: 20px; padding: 15px; background: #eef5fa; border-left: 4px solid var(--primary); border-radius: 4px; display: none; }
-        .feedback-area h4 { color: var(--primary); margin-bottom: 5px; }
+        .opt-btn { background: white; border: 1px solid #ddd; padding: 15px; text-align: left; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+        .opt-btn:hover { background: #f9f9f9; border-color: #bbb; }
+        .opt-btn.correct { background: #d4edda; border-color: var(--success); color: #155724; }
+        .opt-btn.wrong { background: #f8d7da; border-color: var(--error); color: #721c24; }
+        
+        .feedback { margin-top: 20px; padding: 15px; background: #eef6fc; border-left: 4px solid var(--primary); display: none; }
+        .feedback h4 { color: var(--primary); margin-bottom: 5px; }
 
-        /* Flashcard Screen */
-        .flashcard-container { flex: 1; perspective: 1000px; display: flex; justify-content: center; align-items: center; margin: 20px 0; cursor: pointer; }
-        .flashcard { width: 100%; height: 300px; position: relative; transform-style: preserve-3d; transition: transform 0.6s; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 12px; }
+        /* Flashcards */
+        .fc-container { flex: 1; display: flex; justify-content: center; align-items: center; perspective: 1000px; margin: 20px 0; }
+        .flashcard { width: 100%; height: 300px; position: relative; transform-style: preserve-3d; transition: transform 0.6s; cursor: pointer; }
         .flashcard.flipped { transform: rotateY(180deg); }
-        .card-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center; border-radius: 12px; background: white; border: 1px solid #eee; }
-        .card-front { background: white; color: var(--primary); font-size: 1.3rem; font-weight: bold; }
-        .card-back { background: var(--primary); color: white; transform: rotateY(180deg); font-size: 1.1rem; }
-        .card-hint { position: absolute; bottom: 15px; font-size: 0.8rem; opacity: 0.7; }
-        .flashcard-controls { display: flex; justify-content: space-between; gap: 10px; }
-        .footer-actions { margin-top: auto; display: flex; justify-content: flex-end; gap: 10px; }
+        .fc-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; background: white; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .fc-front { font-size: 1.3rem; font-weight: bold; color: var(--primary); }
+        .fc-back { transform: rotateY(180deg); background: var(--primary); color: white; font-size: 1.1rem; }
+        
+        /* Footer */
+        .footer { margin-top: auto; display: flex; gap: 10px; justify-content: flex-end; }
+        button.secondary { background: white; color: #666; border: 1px solid #ccc; cursor: pointer; }
 
-        @media (max-width: 600px) {
-            .stats-container { grid-template-columns: 1fr; }
-            h1 { font-size: 1rem; }
-            .question-text { font-size: 1rem; }
-        }
     </style>
 </head>
 <body>
 
-<div class="container" id="app">
+<div class="container">
     <header>
-        <h1>SEBRAE Study System</h1>
-        <div id="header-badges">
-            <span class="badge" id="mode-badge">Configuração</span>
+        <div>SEBRAE 2026 <span style="font-size:0.8rem; opacity:0.8">Analista Projetos</span></div>
+        <div class="header-controls">
+            <button onclick="app.downloadJSON()">⬇ Baixar Dados (JSON)</button>
         </div>
     </header>
 
-    <!-- 0. Tela de Carregamento (Setup) -->
-    <div id="setup-screen" class="screen active">
-        <div style="text-align: center; margin-bottom: 20px;">
-            <h2>Bem-vindo!</h2>
-            <p style="color: #666;">Para começar, carregue seus arquivos de questões.</p>
+    <!-- HOME -->
+    <div id="screen-home" class="screen active">
+        <div class="stats-grid">
+            <div class="stat-box"><div class="stat-num" id="st-total">0</div><div class="stat-label">Respondidas</div></div>
+            <div class="stat-box"><div class="stat-num" id="st-acc">0%</div><div class="stat-label">Precisão</div></div>
+            <div class="stat-box"><div class="stat-num" id="st-db">220</div><div class="stat-label">Questões Totais</div></div>
         </div>
 
-        <div class="upload-area" onclick="document.getElementById('file-input').click()">
-            <div style="font-size: 3rem;">📂</div>
-            <h3>Clique para selecionar arquivos JSON</h3>
-            <p>Você pode selecionar múltiplos arquivos (Parte 1, Parte 2, etc.)</p>
-        </div>
-        <input type="file" id="file-input" multiple accept=".json" style="display: none;" onchange="app.handleFiles(this.files)">
-
-        <div id="file-list-container" class="file-list"></div>
-
-        <div style="margin-top: auto;">
-            <button id="btn-load-data" onclick="app.processLoadedFiles()" disabled>Carregar e Iniciar</button>
-            <button class="secondary" onclick="app.loadDemoData()" style="margin-top: 10px;">Usar Dados de Demonstração</button>
-        </div>
-    </div>
-
-    <!-- 1. Tela Inicial (Home) -->
-    <div id="home-screen" class="screen">
-        <div class="stats-container">
-            <div class="stat-card">
-                <div class="stat-value" id="stat-total">0</div>
-                <div class="stat-label">Respondidas</div>
+        <div class="control-panel">
+            <div class="form-group">
+                <label>Modo de Estudo</label>
+                <select id="sel-mode">
+                    <option value="quiz">Quiz (Questões)</option>
+                    <option value="flashcard">Flashcards (Revisão)</option>
+                </select>
             </div>
-            <div class="stat-card">
-                <div class="stat-value" id="stat-correct">0</div>
-                <div class="stat-label">Acertos</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value" id="stat-accuracy">0%</div>
-                <div class="stat-label">Precisão</div>
-            </div>
-        </div>
-
-        <div class="mode-toggle">
-            <button class="mode-btn selected" onclick="app.setMode('quiz')">Modo Quiz</button>
-            <button class="mode-btn" onclick="app.setMode('flashcard')">Modo Flashcards</button>
-        </div>
-
-        <div class="filters">
-            <label>Disciplina:</label>
-            <select id="subject-select"><option value="all">Todas as Disciplinas</option></select>
-
-            <div id="difficulty-filter-container">
-                <label>Dificuldade:</label>
-                <select id="difficulty-select">
-                    <option value="all">Todas</option>
-                    <option value="Fácil">Fácil</option>
-                    <option value="Média">Média</option>
-                    <option value="Difícil">Difícil</option>
+            
+            <div class="form-group">
+                <label>Disciplina / Tema</label>
+                <select id="sel-subject">
+                    <option value="all">Todas as Disciplinas</option>
+                    <!-- Preenchido via JS -->
                 </select>
             </div>
 
-            <label><input type="checkbox" id="shuffle-check" checked> Embaralhar questões</label>
+            <button class="primary" onclick="app.start()">INICIAR SESSÃO</button>
         </div>
-
-        <button onclick="app.startSession()">INICIAR SESSÃO</button>
-        <button class="secondary" onclick="app.resetProgress()" style="margin-top: 10px; border-color: #ccc; color: #666;">Zerar Estatísticas</button>
-        <button class="secondary" onclick="location.reload()" style="margin-top: 10px; border-color: #ccc; color: #666;">Carregar Novos Arquivos</button>
-    </div>
-
-    <!-- 2. Tela de Quiz -->
-    <div id="quiz-screen" class="screen">
-        <div class="progress-bar"><div class="progress-fill" id="quiz-progress"></div></div>
-        <div class="question-meta">
-            <span id="q-subject">Tema</span>
-            <span id="q-difficulty" class="badge" style="background:#ccc; color:#333">Média</span>
-        </div>
-        <div class="question-text" id="q-text">Texto da pergunta aqui...</div>
-        <div class="options" id="q-options"></div>
-        <div class="feedback-area" id="q-feedback">
-            <h4 id="feedback-title">Resposta Correta!</h4>
-            <p id="feedback-text">Explicação detalhada...</p>
-        </div>
-        <div class="footer-actions">
-            <button id="btn-next-q" onclick="app.nextQuestion()" style="display:none;">Próxima</button>
-            <button class="secondary" onclick="app.quitSession()">Sair</button>
+        
+        <div style="text-align: center; margin-top: 20px; font-size: 0.8rem; color: #999;">
+            Base de dados consolidada: Partes 1 a 7 (IN 07, IN 36, IN 41, IN 51, Licitações, Projetos, Agro)
         </div>
     </div>
 
-    <!-- 3. Tela de Flashcards -->
-    <div id="flashcard-screen" class="screen">
-        <div class="question-meta" style="justify-content: center;"><span id="fc-counter">1 / 10</span></div>
-        <div class="flashcard-container" onclick="app.flipCard()">
-            <div class="flashcard" id="flashcard-el">
-                <div class="card-face card-front"><span id="fc-front">Frente</span><span class="card-hint">Clique para virar</span></div>
-                <div class="card-face card-back"><span id="fc-back">Verso</span></div>
+    <!-- QUIZ -->
+    <div id="screen-quiz" class="screen">
+        <div class="progress-bar"><div class="progress-fill" id="qz-bar"></div></div>
+        <div class="q-meta"><span id="qz-subj">Tema</span><span id="qz-count">1/10</span></div>
+        <div class="q-text" id="qz-text">...</div>
+        <div class="options" id="qz-opts"></div>
+        <div class="feedback" id="qz-feed">
+            <h4 id="qz-feed-title">Explicação</h4>
+            <p id="qz-feed-text">...</p>
+        </div>
+        <div class="footer">
+            <button class="secondary" onclick="app.home()">Sair</button>
+            <button class="primary" id="qz-next" onclick="app.nextQ()" style="display:none">Próxima</button>
+        </div>
+    </div>
+
+    <!-- FLASHCARD -->
+    <div id="screen-fc" class="screen">
+        <div class="q-meta" style="justify-content:center"><span id="fc-count">1/10</span></div>
+        <div class="fc-container">
+            <div class="flashcard" onclick="this.classList.toggle('flipped')">
+                <div class="fc-face fc-front"><span id="fc-front">...</span><div style="margin-top:20px; font-size:0.8rem; opacity:0.6">(Clique para virar)</div></div>
+                <div class="fc-face fc-back"><span id="fc-back">...</span></div>
             </div>
         </div>
-        <div class="flashcard-controls">
-            <button class="secondary" onclick="app.prevFlashcard()">Anterior</button>
-            <button onclick="app.nextFlashcard()">Próximo</button>
-        </div>
-        <button class="secondary" onclick="app.quitSession()" style="margin-top: 15px; width: 100%;">Encerrar</button>
-    </div>
-
-    <!-- 4. Tela de Resultados -->
-    <div id="result-screen" class="screen">
-        <div style="text-align: center; padding: 40px 0;">
-            <h2 style="margin-bottom: 20px; color: var(--primary);">Sessão Finalizada!</h2>
-            <div class="stats-container" style="margin: 30px 0;">
-                <div class="stat-card"><div class="stat-value" id="res-total">0</div><div class="stat-label">Questões</div></div>
-                <div class="stat-card"><div class="stat-value" id="res-correct" style="color: var(--success)">0</div><div class="stat-label">Acertos</div></div>
-            </div>
-            <p id="res-msg" style="margin-bottom: 30px; font-size: 1.1rem; color: #555;">Bom trabalho!</p>
-            <button onclick="app.goHome()">Voltar ao Início</button>
+        <div class="footer" style="justify-content: space-between;">
+            <button class="secondary" onclick="app.home()">Encerrar</button>
+            <button class="primary" onclick="app.nextFc()">Próximo Card ➡</button>
         </div>
     </div>
 </div>
 
 <script>
-    // Dados de demonstração caso o usuário não tenha arquivos
-    const DEMO_DATA = {
-        "disciplinas": ["Demonstração"],
-        "questoes": [
-            { "id": 1, "tipo": "multipla_escolha", "enunciado": "Esta é uma questão de demonstração. Carregue seus arquivos JSON para ver as questões reais.", "alternativas": ["Entendi", "Não entendi", "Talvez", "Ignorar"], "correta": 0, "explicacao": "Você deve usar o botão 'Carregar Arquivos' na tela inicial.", "tema": "Demonstração", "dificuldade": "Fácil" }
-        ],
-        "flashcards": [
-            { "frente": "Como usar este sistema?", "verso": "Carregue os arquivos JSON gerados pelo assistente." }
-        ]
-    };
+// --- BANCO DE DADOS COMPLETO (MINIFICADO PARA CABER AQUI) ---
+const DB = {
+  "questoes": [
+    // PARTE 1 - GERAL / PROJETOS / AGRO
+    {"id":1,"tema":"Gestão de Projetos","enunciado":"No PMI, o documento que autoriza formalmente o projeto é:","alternativas":["EAP","Termo de Abertura (Project Charter)","Plano de Gerenciamento","Escopo"],"correta":1,"explicacao":"O Termo de Abertura (TAP) oficializa o projeto."},
+    {"id":2,"tema":"Agro - Certificações","enunciado":"O GlobalGap foca principalmente em:","alternativas":["Qualidade visual","Orgânicos exclusivos","Boas Práticas Agrícolas (BPA) e segurança","Certificação religiosa"],"correta":2,"explicacao":"GlobalGap é referência em BPA e segurança alimentar."},
+    {"id":3,"tema":"Agro - Certificações","enunciado":"A Rainforest Alliance foca em:","alternativas":["Custos","Transgênicos","Sustentabilidade e biodiversidade","Processamento"],"correta":2,"explicacao":"Foca em sustentabilidade ambiental e social (o selo do sapo)."},
+    {"id":4,"tema":"ESG","enunciado":"Ação do pilar 'S' (Social) no Sebrae:","alternativas":["Compliance","Energia solar","Empreendedorismo feminino","Digitalização"],"correta":2,"explicacao":"Pilar Social envolve pessoas e inclusão."},
+    {"id":5,"tema":"Gestão de Projetos","enunciado":"Função da EAP (WBS):","alternativas":["Cronograma","Decompor escopo hierarquicamente","Riscos","Custo"],"correta":1,"explicacao":"EAP decompõe as entregas do projeto."},
+    {"id":6,"tema":"Produtos Sebrae","enunciado":"O Sebraetec visa:","alternativas":["Empréstimo","Subsídio para inovação/tecnologia","Feiras","Mão de obra"],"correta":1,"explicacao":"Subsidiada consultoria tecnológica."},
+    {"id":7,"tema":"Legislação","enunciado":"LGPD no Sebrae:","alternativas":["Isento","Dados livres","Respeito à finalidade e necessidade","Apenas PJ"],"correta":2,"explicacao":"Aplica-se a todos, exigindo base legal e finalidade."},
+    {"id":9,"tema":"Qualidade","enunciado":"Ciclo PDCA significa:","alternativas":["Plan, Do, Check, Act","Process, Design, Calc, Analise","Outros","Outros"],"correta":0,"explicacao":"Planejar, Executar, Verificar, Agir."},
+    {"id":10,"tema":"Agro - Certificações","enunciado":"Orgânicos no Brasil exigem:","alternativas":["Pouco veneno","Rastreabilidade e sem transgênicos","Autodeclaração simples","Cor verde"],"correta":1,"explicacao":"Proibido transgênicos e agrotóxicos sintéticos."},
+    {"id":11,"tema":"Gestão de Projetos","enunciado":"Mitigar um risco é:","alternativas":["Eliminar","Transferir","Reduzir probabilidade/impacto","Aceitar"],"correta":2,"explicacao":"Mitigar = Reduzir."},
+    {"id":12,"tema":"Conhecimentos Sebrae","enunciado":"Natureza jurídica do Sebrae:","alternativas":["Empresa Pública","Autarquia","Serviço Social Autônomo (Privado)","Economia Mista"],"correta":2,"explicacao":"Sistema S, direito privado, sem fins lucrativos."},
+    {"id":13,"tema":"Gestão de Projetos","enunciado":"Caminho Crítico é:","alternativas":["Mais curto","Sequência sem folga (mais longo)","Menos importante","Mais barato"],"correta":1,"explicacao":"Determina a duração do projeto."},
+    {"id":14,"tema":"Gestão de Projetos","enunciado":"Matriz RACI define:","alternativas":["ROI","Papéis e responsabilidades","Riscos","Layout"],"correta":1,"explicacao":"Responsible, Accountable, Consulted, Informed."},
+    
+    // PARTE 2 - LICITAÇÕES (RES 493)
+    {"id":41,"tema":"Licitações (Res 493)","enunciado":"O Sebrae tem regulamento próprio de licitações porque é:","alternativas":["Empresa Pública","Estatal","Serviço Social Autônomo","Autarquia"],"correta":2,"explicacao":"Entidade privada de cooperação."},
+    {"id":42,"tema":"Licitações (Res 493)","enunciado":"NÃO é modalidade do Sebrae:","alternativas":["Tomada de Preços","Diálogo Competitivo","Desafio Inovação","Convite"],"correta":0,"explicacao":"Tomada de Preços foi extinta no regulamento novo."},
+    {"id":43,"tema":"Licitações (Res 493)","enunciado":"Limite Convite Obras/Engenharia:","alternativas":["166k","826k","R$ 2.465.000,00","395k"],"correta":2,"explicacao":"Teto para convite de obras."},
+    {"id":44,"tema":"Licitações (Res 493)","enunciado":"Dispensa Obras/Engenharia valor:","alternativas":["50k","92k","R$ 166.000,00","330k"],"correta":2,"explicacao":"Dispensa por valor para obras."},
+    {"id":45,"tema":"Licitações (Res 493)","enunciado":"Artista consagrado contrata-se por:","alternativas":["Dispensa","Inexigibilidade","Credenciamento","Pré-qualificação"],"correta":1,"explicacao":"Inviabilidade de competição."},
+    {"id":46,"tema":"Licitações (Res 493)","enunciado":"Aditivo de valor limite:","alternativas":["25%","50% do inicial atualizado","100%","Ilimitado"],"correta":1,"explicacao":"Sebrae permite aditivo de até 50% (diferente da lei geral)."},
+    {"id":49,"tema":"Licitações (Res 493)","enunciado":"Vigência máxima Ata SRP:","alternativas":["12 meses","24 meses","36 meses","60 meses"],"correta":2,"explicacao":"Incluindo prorrogações."},
+    {"id":50,"tema":"Licitações (Res 493)","enunciado":"Cota MPE bens divisíveis > 80k:","alternativas":["10%","25%","50%","100%"],"correta":1,"explicacao":"Cota de até 25%."},
+    {"id":52,"tema":"Licitações (Res 493)","enunciado":"Critérios julgamento Pregão:","alternativas":["Técnica","Menor preço ou Maior desconto","Retorno","Conteúdo"],"correta":1,"explicacao":"Pregão é preço ou desconto."},
+    {"id":55,"tema":"Licitações (Res 493)","enunciado":"Credenciamento é para:","alternativas":["Obras","Contratação paralela e não excludente","Exclusividade","Preço fixo"],"correta":1,"explicacao":"Vários fornecedores aptos simultâneos."},
+    
+    // PARTE 3 - CONVÊNIOS (MANUAL)
+    {"id":81,"tema":"Convênios (Manual)","enunciado":"Instrumento de intenções sem repasse:","alternativas":["Técnico","Parceria","Cooperação Geral","Financeiro"],"correta":2,"explicacao":"Cooperação Geral (ou Memorando) é genérico."},
+    {"id":82,"tema":"Convênios (Manual)","enunciado":"Tempo existência entidade privada:","alternativas":["1 ano","2 anos","3 anos","5 anos"],"correta":2,"explicacao":"Mínimo 3 anos de constituição."},
+    {"id":83,"tema":"Convênios (Manual)","enunciado":"Prazo Termo de Parceria:","alternativas":["1 mês","3 meses","1 ano","Indefinido"],"correta":0,"explicacao":"Ações pontuais de até 1 mês."},
+    {"id":84,"tema":"Convênios (Manual)","enunciado":"Contrapartida mínima parceiro:","alternativas":["5%","10%","15% (Financeira)","50%"],"correta":2,"explicacao":"Mínimo 15% financeiro."},
+    {"id":85,"tema":"Convênios (Manual)","enunciado":"Despesas administrativas executor:","alternativas":["Vedadas","Limitadas a 15% do projeto","Sem limite","50%"],"correta":1,"explicacao":"Aceitas se previstas, até 15%."},
+    {"id":86,"tema":"Convênios (Manual)","enunciado":"Desembolso de recursos:","alternativas":["Sebrae primeiro","Parceiro primeiro","Concomitante","Livre"],"correta":2,"explicacao":"Aportes devem ser proporcionais e simultâneos."},
+    
+    // PARTE 4 - IN 07 (FINANCEIRO)
+    {"id":101,"tema":"IN 07/2019 - Financeiro","enunciado":"Prazo cadastro contrato após assinatura:","alternativas":["5 dias","Imediatamente","Antes","Mensal"],"correta":1,"explicacao":"Imediatamente após assinatura."},
+    {"id":102,"tema":"IN 07/2019 - Financeiro","enunciado":"Saldo contrato na renovação:","alternativas":["Usa no aditivo","Transfere","Vedado uso (deve encerrar)","Livre"],"correta":2,"explicacao":"Não se usa saldo antigo em aditivo de renovação."},
+    {"id":103,"tema":"IN 07/2019 - Financeiro","enunciado":"Retenção pagamento por irregularidade fiscal:","alternativas":["Sempre","Nunca","Só se for Cessão de Mão de Obra","Depende do valor"],"correta":2,"explicacao":"Regra geral paga e pune. Exceção: terceirização retém."},
+    {"id":105,"tema":"IN 07/2019 - Financeiro","enunciado":"Datas pagamento folha Sebrae:","alternativas":["5 e 20","15 e 30","10 (30%) e 25 (saldo)","Livre"],"correta":2,"explicacao":"Adiantamento dia 10, saldo dia 25."},
+    {"id":106,"tema":"IN 07/2019 - Financeiro","enunciado":"Liberação parcela convênio exige execução de:","alternativas":["50%","80% da etapa anterior","100%","30%"],"correta":1,"explicacao":"Regra dos 80% da parcela anterior."},
+    {"id":107,"tema":"IN 07/2019 - Financeiro","enunciado":"Limite Fundo Fixo (Pequena monta):","alternativas":["100","300","500","1000"],"correta":2,"explicacao":"R$ 500,00."},
+    {"id":109,"tema":"IN 07/2019 - Financeiro","enunciado":"Prazo UGF protocolar documento:","alternativas":["1 dia","2 dias","4 dias úteis","5 dias"],"correta":2,"explicacao":"4 dias úteis."},
+    
+    // PARTE 5 - IN 36 (CONTRATAÇÕES)
+    {"id":141,"tema":"IN 36/2024 - Contratações","enunciado":"Documento que caracteriza o objeto (IN 36):","alternativas":["PB","ETP","Termo de Referência (TR)","Mapa"],"correta":2,"explicacao":"TR define o objeto."},
+    {"id":142,"tema":"IN 36/2024 - Contratações","enunciado":"Garantia contratual obrigatória em:","alternativas":["Bens","Mão de obra terceirizada","Consultoria","Sempre"],"correta":1,"explicacao":"Risco trabalhista exige garantia."},
+    {"id":144,"tema":"IN 36/2024 - Contratações","enunciado":"Validade pesquisa de preços:","alternativas":["60 dias","90 dias","180 dias","1 ano"],"correta":2,"explicacao":"6 meses (180 dias)."},
+    {"id":146,"tema":"IN 36/2024 - Contratações","enunciado":"Regularidade fiscal dispensa valor:","alternativas":["FGTS só","Todas","Dispensada até R$ 92k","Federal só"],"correta":2,"explicacao":"Até 92k dispensa doc fiscal."},
+    {"id":147,"tema":"IN 36/2024 - Contratações","enunciado":"Regularidade fiscal 92k a 826k:","alternativas":["Todas","Federal e FGTS","Estadual","Nenhuma"],"correta":1,"explicacao":"Faixa intermediária pede Federal+FGTS."},
+    {"id":153,"tema":"IN 36/2024 - Contratações","enunciado":"Apostilamento serve para:","alternativas":["Alterar objeto","Novo contrato","Reajuste/Erro material (sem assinatura da contratada)","Prorrogar valor"],"correta":2,"explicacao":"Ajustes simples sem mudar essência."},
+    
+    // PARTE 6 - IN 51 (GESTÃO CONTRATOS)
+    {"id":171,"tema":"IN 51/2025 - Gestão Contratos","enunciado":"Quem indica o gestor do contrato?","alternativas":["DAF","UAC","Gerente da unidade demandante","RH"],"correta":2,"explicacao":"Gerente da área dona da demanda."},
+    {"id":172,"tema":"IN 51/2025 - Gestão Contratos","enunciado":"Gestor Adm e Técnico podem ser o mesmo?","alternativas":["Nunca","Sim, dependendo da complexidade","Sempre","Só se for gerente"],"correta":1,"explicacao":"Permitido se não for complexo."},
+    {"id":179,"tema":"IN 51/2025 - Gestão Contratos","enunciado":"Glosa é:","alternativas":["Bônus","Retenção por falha na execução","Multa","Juros"],"correta":1,"explicacao":"Desconto por serviço não prestado."},
+    {"id":176,"tema":"IN 51/2025 - Gestão Contratos","enunciado":"Quem aplica penalidade?","alternativas":["Gestor","Gerente","Autoridade signatária do contrato","Auditor"],"correta":2,"explicacao":"Quem assinou o contrato pune."},
+    
+    // PARTE 7 - IN 41 (PROJETOS/PARCERIAS)
+    {"id":201,"tema":"IN 41/2025 - Projetos","enunciado":"Portal de Convênios é:","alternativas":["Notícias","Sistema de gestão de parcerias","Transparência","ERP"],"correta":1,"explicacao":"Ferramenta oficial de gestão."},
+    {"id":202,"tema":"IN 41/2025 - Projetos","enunciado":"Recursos de terceiros (Sebrae executor), regras:","alternativas":["Do Sebrae","Da concedente","Lei 8666","Nenhuma"],"correta":1,"explicacao":"Quem dá o dinheiro define a regra."},
+    {"id":209,"tema":"IN 41/2025 - Projetos","enunciado":"Contrapartida parceiro regra:","alternativas":["Econômica","Mín 15% Financeira","Livre","10%"],"correta":1,"explicacao":"15% cash."},
+    {"id":210,"tema":"IN 41/2025 - Projetos","enunciado":"ATP é inserida no:","alternativas":["SEAP","SIAFI","Portal","Excel"],"correta":0,"explicacao":"Sistema de Acompanhamento de Projetos."}
+  ],
+  "flashcards": [
+    {"frente":"Prazo Cadastro Contrato (IN 07)","verso":"Imediatamente"},
+    {"frente":"Limite Aditivo Valor (Res 493)","verso":"50%"},
+    {"frente":"Validade Pesquisa Preço (IN 36)","verso":"180 dias"},
+    {"frente":"Contrapartida Mínima Convênio","verso":"15% Financeira"},
+    {"frente":"Glosa","verso":"Retenção por serviço mal feito"},
+    {"frente":"Gestor Técnico","verso":"Avalia qualidade/SLA"},
+    {"frente":"Prazo Pagamento Padrão","verso":"30 dias após atesto"},
+    {"frente":"Vigência Máxima Ata SRP","verso":"36 meses"},
+    {"frente":"Cota MPE Licitação","verso":"25% (bens divisíveis > 80k)"},
+    {"frente":"Limite Dispensa Obras (Res 493)","verso":"R$ 166.000,00"}
+  ]
+};
+// --------------------------------------------------------
 
-    const app = {
-        data: { questoes: [], flashcards: [], disciplinas: [] },
-        tempFilesContent: [], // Armazena conteúdo dos arquivos carregados antes de processar
-        state: { mode: 'quiz', currentQuestions: [], currentIndex: 0, score: 0, isAnswered: false },
-        storageKey: 'sebrae_study_v2',
+const app = {
+    state: {
+        mode: 'quiz',
+        questions: [],
+        currentIndex: 0,
+        score: 0,
+        answered: false
+    },
+    
+    init() {
+        // Carrega stats do localStorage
+        this.updateStatsDisplay();
+        this.populateSubjects();
+        
+        // Seletor de modo
+        document.getElementById('sel-mode').addEventListener('change', (e) => {
+            this.state.mode = e.target.value;
+        });
+    },
+    
+    populateSubjects() {
+        const subjects = new Set();
+        DB.questoes.forEach(q => subjects.add(q.tema));
+        const sel = document.getElementById('sel-subject');
+        Array.from(subjects).sort().forEach(s => {
+            const opt = document.createElement('option');
+            opt.value = s;
+            opt.innerText = s;
+            sel.appendChild(opt);
+        });
+    },
 
-        init() {
-            this.loadStats();
-        },
+    start() {
+        const mode = document.getElementById('sel-mode').value;
+        const subj = document.getElementById('sel-subject').value;
+        
+        let data = mode === 'quiz' ? DB.questoes : DB.flashcards;
+        
+        // Filtro
+        if(mode === 'quiz' && subj !== 'all') {
+            data = data.filter(q => q.tema === subj);
+        }
+        
+        // Embaralhar
+        data = data.sort(() => Math.random() - 0.5);
+        
+        this.state.questions = data;
+        this.state.currentIndex = 0;
+        this.state.score = 0;
+        this.state.mode = mode;
+        this.state.answered = false;
+        
+        if(data.length === 0) { alert("Sem dados para este filtro."); return; }
+        
+        this.showScreen(mode === 'quiz' ? 'screen-quiz' : 'screen-fc');
+        
+        if(mode === 'quiz') this.renderQuiz();
+        else this.renderFc();
+    },
 
-        // --- Lógica de Arquivos (Upload) ---
-        handleFiles(files) {
-            const container = document.getElementById('file-list-container');
-            container.innerHTML = '';
-            this.tempFilesContent = [];
-            const btn = document.getElementById('btn-load-data');
-            
-            if (files.length === 0) {
-                btn.disabled = true;
-                btn.innerText = "Carregar e Iniciar";
-                return;
-            }
+    renderQuiz() {
+        const q = this.state.questions[this.state.currentIndex];
+        const total = this.state.questions.length;
+        
+        document.getElementById('qz-subj').innerText = q.tema;
+        document.getElementById('qz-count').innerText = `${this.state.currentIndex+1}/${total}`;
+        document.getElementById('qz-text').innerText = q.enunciado;
+        document.getElementById('qz-bar').style.width = `${((this.state.currentIndex)/total)*100}%`;
+        
+        const optsDiv = document.getElementById('qz-opts');
+        optsDiv.innerHTML = '';
+        document.getElementById('qz-feed').style.display = 'none';
+        document.getElementById('qz-next').style.display = 'none';
+        this.state.answered = false;
 
-            btn.disabled = true;
-            btn.innerText = "Lendo arquivos...";
+        q.alternativas.forEach((alt, idx) => {
+            const btn = document.createElement('div');
+            btn.className = 'opt-btn';
+            btn.innerText = alt;
+            btn.onclick = () => this.answer(idx, btn, q.correta, q.explicacao);
+            optsDiv.appendChild(btn);
+        });
+    },
 
-            let filesRead = 0;
-            
-            Array.from(files).forEach(file => {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    try {
-                        const json = JSON.parse(e.target.result);
-                        this.tempFilesContent.push({ name: file.name, data: json });
-                        
-                        // UI Update
-                        const div = document.createElement('div');
-                        div.className = 'file-item';
-                        div.innerHTML = `<span>${file.name}</span><span style="color:green">✓</span>`;
-                        container.appendChild(div);
+    answer(idx, btn, correctIdx, explanation) {
+        if(this.state.answered) return;
+        this.state.answered = true;
+        
+        const btns = document.querySelectorAll('.opt-btn');
+        btns[correctIdx].classList.add('correct');
+        
+        if(idx === correctIdx) {
+            this.state.score++;
+        } else {
+            btn.classList.add('wrong');
+        }
+        
+        document.getElementById('qz-feed-text').innerText = explanation;
+        document.getElementById('qz-feed').style.display = 'block';
+        document.getElementById('qz-next').style.display = 'block';
+    },
 
-                    } catch (err) {
-                        const div = document.createElement('div');
-                        div.className = 'file-item';
-                        div.innerHTML = `<span>${file.name}</span><span style="color:red">Erro JSON</span>`;
-                        container.appendChild(div);
-                    } finally {
-                        filesRead++;
-                        if (filesRead === files.length) {
-                            btn.disabled = false;
-                            btn.innerText = `Carregar ${this.tempFilesContent.length} Arquivos`;
-                        }
-                    }
-                };
-                reader.readAsText(file);
-            });
-        },
+    nextQ() {
+        this.state.currentIndex++;
+        if(this.state.currentIndex < this.state.questions.length) {
+            this.renderQuiz();
+        } else {
+            this.finish();
+        }
+    },
 
-        processLoadedFiles() {
-            // Unificar dados
-            let allQuestions = [];
-            let allFlashcards = [];
-            let allDisciplines = new Set();
+    renderFc() {
+        const fc = this.state.questions[this.state.currentIndex];
+        document.getElementById('fc-count').innerText = `${this.state.currentIndex+1}/${this.state.questions.length}`;
+        document.getElementById('fc-front').innerText = fc.frente;
+        document.getElementById('fc-back').innerText = fc.verso;
+        document.querySelector('.flashcard').classList.remove('flipped');
+    },
 
-            this.tempFilesContent.forEach(fileObj => {
-                const json = fileObj.data;
-                if (json.questoes) allQuestions = allQuestions.concat(json.questoes);
-                if (json.flashcards) allFlashcards = allFlashcards.concat(json.flashcards);
-                if (json.disciplinas) json.disciplinas.forEach(d => allDisciplines.add(d));
-                
-                // Extrair disciplinas das questões se não houver lista explicita
-                if (json.questoes) {
-                    json.questoes.forEach(q => { if(q.tema) allDisciplines.add(q.tema); });
-                }
-            });
+    nextFc() {
+        this.state.currentIndex++;
+        if(this.state.currentIndex < this.state.questions.length) {
+            this.renderFc();
+        } else {
+            alert("Fim dos cards!");
+            this.home();
+        }
+    },
 
-            this.data = {
-                questoes: allQuestions,
-                flashcards: allFlashcards,
-                disciplinas: Array.from(allDisciplines).sort()
-            };
+    finish() {
+        const total = this.state.questions.length;
+        const score = this.state.score;
+        alert(`Fim! Você acertou ${score} de ${total}.`);
+        
+        // Salvar stats
+        const current = JSON.parse(localStorage.getItem('sebrae_stats') || '{"total":0, "acc":0}');
+        current.total += total;
+        // Simplificação de accuracy global
+        current.acc = Math.round((score/total)*100); 
+        localStorage.setItem('sebrae_stats', JSON.stringify(current));
+        
+        this.home();
+    },
 
-            if (this.data.questoes.length === 0 && this.data.flashcards.length === 0) {
-                alert("Nenhuma questão ou flashcard encontrado nos arquivos.");
-                return;
-            }
+    home() {
+        this.updateStatsDisplay();
+        this.showScreen('screen-home');
+    },
 
-            this.renderHome();
-        },
+    updateStatsDisplay() {
+        const stats = JSON.parse(localStorage.getItem('sebrae_stats') || '{"total":0, "acc":0}');
+        document.getElementById('st-total').innerText = stats.total;
+        document.getElementById('st-acc').innerText = stats.acc + '%';
+        document.getElementById('st-db').innerText = DB.questoes.length;
+    },
 
-        loadDemoData() {
-            this.data = DEMO_DATA;
-            this.renderHome();
-        },
+    showScreen(id) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    },
 
-        // --- Renderização Principal ---
-        renderHome() {
-            this.showScreen('home-screen');
-            document.getElementById('mode-badge').innerText = "Início";
-            
-            // Popular Select
-            const select = document.getElementById('subject-select');
-            select.innerHTML = '<option value="all">Todas as Disciplinas</option>';
-            this.data.disciplinas.forEach(subj => {
-                const opt = document.createElement('option');
-                opt.value = subj; opt.innerText = subj;
-                select.appendChild(opt);
-            });
+    downloadJSON() {
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(DB, null, 2));
+        const downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute("href", dataStr);
+        downloadAnchorNode.setAttribute("download", "sebrae_simulado_completo.json");
+        document.body.appendChild(downloadAnchorNode);
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+    }
+};
 
-            // Reset UI states
-            this.updateHomeStats();
-            this.setMode('quiz');
-        },
-
-        updateHomeStats() {
-            const stats = JSON.parse(localStorage.getItem(this.storageKey) || '{"total":0, "correct":0}');
-            document.getElementById('stat-total').innerText = stats.total;
-            document.getElementById('stat-correct').innerText = stats.correct;
-            const accuracy = stats.total === 0 ? 0 : Math.round((stats.correct / stats.total) * 100);
-            document.getElementById('stat-accuracy').innerText = accuracy + '%';
-        },
-
-        setMode(mode) {
-            this.state.mode = mode;
-            document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('selected'));
-            const idx = mode === 'quiz' ? 0 : 1;
-            document.querySelectorAll('.mode-btn')[idx].classList.add('selected');
-            document.getElementById('difficulty-filter-container').style.display = mode === 'quiz' ? 'block' : 'none';
-        },
-
-        // --- Sessão ---
-        startSession() {
-            const subject = document.getElementById('subject-select').value;
-            const difficulty = document.getElementById('difficulty-select').value;
-            const shuffle = document.getElementById('shuffle-check').checked;
-
-            let items = (this.state.mode === 'quiz') ? this.data.questoes : this.data.flashcards;
-
-            // Filtros
-            items = items.filter(item => {
-                const matchSubj = subject === 'all' || (item.tema && item.tema.includes(subject)) || (this.state.mode === 'flashcard'); // Flashcards as vezes não tem tema explícito no JSON simples
-                const matchDiff = this.state.mode === 'flashcard' ? true : (difficulty === 'all' || item.dificuldade === difficulty);
-                return matchSubj && matchDiff;
-            });
-
-            if (items.length === 0) { alert('Nenhum item encontrado com esses filtros.'); return; }
-            if (shuffle) items = items.sort(() => Math.random() - 0.5);
-
-            this.state.currentQuestions = items;
-            this.state.currentIndex = 0;
-            this.state.score = 0;
-            
-            if (this.state.mode === 'quiz') {
-                this.showScreen('quiz-screen');
-                this.renderQuizQuestion();
-            } else {
-                this.showScreen('flashcard-screen');
-                this.renderFlashcard();
-            }
-        },
-
-        // --- Quiz ---
-        renderQuizQuestion() {
-            const q = this.state.currentQuestions[this.state.currentIndex];
-            const total = this.state.currentQuestions.length;
-            
-            const pct = ((this.state.currentIndex) / total) * 100;
-            document.querySelector('.progress-fill').style.width = pct + '%';
-
-            document.getElementById('q-subject').innerText = `${this.state.currentIndex + 1}/${total} - ${q.tema || 'Geral'}`;
-            document.getElementById('q-difficulty').innerText = q.dificuldade || '-';
-            document.getElementById('q-text').innerText = q.enunciado;
-            
-            const optsContainer = document.getElementById('q-options');
-            optsContainer.innerHTML = '';
-            document.getElementById('q-feedback').style.display = 'none';
-            document.getElementById('btn-next-q').style.display = 'none';
-            this.state.isAnswered = false;
-
-            q.alternativas.forEach((optText, idx) => {
-                const btn = document.createElement('button');
-                btn.className = 'option-btn';
-                btn.innerText = optText;
-                btn.onclick = () => this.handleAnswer(idx, btn);
-                optsContainer.appendChild(btn);
-            });
-        },
-
-        handleAnswer(selectedIndex, btnElement) {
-            if (this.state.isAnswered) return;
-            this.state.isAnswered = true;
-            const q = this.state.currentQuestions[this.state.currentIndex];
-            
-            const buttons = document.querySelectorAll('.option-btn');
-            buttons[q.correta].classList.add('correct');
-            
-            if (selectedIndex === q.correta) {
-                this.state.score++;
-                this.setFeedback(true);
-            } else {
-                btnElement.classList.add('wrong');
-                this.setFeedback(false);
-            }
-            
-            document.getElementById('feedback-text').innerText = q.explicacao;
-            document.getElementById('q-feedback').style.display = 'block';
-            document.getElementById('btn-next-q').style.display = 'block';
-            buttons.forEach(b => b.disabled = true);
-        },
-
-        setFeedback(isCorrect) {
-            const title = document.getElementById('feedback-title');
-            title.innerText = isCorrect ? "Correto!" : "Incorreto";
-            title.style.color = isCorrect ? "var(--success)" : "var(--error)";
-        },
-
-        nextQuestion() {
-            this.state.currentIndex++;
-            if (this.state.currentIndex < this.state.currentQuestions.length) this.renderQuizQuestion();
-            else this.finishSession();
-        },
-
-        // --- Flashcards ---
-        renderFlashcard() {
-            const fc = this.state.currentQuestions[this.state.currentIndex];
-            document.getElementById('fc-counter').innerText = `${this.state.currentIndex + 1} / ${this.state.currentQuestions.length}`;
-            document.getElementById('fc-front').innerText = fc.frente;
-            document.getElementById('fc-back').innerText = fc.verso;
-            document.getElementById('flashcard-el').classList.remove('flipped');
-        },
-        flipCard() { document.getElementById('flashcard-el').classList.toggle('flipped'); },
-        nextFlashcard() {
-            if (this.state.currentIndex < this.state.currentQuestions.length - 1) {
-                this.state.currentIndex++;
-                this.renderFlashcard();
-            } else { this.finishSession(); }
-        },
-        prevFlashcard() {
-            if (this.state.currentIndex > 0) {
-                this.state.currentIndex--;
-                this.renderFlashcard();
-            }
-        },
-
-        // --- Geral ---
-        finishSession() {
-            this.saveStats();
-            this.showScreen('result-screen');
-            document.getElementById('res-total').innerText = this.state.currentQuestions.length;
-            document.getElementById('res-correct').innerText = this.state.score;
-            const p = (this.state.score / this.state.currentQuestions.length) * 100;
-            document.getElementById('res-msg').innerText = p >= 80 ? "Excelente!" : (p >= 50 ? "Bom trabalho!" : "Continue estudando!");
-        },
-        saveStats() {
-            const stats = JSON.parse(localStorage.getItem(this.storageKey) || '{"total":0, "correct":0}');
-            stats.total += this.state.currentQuestions.length;
-            stats.correct += this.state.score;
-            localStorage.setItem(this.storageKey, JSON.stringify(stats));
-        },
-        quitSession() { if(confirm("Sair agora?")) this.renderHome(); },
-        goHome() { this.renderHome(); },
-        resetProgress() { if(confirm("Zerar estatísticas?")) { localStorage.removeItem(this.storageKey); this.updateHomeStats(); } },
-        showScreen(id) { document.querySelectorAll('.screen').forEach(s => s.classList.remove('active')); document.getElementById(id).classList.add('active'); },
-        loadStats() { /* Carregado no updateHomeStats */ }
-    };
-
-    document.addEventListener('DOMContentLoaded', () => app.init());
+app.init();
 </script>
 </body>
 </html>
