@@ -1,0 +1,244 @@
+{
+  "prova": "Simulado SEBRAE 2026 - Parte 7 (IN 41/2025 - Projetos e Convênios)",
+  "disciplinas": [
+    "Instrução Normativa 41/2025",
+    "Gestão de Projetos e Parcerias"
+  ],
+  "questoes": [
+    {
+      "id": 201,
+      "tipo": "multipla_escolha",
+      "enunciado": "A IN 41/2025 define 'Portal de Convênios' como:",
+      "alternativas": [
+        "Site de notícias do Sebrae.",
+        "Sistema disponibilizado para apresentação de projetos, monitoramento e prestação de contas de convênios.",
+        "Portal de transparência do governo federal.",
+        "Sistema de gestão financeira interno (ERP)."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 2º, I. Portal de convênios: sistema disponibilizado pelo Sebrae para que o parceiro e/ou o Sebrae possam apresentar projetos de parceria...",
+      "tema": "Definições",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 202,
+      "tipo": "multipla_escolha",
+      "enunciado": "Nos projetos em que o Sebrae for partícipe executor de recursos de terceiros (o Sebrae recebe o dinheiro), aplicam-se na formalização:",
+      "alternativas": [
+        "As regras do Sebrae integralmente.",
+        "As regras da concedente (quem deu o dinheiro).",
+        "A lei de licitações 8.666.",
+        "Nenhuma regra específica."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 1º, Parágrafo único. Nos projetos em que o Sebrae for o partícipe executor de recursos de terceiros aplicam-se... as regras da concedente.",
+      "tema": "Recursos de Terceiros",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 203,
+      "tipo": "multipla_escolha",
+      "enunciado": "A elaboração de projetos de parceria deve estar alinhada com:",
+      "alternativas": [
+        "Apenas a vontade do parceiro.",
+        "O Planejamento Estratégico e as diretrizes do Sebrae.",
+        "O orçamento do ano anterior.",
+        "As normas da ABNT apenas."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 4º. A elaboração de projetos... deve observar o alinhamento com o Planejamento Estratégico...",
+      "tema": "Alinhamento Estratégico",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 204,
+      "tipo": "multipla_escolha",
+      "enunciado": "O 'Núcleo de Convênios' tem como objetivo:",
+      "alternativas": [
+        "Aprovar os projetos politicamente.",
+        "Apoiar a gestão do processo no que compete à conformidade da execução, prestação de contas financeira e encerramento.",
+        "Executar as ações finalísticas do projeto.",
+        "Realizar o pagamento dos fornecedores."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 2º, II. Núcleo de convênios: colaboradores especializados que têm o objetivo de apoiar a gestão... conformidade da execução... prestação de contas...",
+      "tema": "Estrutura Organizacional",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 205,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para formalização de convênio com repasse financeiro, é imprescindível a apresentação de:",
+      "alternativas": [
+        "Apenas a intenção verbal.",
+        "Projeto detalhado com plano de trabalho e orçamento (Plano de Aplicação).",
+        "Nota fiscal antecipada.",
+        "Cheque caução."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 9º (e anexos). A instrução exige o Projeto detalhado contendo ações, metas, indicadores e plano de aplicação financeira.",
+      "tema": "Instrução Processual",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 206,
+      "tipo": "multipla_escolha",
+      "enunciado": "A prestação de contas dos convênios deve ser realizada:",
+      "alternativas": [
+        "Apenas ao final do projeto.",
+        "A qualquer tempo, quando solicitada.",
+        "Periodicamente (parcial) para liberação de parcelas e ao final (final).",
+        "Apenas se houver sobra de recursos."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 22 (IN 07) e regras da IN 41. A liberação de parcelas é condicionada à prestação de contas parcial (execução de 80% da anterior).",
+      "tema": "Prestação de Contas",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 207,
+      "tipo": "multipla_escolha",
+      "enunciado": "Nas parcerias com a Administração Pública, a exigência de certidões de regularidade fiscal e atestados de capacidade técnica:",
+      "alternativas": [
+        "É dispensada.",
+        "É dobrada.",
+        "Deve ser autenticada em cartório.",
+        "É obrigatória e rigorosa."
+      ],
+      "correta": 0,
+      "explicacao": "Conforme Manual/IN: Nas parcerias com entidades internacionais ou órgãos da Administração Pública, não serão exigidos atestados... nem certidões...",
+      "tema": "Parcerias Públicas",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 208,
+      "tipo": "multipla_escolha",
+      "enunciado": "O 'Termo de Parceria' é um instrumento simplificado para ações de curto prazo. Qual o prazo máximo de execução?",
+      "alternativas": [
+        "1 mês.",
+        "3 meses.",
+        "6 meses.",
+        "1 ano."
+      ],
+      "correta": 0,
+      "explicacao": "Definição de Termo de Parceria no Manual/IN: Ações pontuais e específicas a serem executadas em até um mês.",
+      "tema": "Tipos de Instrumento",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 209,
+      "tipo": "multipla_escolha",
+      "enunciado": "A contrapartida do parceiro nos convênios com repasse financeiro deve ser:",
+      "alternativas": [
+        "Exclusivamente econômica (bens).",
+        "No mínimo 15% e obrigatoriamente financeira.",
+        "Opcional.",
+        "No máximo 10%."
+      ],
+      "correta": 1,
+      "explicacao": "Regra de contrapartida: Mínimo 15% financeira. Vedada contrapartida econômica para compor o mínimo.",
+      "tema": "Contrapartida",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 210,
+      "tipo": "multipla_escolha",
+      "enunciado": "A análise técnica de mérito do projeto (ATP) é inserida em qual sistema?",
+      "alternativas": [
+        "SEAP (Sistema de Acompanhamento de Projetos).",
+        "SIAFI.",
+        "Portal da Transparência.",
+        "Excel apenas."
+      ],
+      "correta": 0,
+      "explicacao": "Procedimentos: Análise Técnica inserida no SEAP (formulário ATP).",
+      "tema": "Sistemas Internos",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 211,
+      "tipo": "discursiva",
+      "enunciado": "Quais são as etapas principais para a celebração de um Convênio de Cooperação Técnica e Financeira no Sebrae?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "1) Elaboração e negociação do projeto; 2) Inserção no Portal de Convênios; 3) Instrução do processo (documentos, pareceres UGOC, Integridade, Técnico e Jurídico); 4) Aprovação pela DIREX; 5) Envio ao CDN (Criticidade); 6) Assinatura e Cadastro.",
+      "tema": "Fluxo de Convênios",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 212,
+      "tipo": "discursiva",
+      "enunciado": "O que é a 'Due Diligence' de integridade nos convênios e quando ela ocorre?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "É a análise de riscos de integridade e compliance do parceiro proponente. Ocorre na fase de instrução do processo, antes da deliberação pela diretoria e assinatura do convênio, resultando em um parecer da Unidade de Integridade.",
+      "tema": "Compliance",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 213,
+      "tipo": "discursiva",
+      "enunciado": "Explique a diferença entre 'Convênio de Cooperação Geral' e 'Convênio de Cooperação Técnica'.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Geral: Define intenções políticas e gerais de cooperação, sem ações específicas ou orçamento definido. Técnica: Define ações concretas, metas e responsabilidades de execução para cada parte, mas sem transferência financeira entre elas.",
+      "tema": "Tipos de Convênio",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 214,
+      "tipo": "discursiva",
+      "enunciado": "Qual a regra para despesas administrativas do executor em um convênio?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Podem ser aceitas desde que expressamente previstas e justificadas no plano de trabalho, limitadas ao teto de 15% do valor total do projeto.",
+      "tema": "Custos do Projeto",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 215,
+      "tipo": "discursiva",
+      "enunciado": "Como o Sebrae monitora a execução física dos convênios?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Por meio dos relatórios de execução apresentados pelo parceiro no Portal de Convênios, evidências das ações (fotos, listas de presença, produtos), verificação do alcance das metas e indicadores definidos no projeto.",
+      "tema": "Monitoramento",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 216,
+      "tipo": "flashcard",
+      "enunciado": "Flashcard 1",
+      "frente": "Portal de Convênios",
+      "verso": "Sistema para apresentação e gestão de projetos com parceiros."
+    },
+    {
+      "id": 217,
+      "tipo": "flashcard",
+      "enunciado": "Flashcard 2",
+      "frente": "Contrapartida Financeira Mínima",
+      "verso": "15% do valor do projeto."
+    },
+    {
+      "id": 218,
+      "tipo": "flashcard",
+      "enunciado": "Flashcard 3",
+      "frente": "Prazo Termo de Parceria",
+      "verso": "Até 1 mês (ações pontuais)."
+    },
+    {
+      "id": 219,
+      "tipo": "flashcard",
+      "enunciado": "Flashcard 4",
+      "frente": "Aprovação de Convênio Financeiro",
+      "verso": "Competência da DIREX."
+    },
+    {
+      "id": 220,
+      "tipo": "flashcard",
+      "enunciado": "Flashcard 5",
+      "frente": "Recursos de Terceiros (Sebrae Executor)",
+      "verso": "Seguir regras da Concedente."
+    }
+  ]
+}
