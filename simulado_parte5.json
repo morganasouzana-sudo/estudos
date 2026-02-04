@@ -1,1 +1,492 @@
-
+{
+  "prova": "Simulado SEBRAE 2026 - Parte 5 (IN 36/2024 - Contratações)",
+  "disciplinas": [
+    "Instrução Normativa 36/2024",
+    "Gestão de Contratos",
+    "Procedimentos Administrativos"
+  ],
+  "questoes": [
+    {
+      "id": 141,
+      "tipo": "multipla_escolha",
+      "enunciado": "De acordo com a IN 36/2024, o documento elaborado pela unidade demandante contendo a justificativa, especificações e obrigações contratuais para caracterizar o objeto da contratação é denominado:",
+      "alternativas": [
+        "Projeto Básico.",
+        "Estudo Técnico Preliminar.",
+        "Termo de Referência.",
+        "Mapa de Preços."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 3º. O termo de referência deverá ser elaborado pela unidade demandante contendo informações e elementos técnicos... para caracterizar o objeto.",
+      "tema": "Formalização da Contratação",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 142,
+      "tipo": "multipla_escolha",
+      "enunciado": "A previsão de garantia contratual no Termo de Referência é OBRIGATÓRIA quando o objeto envolver:",
+      "alternativas": [
+        "Fornecimento de bens imediatos.",
+        "Mão de obra terceirizada.",
+        "Serviços de consultoria intelectual.",
+        "Qualquer contratação acima de R$ 100.000,00."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 3º, III, 'f'. ...sendo obrigatória quando envolver mão de obra terceirizada e, nos demais casos, a critério do gestor...",
+      "tema": "Garantia Contratual",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 143,
+      "tipo": "multipla_escolha",
+      "enunciado": "A cláusula de 'Matriz de Riscos' deve constar obrigatoriamente no Termo de Referência nas contratações de obras e serviços de engenharia com valores iguais ou superiores a:",
+      "alternativas": [
+        "R$ 1.000.000,00.",
+        "10 vezes o valor do convite.",
+        "20 vezes o valor da concorrência de obras.",
+        "50 vezes o valor de dispensa."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 3º, Parágrafo único. ...obrigatória... nas obras e serviços de engenharia de valores iguais ou superiores a 20 vezes o valor da concorrência de obras...",
+      "tema": "Matriz de Risco",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 144,
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre a pesquisa de preços, a validade dos orçamentos/pesquisas para fins de instrução do processo é de:",
+      "alternativas": [
+        "60 dias.",
+        "90 dias.",
+        "180 dias.",
+        "1 ano."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 4º, § 4º. A pesquisa de preços é válida por 180 (cento e oitenta) dias...",
+      "tema": "Pesquisa de Preços",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 145,
+      "tipo": "multipla_escolha",
+      "enunciado": "Ao realizar pesquisa direta apenas com fornecedores, a unidade demandante deve obter, no mínimo:",
+      "alternativas": [
+        "1 proposta válida.",
+        "2 propostas de empresas diferentes.",
+        "3 propostas de diferentes fornecedores.",
+        "5 propostas."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 4º, § 1º. ...deverá obter a maior quantidade possível de propostas, em número mínimo de 3 (três) diferentes fornecedores...",
+      "tema": "Pesquisa de Preços",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 146,
+      "tipo": "multipla_escolha",
+      "enunciado": "Em relação à exigência de regularidade fiscal nas contratações diretas por valor (Dispensa, art. 13 I e II), para contratações de até R$ 92.000,00:",
+      "alternativas": [
+        "Exige-se apenas certidão do FGTS.",
+        "Exige-se regularidade fiscal completa (Federal, Estadual, Municipal).",
+        "Está dispensada a juntada de documentos de regularidade fiscal.",
+        "Exige-se apenas certidão Federal."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 8º, I. ...cujo valor da contratação seja de até R$ 92.000,00... está dispensada a juntada de documentos de regularidade fiscal.",
+      "tema": "Regularidade Fiscal",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 147,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para contratações diretas com valor entre R$ 92.001,00 e R$ 826.000,00, quais certidões de regularidade fiscal são exigidas?",
+      "alternativas": [
+        "Todas (Federal, Estadual, Municipal e FGTS).",
+        "Apenas tributos federais e FGTS.",
+        "Apenas Municipal e Estadual.",
+        "Nenhuma, devido ao princípio da celeridade."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 8º, II. ...serão exigidas apenas as certidões de regularidade fiscal de tributos federais e do FGTS.",
+      "tema": "Regularidade Fiscal",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 148,
+      "tipo": "multipla_escolha",
+      "enunciado": "Os pareceres da Unidade de Assessoria Jurídica (UASJUR) e da Unidade de Integridade Corporativa (UIC) são obrigatórios em quais situações?",
+      "alternativas": [
+        "Em todas as contratações, inclusive de pequeno valor.",
+        "Apenas nas licitações.",
+        "Nas contratações por dispensa e inexigibilidade, exceto nas dispensas por valor (Art. 13, I e II).",
+        "Apenas quando houver dúvida jurídica."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 9º. ...sendo obrigatórios... nas contratações por dispensa e inexigibilidade de licitação, com exceção das contratações fundamentadas no art. 13, incisos I e II...",
+      "tema": "Pareceres",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 149,
+      "tipo": "multipla_escolha",
+      "enunciado": "Nas contratações diretas de pequeno valor (Art. 13, I), é permitido realizar compras em lojas físicas ou comércio eletrônico com pagamento imediato. Nesses casos:",
+      "alternativas": [
+        "É obrigatória a emissão de contrato formal assinado.",
+        "Estão dispensados os documentos de habilitação jurídica e a emissão de instrumento contratual.",
+        "Não é necessário emitir nota fiscal.",
+        "O pagamento só pode ser feito após 30 dias."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 15. ...hipóteses em que estarão dispensados os documentos de habilitação jurídica e a emissão de instrumento contratual...",
+      "tema": "Compras de Pequeno Valor",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 150,
+      "tipo": "multipla_escolha",
+      "enunciado": "A contratação de Encomenda Tecnológica exige, na fase prévia, a consulta formal a potenciais fornecedores. Essa consulta:",
+      "alternativas": [
+        "Gera obrigação de contratar o consultado.",
+        "Implica desembolso imediato de recursos.",
+        "Não implica desembolso de recursos nem preferência na escolha do fornecedor.",
+        "Substitui a licitação."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 20, I. as consultas não implicarão: a) desembolso... b) preferência na escolha...",
+      "tema": "Inovação",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 151,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para comprovar a inexigibilidade de licitação por exclusividade (fornecedor exclusivo), o fornecedor deve apresentar:",
+      "alternativas": [
+        "Apenas uma declaração própria em papel timbrado.",
+        "Atestado emitido por órgão de registro de comércio, sindicato ou entidade equivalente.",
+        "Três notas fiscais de venda para outros clientes.",
+        "Cópia do contrato social."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 23. ...atestado/declaração de exclusividade... emitido por órgão de registro do comércio local, sindicato, federação...",
+      "tema": "Inexigibilidade",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 152,
+      "tipo": "multipla_escolha",
+      "enunciado": "O Credenciamento pode ser utilizado em situações de contratação 'paralela e não excludente'. Nesse caso, o edital deve:",
+      "alternativas": [
+        "Estabelecer disputa de preços entre os credenciados.",
+        "Divulgar previamente o valor da hora/serviço a ser pago.",
+        "Escolher apenas um fornecedor ao final.",
+        "Impedir a entrada de novos credenciados após o início."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 26, I. ...caso em que o valor da hora/serviço deve ser divulgado.",
+      "tema": "Credenciamento",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 153,
+      "tipo": "multipla_escolha",
+      "enunciado": "Alterações contratuais que não caracterizam modificação do objeto, como reajuste de preços previsto ou correção de erro material, são formalizadas por:",
+      "alternativas": [
+        "Termo Aditivo assinado por ambas as partes.",
+        "Novo contrato.",
+        "Termo de Apostilamento, dispensada a assinatura da contratada.",
+        "Simples e-mail."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 42. ...poderão ser formalizados por meio de termo de apostilamento... dispensada a assinatura do instrumento pela contratada...",
+      "tema": "Gestão Contratual",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 154,
+      "tipo": "multipla_escolha",
+      "enunciado": "Qual o prazo estabelecido para a Unidade de Assessoria Jurídica (UASJUR) analisar e emitir parecer nos processos de contratação?",
+      "alternativas": [
+        "3 dias úteis.",
+        "5 dias úteis.",
+        "10 dias úteis.",
+        "15 dias corridos."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 43. A UASJUR terá até cinco dias úteis para analisar e emitir parecer...",
+      "tema": "Prazos Internos",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 155,
+      "tipo": "multipla_escolha",
+      "enunciado": "A contratação de serviços de consultoria e instrutoria deve ocorrer, via de regra:",
+      "alternativas": [
+        "Por convite verbal.",
+        "Livremente no mercado.",
+        "Por meio do Sistema de Gestão de Fornecedores (SGF).",
+        "Apenas por inexigibilidade."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 47. Fica vedada a contratação de serviços de consultoria e/ou instrutoria fora do Sistema de Gestão de Fornecedores - SGF, salvo...",
+      "tema": "SGF",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 156,
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre a habilitação jurídica de Pessoa Jurídica, é obrigatória a apresentação de declaração de que inexiste participação na composição societária de:",
+      "alternativas": [
+        "Pessoas politicamente expostas.",
+        "Empregado e diretor do Sistema Sebrae, bem como conselheiro da unidade contratante.",
+        "Estrangeiros residentes fora do país.",
+        "Parentes de até 4º grau dos gestores."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 7º, II, 'd'. declaração... de que inexiste participação de empregado e diretor do Sistema Sebrae... bem como conselheiro...",
+      "tema": "Habilitação",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 157,
+      "tipo": "multipla_escolha",
+      "enunciado": "Nas contratações diretas por inexigibilidade, a pesquisa de preços pode ser substituída por:",
+      "alternativas": [
+        "Declaração verbal de preço justo.",
+        "Cópias de contratos e/ou notas fiscais do fornecedor evidenciando equivalência de preços com outros clientes.",
+        "Planilha de custos interna do Sebrae.",
+        "Cotação de concorrentes."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 5º, § 1º. Nas contratações diretas... a pesquisa... serão substituídos por cópias de contratos e/ou notas fiscais...",
+      "tema": "Preços na Inexigibilidade",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 158,
+      "tipo": "multipla_escolha",
+      "enunciado": "O instrumento de contrato padrão decorrente de licitação é emitido por qual unidade?",
+      "alternativas": [
+        "Pela unidade demandante.",
+        "Pela Unidade de Aquisições e Contratos (UAC).",
+        "Exclusivamente pela UASJUR.",
+        "Pelo fornecedor."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 10. Os contratos decorrentes de processo licitatório... serão emitidos pela UAC, com base nos modelos padrão...",
+      "tema": "Competências Internas",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 159,
+      "tipo": "multipla_escolha",
+      "enunciado": "A permissão ou vedação de subcontratação deve constar expressamente em qual documento?",
+      "alternativas": [
+        "Apenas na Nota Fiscal.",
+        "No Termo de Referência e, se houver licitação, no edital.",
+        "No e-mail de contratação.",
+        "No regulamento interno de RH."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 46. A permissão ou vedação de subcontratação deverá ser prevista no TR e... no instrumento convocatório...",
+      "tema": "Subcontratação",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 160,
+      "tipo": "multipla_escolha",
+      "enunciado": "Nas contratações por adesão (ex: softwares de prateleira com termos de uso online), a assinatura do fornecedor no termo de adesão:",
+      "alternativas": [
+        "É indispensável e deve ser reconhecida em cartório.",
+        "É dispensada, devendo tal condição estar prevista no contrato.",
+        "Deve ser substituída por biometria.",
+        "Exige testemunhas."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 49. Nas hipóteses de contratação por adesão, é dispensada a assinatura do fornecedor...",
+      "tema": "Contratos de Adesão",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 161,
+      "tipo": "discursiva",
+      "enunciado": "Quais são os itens obrigatórios que devem constar no Termo de Referência (TR) segundo a IN 36/2024? Cite pelo menos 5.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "O TR deve conter: 1) Definição da demanda e justificativa; 2) Especificação do objeto; 3) Definição de quantitativos; 4) Prazo de entrega; 5) Forma de pagamento; 6) Obrigações das partes/ANS; 7) Penalidades; 8) Garantia contratual (se houver); 9) Dotação orçamentária.",
+      "tema": "Termo de Referência",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 162,
+      "tipo": "discursiva",
+      "enunciado": "Explique as regras de dispensa de documentos de regularidade fiscal conforme os valores da contratação direta.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Até R$ 92.000,00: Dispensada a juntada de documentos de regularidade fiscal. De R$ 92.001,00 a R$ 826.000,00: Exigidas apenas certidões federais e FGTS. Acima de R$ 826.000,00: Exigidas todas as certidões (Federal, Estadual, Municipal e FGTS).",
+      "tema": "Regularidade Fiscal",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 163,
+      "tipo": "discursiva",
+      "enunciado": "Como deve ser realizada a pesquisa de preços quando feita diretamente com fornecedores? Qual o número mínimo de propostas?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "A unidade deve obter a maior quantidade possível de propostas, com um mínimo de 3 (três) fornecedores diferentes. Se não for possível obter 3, deve-se apresentar justificativa no processo.",
+      "tema": "Pesquisa de Preços",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 164,
+      "tipo": "discursiva",
+      "enunciado": "Diferencie 'Apostilamento' de 'Termo Aditivo' e cite dois exemplos de uso do apostilamento.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Termo Aditivo altera cláusulas contratuais e exige assinatura das partes. Apostilamento registra ajustes que não alteram a essência do contrato e dispensa assinatura da contratada. Exemplos de apostila: Reajuste de preços previsto, correção de erro material, mudança de razão social, prorrogação de prazo (quando prevista).",
+      "tema": "Alteração Contratual",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 165,
+      "tipo": "discursiva",
+      "enunciado": "O que é o Credenciamento e quais são as três hipóteses de uso previstas na IN 36?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "É o registro de vários fornecedores para entrega de bem/serviço sob condições padronizadas, sem exclusividade. Hipóteses: 1) Contratação paralela e não excludente; 2) Seleção a critério de terceiros (beneficiário escolhe); 3) Mercados fluidos (preço flutuante).",
+      "tema": "Credenciamento",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 166,
+      "tipo": "discursiva",
+      "enunciado": "Em quais situações o parecer jurídico da UASJUR é dispensado nos processos de contratação?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Dispensado em: contratações de pequeno valor (art. 13 I e II), aplicação de reajuste, distratos, prorrogações somente de prazo e hipóteses com parecer normativo já existente.",
+      "tema": "Pareceres",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 167,
+      "tipo": "discursiva",
+      "enunciado": "Como funciona a comprovação de preço justo (vantajosidade) em uma contratação por Inexigibilidade de Licitação?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Como não há disputa de preços, deve-se apresentar cópias de contratos anteriores ou notas fiscais emitidas pelo fornecedor para outros clientes (privados ou públicos) que comprovem que o preço cobrado do Sebrae é equivalente ao praticado no mercado. Se não for possível, pode-se usar a Declaração de Compatibilidade de Preço com justificativa.",
+      "tema": "Inexigibilidade",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 168,
+      "tipo": "discursiva",
+      "enunciado": "O que é o SGF (Sistema de Gestão de Fornecedores) e qual a regra para contratação de consultores/instrutores?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "É o sistema de credenciamento do Sebrae. A regra é que toda contratação de consultoria e instrutoria DEVE ser feita via SGF. Exceções (que exigem justificativa): inexistência de credenciado na área, impossibilidade de uso do sistema ou notória especialização (inexigibilidade).",
+      "tema": "SGF",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 169,
+      "tipo": "discursiva",
+      "enunciado": "Explique o procedimento de compras de baixo valor em lojas físicas ou comércio eletrônico.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Permitido para dispensa por valor (Art. 13, I). Dispensa-se habilitação jurídica e contrato formal. Pagamento pode ser imediato (cartão/boleto). Obrigatória a emissão de nota fiscal posterior e instrução do processo com os comprovantes.",
+      "tema": "Compras Diretas",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 170,
+      "tipo": "discursiva",
+      "enunciado": "O que é e quem elabora o 'Mapa de Preços'?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Documento que consolida os dados das cotações/pesquisa de preços, a manifestação técnica e indica a proposta selecionada. É elaborado pela Unidade de Aquisições e Contratos (UAC), com apoio da área técnica se necessário.",
+      "tema": "Mapa de Preços",
+      "dificuldade": "Média"
+    }
+  ],
+  "flashcards": [
+    {
+      "frente": "Validade Pesquisa de Preços",
+      "verso": "180 dias."
+    },
+    {
+      "frente": "Mínimo Cotações Diretas",
+      "verso": "3 fornecedores."
+    },
+    {
+      "frente": "Regularidade Fiscal (< 92k)",
+      "verso": "Dispensada."
+    },
+    {
+      "frente": "Regularidade Fiscal (92k - 826k)",
+      "verso": "Federal e FGTS."
+    },
+    {
+      "frente": "Prazo Parecer Jurídico",
+      "verso": "5 dias úteis."
+    },
+    {
+      "frente": "Apostilamento - Assinatura",
+      "verso": "Dispensada assinatura da contratada."
+    },
+    {
+      "frente": "Garantia Contratual Obrigatória",
+      "verso": "Mão de obra terceirizada."
+    },
+    {
+      "frente": "Matriz de Risco Obrigatória",
+      "verso": "Obras > 20x concorrência / Contratação Integrada."
+    },
+    {
+      "frente": "Quem elabora Mapa de Preços?",
+      "verso": "Unidade de Aquisições (UAC)."
+    },
+    {
+      "frente": "Preço na Inexigibilidade",
+      "verso": "Comprovar com notas/contratos anteriores."
+    },
+    {
+      "frente": "SGF - Obrigatoriedade",
+      "verso": "Consultoria e Instrutoria."
+    },
+    {
+      "frente": "Credenciamento - Tipo 1",
+      "verso": "Paralela e não excludente."
+    },
+    {
+      "frente": "Termo de Referência",
+      "verso": "Documento que caracteriza o objeto e obrigações."
+    },
+    {
+      "frente": "Dispensa Valor - Compras Online",
+      "verso": "Permitido, sem contrato formal, pagamento imediato."
+    },
+    {
+      "frente": "Habilitação - Vínculo Sebrae",
+      "verso": "Declaração de inexistência de parentes/empregados."
+    },
+    {
+      "frente": "Quem emite contrato padrão?",
+      "verso": "UAC."
+    },
+    {
+      "frente": "Quem emite contrato complexo/dispensa?",
+      "verso": "UASJUR."
+    },
+    {
+      "frente": "Cópia de documentos",
+      "verso": "Cópia simples aceita (exceto certidões fiscais)."
+    },
+    {
+      "frente": "Encomenda Tecnológica - Custo",
+      "verso": "Consulta prévia não gera custo/preferência."
+    },
+    {
+      "frente": "Prorrogação Prazo Entrega",
+      "verso": "Exige novo cronograma. Feito por apostila se sem custo."
+    }
+  ]
+}
