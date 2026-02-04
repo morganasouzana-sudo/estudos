@@ -3,82 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Estudos SEBRAE 2026 - AutoLoad</title>
+    <title>Sistema de Estudos SEBRAE 2026 - Responsivo</title>
     <style>
         :root {
             --primary: #005DAA; --primary-dark: #004580; --secondary: #FFD200;
-            --text: #333; --text-light: #666; --bg: #f4f7f6; --card-bg: #ffffff;
+            --text: #333; --text-light: #666; --bg: #f0f2f5; --card-bg: #ffffff;
             --success: #28a745; --error: #dc3545; --border-radius: 12px;
-            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; }
-        body { background-color: var(--bg); color: var(--text); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
         
-        .container { width: 100%; max-width: 900px; background: var(--card-bg); border-radius: var(--border-radius); box-shadow: var(--shadow); overflow: hidden; min-height: 650px; display: flex; flex-direction: column; position: relative; }
+        body { 
+            background-color: var(--bg); color: var(--text); 
+            min-height: 100vh; display: flex; justify-content: center; align-items: center; 
+            padding: 20px; 
+        }
+        
+        .container { 
+            width: 100%; max-width: 900px; 
+            background: var(--card-bg); border-radius: var(--border-radius); 
+            box-shadow: var(--shadow); overflow: hidden; 
+            min-height: 600px; display: flex; flex-direction: column; position: relative; 
+        }
         
         /* Header */
-        header { background: var(--primary); color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        h1 { font-size: 1.2rem; font-weight: 600; margin: 0; }
-        .badge { background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; }
+        header { 
+            background: var(--primary); color: white; padding: 15px 20px; 
+            display: flex; justify-content: space-between; align-items: center; 
+            flex-wrap: wrap; gap: 10px;
+        }
+        h1 { font-size: 1.1rem; font-weight: 600; margin: 0; white-space: nowrap; }
+        .subtitle { font-size: 0.8rem; opacity: 0.9; display: block; margin-top: 2px; }
+        .badge { background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; white-space: nowrap; }
         
         /* Screens */
-        .screen { display: none; flex-direction: column; flex: 1; padding: 25px; animation: fadeIn 0.3s ease; overflow-y: auto; }
+        .screen { display: none; flex-direction: column; flex: 1; padding: 20px; animation: fadeIn 0.3s ease; overflow-y: auto; }
         .screen.active { display: flex; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
         
         /* Buttons & Inputs */
-        button { padding: 12px 20px; border-radius: 8px; border: none; font-size: 1rem; cursor: pointer; transition: 0.2s; font-weight: 600; width: 100%; }
+        button { 
+            padding: 12px 20px; border-radius: 8px; border: none; font-size: 1rem; 
+            cursor: pointer; transition: 0.2s; font-weight: 600; width: 100%; 
+            touch-action: manipulation;
+        }
         button.primary { background: var(--primary); color: white; }
         button.primary:hover { background: var(--primary-dark); }
-        button.secondary { background: transparent; border: 2px solid #ccc; color: #666; }
+        button.secondary { background: transparent; border: 2px solid #ddd; color: #666; }
         button.secondary:hover { border-color: var(--primary); color: var(--primary); background: #f9f9f9; }
-        select, input[type="text"] { padding: 12px; border-radius: 8px; border: 1px solid #ccc; width: 100%; font-size: 1rem; margin-bottom: 15px; background: white; }
         
-        /* Login Screen Specifics */
-        .login-box { text-align: center; max-width: 400px; margin: 0 auto; padding-top: 40px; }
-        .user-list { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; max-height: 200px; overflow-y: auto; }
-        .user-card { background: #f8f9fa; border: 1px solid #eee; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.2s; }
-        .user-card:hover { background: #eef5fa; border-color: var(--primary); }
-        .user-card span { font-weight: 600; }
-        .delete-user { color: var(--error); font-size: 0.8rem; padding: 5px; cursor: pointer; }
+        select, input[type="text"] { 
+            padding: 12px; border-radius: 8px; border: 1px solid #ccc; width: 100%; 
+            font-size: 1rem; margin-bottom: 15px; background: white; 
+        }
+        
+        /* Login Screen */
+        .login-box { text-align: center; max-width: 400px; margin: 0 auto; padding-top: 20px; width: 100%; }
+        .user-list { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; max-height: 300px; overflow-y: auto; }
+        .user-card { 
+            background: #fff; border: 1px solid #eee; padding: 15px; border-radius: 8px; 
+            display: flex; justify-content: space-between; align-items: center; 
+            cursor: pointer; transition: 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .user-card:hover { border-color: var(--primary); transform: translateY(-1px); box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .delete-user { color: #ccc; font-size: 1.2rem; padding: 0 10px; cursor: pointer; transition: 0.2s; }
+        .delete-user:hover { color: var(--error); }
 
         /* Setup Area */
-        .setup-box { border: 2px dashed #ccc; padding: 30px; text-align: center; border-radius: 12px; margin: 20px 0; cursor: pointer; transition: 0.2s; }
+        .setup-box { 
+            border: 2px dashed #ccc; padding: 30px 20px; text-align: center; 
+            border-radius: 12px; margin: 15px 0; cursor: pointer; transition: 0.2s; 
+        }
         .setup-box:hover { border-color: var(--primary); background: #f9f9f9; }
-        .file-status-list { max-height: 150px; overflow-y: auto; margin-top: 15px; text-align: left; font-size: 0.85rem; border: 1px solid #eee; padding: 10px; border-radius: 8px; display: none; }
-        .status-item { display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px solid #f5f5f5; padding-bottom: 2px; }
+        .file-status-list { 
+            max-height: 150px; overflow-y: auto; margin-top: 15px; text-align: left; 
+            font-size: 0.85rem; border: 1px solid #eee; padding: 10px; border-radius: 8px; 
+            background: #fafafa; display: none; 
+        }
+        .status-item { display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
         
         /* Home Stats */
-        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 30px; }
-        .stat-card { background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #eee; }
-        .stat-value { font-size: 1.8rem; font-weight: bold; color: var(--primary); display: block; }
-        .stat-label { font-size: 0.85rem; color: #777; }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 25px; }
+        .stat-card { background: #f8f9fa; padding: 15px 10px; border-radius: 8px; text-align: center; border: 1px solid #eee; }
+        .stat-value { font-size: 1.5rem; font-weight: bold; color: var(--primary); display: block; margin-bottom: 5px; }
+        .stat-label { font-size: 0.75rem; color: #777; text-transform: uppercase; letter-spacing: 0.5px; }
         
         /* Mode Toggle */
-        .mode-toggle { display: flex; background: #eee; padding: 5px; border-radius: 10px; margin-bottom: 25px; }
-        .mode-btn { flex: 1; background: transparent; color: #666; border-radius: 8px; padding: 10px; border: none; }
-        .mode-btn.selected { background: white; color: var(--primary); shadow: 0 2px 4px rgba(0,0,0,0.1); font-weight: bold; }
+        .mode-toggle { display: flex; background: #eee; padding: 4px; border-radius: 10px; margin-bottom: 20px; }
+        .mode-btn { flex: 1; background: transparent; color: #666; border-radius: 8px; padding: 8px; border: none; font-size: 0.9rem; }
+        .mode-btn.selected { background: white; color: var(--primary); box-shadow: 0 2px 4px rgba(0,0,0,0.1); font-weight: bold; }
         
         /* Quiz Layout */
-        .question-meta { display: flex; justify-content: space-between; margin-bottom: 15px; color: #777; font-size: 0.9rem; }
-        .question-text { font-size: 1.25rem; line-height: 1.5; margin-bottom: 25px; font-weight: 500; }
-        .options { display: flex; flex-direction: column; gap: 12px; }
-        .opt-btn { text-align: left; background: white; border: 1px solid #ddd; color: #444; padding: 15px; border-radius: 8px; transition: 0.2s; position: relative; }
-        .opt-btn:hover:not(:disabled) { background: #f0f4f8; border-color: var(--primary); }
+        .question-meta { display: flex; justify-content: space-between; margin-bottom: 15px; color: #777; font-size: 0.85rem; }
+        .question-text { font-size: 1.1rem; line-height: 1.5; margin-bottom: 20px; font-weight: 500; }
+        .options { display: flex; flex-direction: column; gap: 10px; }
+        .opt-btn { 
+            text-align: left; background: white; border: 1px solid #ddd; color: #444; 
+            padding: 15px; border-radius: 8px; transition: 0.2s; position: relative; font-size: 0.95rem;
+        }
+        .opt-btn:active { background: #f0f0f0; }
         .opt-btn.correct { background: #d4edda; border-color: var(--success); color: #155724; }
         .opt-btn.wrong { background: #f8d7da; border-color: var(--error); color: #721c24; }
         
-        .feedback { margin-top: 20px; padding: 15px; background: #eef5fa; border-left: 5px solid var(--primary); border-radius: 4px; display: none; }
-        .feedback h4 { color: var(--primary); margin: 0 0 10px 0; }
+        .feedback { 
+            margin-top: 20px; padding: 15px; background: #eef5fa; 
+            border-left: 4px solid var(--primary); border-radius: 4px; display: none; font-size: 0.95rem;
+        }
+        .feedback h4 { color: var(--primary); margin: 0 0 5px 0; font-size: 1rem; }
         
         /* Flashcards */
-        .fc-container { flex: 1; display: flex; justify-content: center; align-items: center; perspective: 1000px; margin: 20px 0; cursor: pointer; }
-        .flashcard { width: 100%; max-width: 500px; height: 320px; position: relative; transform-style: preserve-3d; transition: transform 0.6s; }
+        .fc-container { 
+            flex: 1; display: flex; justify-content: center; align-items: center; 
+            perspective: 1000px; margin: 10px 0; cursor: pointer; min-height: 250px;
+        }
+        .flashcard { width: 100%; max-width: 500px; height: 100%; min-height: 280px; position: relative; transform-style: preserve-3d; transition: transform 0.6s; }
         .flashcard.flipped { transform: rotateY(180deg); }
-        .fc-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 30px; text-align: center; border: 1px solid #eee; background: white; }
+        .fc-face { 
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden; 
+            border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            padding: 20px; text-align: center; border: 1px solid #eee; background: white; 
+        }
         .fc-front { background: white; }
         .fc-back { background: var(--primary); color: white; transform: rotateY(180deg); }
-        .fc-content { font-size: 1.4rem; font-weight: 500; }
+        .fc-content { font-size: 1.2rem; font-weight: 500; overflow-y: auto; max-height: 100%; width: 100%; }
         .fc-hint { margin-top: 15px; font-size: 0.8rem; opacity: 0.6; }
         
         /* Footer Controls */
@@ -88,36 +136,49 @@
         .loader { border: 4px solid #f3f3f3; border-top: 4px solid var(--primary); border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 0 auto; display: none; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        @media (max-width: 600px) { .stats-grid { grid-template-columns: 1fr; } }
+        /* Mobile Adjustments */
+        @media (max-width: 600px) { 
+            body { padding: 0; align-items: flex-start; background: #fff; }
+            .container { border-radius: 0; box-shadow: none; min-height: 100vh; }
+            header { padding: 15px; position: sticky; top: 0; z-index: 10; }
+            h1 { font-size: 1rem; }
+            .screen { padding: 15px; }
+            .stats-grid { gap: 8px; }
+            .stat-value { font-size: 1.2rem; }
+            .question-text { font-size: 1rem; }
+            .opt-btn { padding: 12px; font-size: 0.9rem; }
+            .flashcard { min-height: 220px; }
+            .fc-content { font-size: 1.1rem; }
+        }
     </style>
 </head>
 <body>
 
 <div class="container" id="app">
     <header>
-        <div>
+        <div style="flex: 1;">
             <h1>Estudos SEBRAE</h1>
-            <div style="font-size: 0.8rem; opacity: 0.8;">Analista Técnico I - Projetos</div>
+            <span class="subtitle">Analista Técnico I - Projetos</span>
         </div>
-        <div style="display:flex; align-items:center; gap:10px;">
-            <span class="badge" id="user-display" style="display:none; background: var(--secondary); color:#333;">Visitante</span>
-            <span class="badge" id="header-status">Login</span>
+        <div style="display:flex; align-items:center; gap:8px;">
+            <span class="badge" id="user-display" style="display:none; background: var(--secondary); color:#333; font-weight:600;">Visitante</span>
+            <span class="badge" id="header-status" style="opacity: 0.8;">Login</span>
         </div>
     </header>
 
     <!-- TELA -1: LOGIN (NOVA) -->
     <div id="screen-login" class="screen active">
         <div class="login-box">
-            <h2>Quem vai estudar?</h2>
-            <p style="color: #666; margin-bottom: 20px;">Selecione seu perfil ou crie um novo.</p>
+            <h2 style="color: var(--primary);">Bem-vindo</h2>
+            <p style="color: #666; margin-bottom: 25px; font-size: 0.9rem;">Selecione seu perfil para continuar.</p>
             
-            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                <input type="text" id="new-user-name" placeholder="Nome do novo utilizador" onkeypress="if(event.key === 'Enter') app.createUser()">
-                <button class="primary" onclick="app.createUser()" style="width: auto;">Criar</button>
+            <div style="display: flex; gap: 8px; margin-bottom: 25px;">
+                <input type="text" id="new-user-name" placeholder="Novo usuário..." onkeypress="if(event.key === 'Enter') app.createUser()">
+                <button class="primary" onclick="app.createUser()" style="width: auto; padding: 0 20px;">+</button>
             </div>
 
             <div id="user-list" class="user-list">
-                <!-- Lista de utilizadores preenchida via JS -->
+                <!-- Lista preenchida via JS -->
             </div>
         </div>
     </div>
@@ -126,28 +187,28 @@
     <div id="screen-setup" class="screen">
         <div style="text-align: center; margin-top: 20px;">
             <h2>Carregar Conteúdo</h2>
-            <p style="color: #666;">Tentando carregar arquivos da pasta...</p>
+            <p style="color: #666; font-size: 0.9rem;">O sistema está procurando os arquivos na pasta...</p>
         </div>
 
         <div class="setup-box" style="border: none;">
             <div id="loader-github" class="loader"></div>
-            <p id="loading-text" style="margin-top: 15px; color: #888;">Buscando arquivos...</p>
+            <p id="loading-text" style="margin-top: 15px; color: #888; font-size: 0.9rem;">Verificando arquivos...</p>
         </div>
         
         <div id="file-status-list" class="file-status-list" style="display: block;"></div>
 
         <div style="margin-top: 30px; text-align: center;">
-            <p style="font-size: 0.9rem; color: #888;">Falha no automático? Tente manual:</p>
-            <button class="secondary" onclick="document.getElementById('file-input').click()">📂 Upload Manual</button>
+            <p style="font-size: 0.85rem; color: #888;">Falha no automático? Tente manual:</p>
+            <button class="secondary" onclick="document.getElementById('file-input').click()">📂 Selecionar Arquivos</button>
             <input type="file" id="file-input" multiple accept=".json" style="display: none;" onchange="app.handleFileUpload(this.files)">
             <br><br>
             <button class="secondary" onclick="app.useEmbeddedData()" style="font-size: 0.8rem; border: none; color: #999;">
-                Usar Base de Emergência (Offline)
+                Usar Base Offline (Emergência)
             </button>
         </div>
         
-        <button class="secondary" onclick="app.logout()" style="margin-top: 20px; color: var(--error); border-color: #ddd;">
-            ← Voltar para Login
+        <button class="secondary" onclick="app.logout()" style="margin-top: 20px; color: var(--error); border-color: #eee;">
+            Sair
         </button>
     </div>
 
@@ -173,17 +234,18 @@
             <button class="mode-btn" onclick="app.setMode('flashcard')">🔄 Flashcards</button>
         </div>
 
-        <label style="font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; display: block;">Filtrar por Disciplina:</label>
+        <label style="font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; display: block; color: #555;">Filtrar por Disciplina:</label>
         <select id="sel-subject">
             <option value="all">Todas as Disciplinas</option>
         </select>
 
         <div style="flex: 1;"></div>
 
-        <button class="primary" onclick="app.startSession()">INICIAR ESTUDOS</button>
-        <div style="display: flex; gap: 10px; margin-top: 10px;">
-            <button class="secondary" onclick="app.resetStats()">Zerar Meu Progresso</button>
-            <button class="secondary" onclick="app.logout()">Sair / Trocar User</button>
+        <button class="primary" onclick="app.startSession()" style="margin-bottom: 10px;">INICIAR ESTUDOS</button>
+        
+        <div style="display: flex; gap: 10px;">
+            <button class="secondary" onclick="app.resetStats()">Zerar Progresso</button>
+            <button class="secondary" onclick="app.logout()" style="border-color: #eee; color: var(--error);">Sair</button>
         </div>
     </div>
 
@@ -250,7 +312,13 @@ const app = {
     state: { mode: 'quiz', currentItems: [], index: 0, score: 0, answered: false, currentUser: null },
     
     init() { 
-        this.renderUserList(); 
+        // Verifica sessão ativa ao carregar
+        const activeUser = localStorage.getItem('sebrae_active_session');
+        if (activeUser) {
+            this.login(activeUser, true); // true = auto login
+        } else {
+            this.renderUserList(); 
+        }
     },
 
     // --- GESTÃO DE UTILIZADORES ---
@@ -282,29 +350,37 @@ const app = {
         let users = this.getUsers();
         users = users.filter(u => u !== name);
         localStorage.setItem('sebrae_users', JSON.stringify(users));
-        localStorage.removeItem(`sebrae_stats_${name}`); // Remove dados específicos
-        this.renderUserList();
+        localStorage.removeItem(`sebrae_stats_${name}`); 
+        
+        // Se apagou o user logado, faz logout
+        if (this.state.currentUser === name) this.logout();
+        else this.renderUserList();
     },
 
-    login(name) {
+    login(name, isAuto = false) {
         this.state.currentUser = name;
+        localStorage.setItem('sebrae_active_session', name); // Persiste sessão
+        
         document.getElementById('user-display').innerText = name;
         document.getElementById('user-display').style.display = 'inline-block';
         
-        // Verifica se já temos dados carregados na memória
-        if (this.data.questoes.length > 0) {
+        // Verifica se já temos dados carregados na memória (apenas se não for refresh da página)
+        // Se for refresh (isAuto), precisamos recarregar os dados de qualquer jeito
+        if (!isAuto && this.data.questoes.length > 0) {
             this.loadStats(); 
             this.showScreen('screen-home');
         } else {
             // Se não tem dados, vai para o setup e carrega AUTOMATICAMENTE
             this.showScreen('screen-setup');
-            this.loadPartsFromRepo(); // <<-- AUTO LOAD AQUI
+            this.loadPartsFromRepo(); 
         }
     },
 
     logout() {
         this.state.currentUser = null;
+        localStorage.removeItem('sebrae_active_session'); // Limpa sessão
         document.getElementById('user-display').style.display = 'none';
+        this.renderUserList(); // Atualiza lista
         this.showScreen('screen-login');
     },
 
@@ -314,7 +390,7 @@ const app = {
         const users = this.getUsers();
 
         if (users.length === 0) {
-            list.innerHTML = '<div style="color:#999; font-style:italic;">Nenhum utilizador criado.</div>';
+            list.innerHTML = '<div style="color:#999; font-style:italic; font-size:0.9rem;">Nenhum utilizador criado.</div>';
             return;
         }
 
@@ -324,7 +400,7 @@ const app = {
             div.onclick = () => this.login(u);
             div.innerHTML = `
                 <span>👤 ${u}</span>
-                <span class="delete-user" onclick="app.deleteUser(event, '${u}')">✖</span>
+                <span class="delete-user" onclick="app.deleteUser(event, '${u}')">×</span>
             `;
             list.appendChild(div);
         });
@@ -338,6 +414,7 @@ const app = {
         
         loader.style.display = 'block';
         statusList.innerHTML = ''; 
+        loadingText.innerText = "Buscando arquivos na pasta...";
         
         let loadedQ = [];
         let loadedF = [];
@@ -352,14 +429,12 @@ const app = {
                 .then(json => {
                     if(json.questoes) loadedQ = loadedQ.concat(json.questoes);
                     if(json.flashcards) loadedF = loadedF.concat(json.flashcards);
-                    statusList.innerHTML += `<div class="status-item"><span>${filename}</span><span style="color:green">✔ Sucesso</span></div>`;
+                    statusList.innerHTML += `<div class="status-item"><span>${filename}</span><span style="color:green">✔</span></div>`;
                     successCount++;
                 })
                 .catch(err => {
-                    // Não mostra erro visual para não poluir se for apenas 1 arquivo faltando, 
-                    // mas loga no console.
-                    console.log(`Arquivo ${filename} não encontrado ou erro.`);
-                    statusList.innerHTML += `<div class="status-item"><span>${filename}</span><span style="color:#ccc">⚠ Não encontrado</span></div>`;
+                    // Falha silenciosa para não travar o fluxo, apenas loga
+                    console.log(`Arquivo ${filename} não encontrado.`);
                 })
         );
 
@@ -373,13 +448,13 @@ const app = {
             loadingText.innerText = "Carregamento concluído!";
             loadingText.style.color = "green";
             
-            // Auto-transition para home após breve delay
+            // Auto-transition rápida para home
             setTimeout(() => {
                 this.prepareData();
-            }, 800);
+            }, 500);
         } else {
-            loadingText.innerText = "Nenhum arquivo encontrado automaticamente.";
-            loadingText.style.color = "red";
+            loadingText.innerText = "Nenhum arquivo encontrado. Use o upload manual.";
+            loadingText.style.color = "#d9534f";
         }
     },
 
@@ -421,7 +496,7 @@ const app = {
     prepareData() {
         // Atualiza UI da Home
         document.getElementById('st-db-size').innerText = this.data.questoes.length + this.data.flashcards.length;
-        this.loadStats(); // Carrega stats do utilizador atual para este novo banco
+        this.loadStats(); 
         
         // Popula Filtros
         const subjects = new Set();
@@ -535,7 +610,6 @@ const app = {
         const total = this.state.currentItems.length;
         const score = this.state.score;
         
-        // Salvar stats ESPECÍFICOS DO UTILIZADOR
         const userKey = `sebrae_stats_${this.state.currentUser}`;
         const stats = JSON.parse(localStorage.getItem(userKey) || '{"total":0, "hits":0}');
         stats.total += total;
@@ -573,7 +647,7 @@ const app = {
         document.getElementById(id).classList.add('active');
         
         let status = 'Início';
-        if(id === 'screen-setup') status = 'Config';
+        if(id === 'screen-setup') status = 'Carregando...';
         else if(id === 'screen-login') status = 'Login';
         else if(id.includes('quiz') || id.includes('flash')) status = 'Estudando';
         
