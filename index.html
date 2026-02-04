@@ -310,6 +310,7 @@ const EMBEDDED_DB = {
 const app = {
     data: { questoes: [], flashcards: [] },
     state: { mode: 'quiz', currentItems: [], index: 0, score: 0, answered: false, currentUser: null },
+    subjectMapping: {}, // Armazena o mapeamento Categoria -> Temas Originais
     
     init() { 
         // Verifica sessão ativa ao carregar
@@ -498,14 +499,45 @@ const app = {
         document.getElementById('st-db-size').innerText = this.data.questoes.length + this.data.flashcards.length;
         this.loadStats(); 
         
-        // Popula Filtros
-        const subjects = new Set();
-        this.data.questoes.forEach(q => subjects.add(q.tema));
+        // --- LOGICA DE AGRUPAMENTO (NORMALIZE SUBJECTS) ---
+        const mapping = {};
+        
+        // Função auxiliar para categorizar
+        const getCategory = (fullTheme) => {
+            if (!fullTheme) return "Geral";
+            const t = fullTheme.toUpperCase();
+            
+            // Regras de Agrupamento
+            if (t.includes("IN 07") || t.includes("FINANCEIRO")) return "Gestão Financeira (IN 07)";
+            if (t.includes("IN 36") || t.includes("CONTRATAÇÕES")) return "Contratações (IN 36)";
+            if (t.includes("IN 51") || t.includes("GESTÃO DE CONTRATOS")) return "Gestão de Contratos (IN 51)";
+            if (t.includes("IN 41") || t.includes("PARCERIAS") || t.includes("CONVÊNIO")) return "Convênios e Parcerias (Manual/IN 41)";
+            if (t.includes("LICITAÇ") || t.includes("RES 493")) return "Licitações (Res. 493)";
+            if (t.includes("AGRO") || t.includes("RURAL")) return "Agronegócio e Certificações";
+            if (t.includes("PROJETO") || t.includes("PMI") || t.includes("ÁGIL")) return "Gestão de Projetos";
+            if (t.includes("PORTUGUÊS") || t.includes("LÍNGUA")) return "Língua Portuguesa";
+            if (t.includes("SEBRAE") || t.includes("ESG") || t.includes("LGPD")) return "Conhecimentos Gerais Sebrae";
+            
+            return "Outros Temas"; // Fallback
+        };
+
+        // Processa todas as questões para montar o mapa
+        this.data.questoes.forEach(q => {
+            const cat = getCategory(q.tema);
+            if (!mapping[cat]) mapping[cat] = [];
+            // Guarda o tema original na lista dessa categoria
+            if (!mapping[cat].includes(q.tema)) mapping[cat].push(q.tema);
+        });
+
+        this.subjectMapping = mapping; // Salva para uso no startSession
+
+        // Popula o Select com as Categorias (chaves do mapa)
         const sel = document.getElementById('sel-subject');
         sel.innerHTML = '<option value="all">Todas as Disciplinas</option>';
-        Array.from(subjects).sort().forEach(s => {
+        Object.keys(mapping).sort().forEach(cat => {
             const opt = document.createElement('option');
-            opt.value = s; opt.innerText = s;
+            opt.value = cat; 
+            opt.innerText = cat;
             sel.appendChild(opt);
         });
 
@@ -526,7 +558,9 @@ const app = {
         let items = mode === 'quiz' ? this.data.questoes : this.data.flashcards;
 
         if (mode === 'quiz' && subj !== 'all') {
-            items = items.filter(i => i.tema === subj);
+            // Filtra usando o mapeamento: se o tema da questão estiver na lista da categoria selecionada
+            const allowedThemes = this.subjectMapping[subj] || [];
+            items = items.filter(i => allowedThemes.includes(i.tema));
         }
 
         if (items.length === 0) { alert("Sem itens para este filtro."); return; }
