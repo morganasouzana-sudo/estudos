@@ -1,0 +1,337 @@
+{
+  "prova": "Simulado SEBRAE 2026 - Parte 3 (Convênios e Flashcards)",
+  "questoes": [
+    {
+      "id": 81,
+      "tipo": "multipla_escolha",
+      "enunciado": "De acordo com o Manual de Convênios, o instrumento jurídico que define as intenções gerais da parceria, sem ações definidas e sem previsão de repasse de recursos financeiros entre as partes, é denominado:",
+      "alternativas": [
+        "Convênio de Cooperação Técnica.",
+        "Termo de Parceria.",
+        "Convênio de Cooperação Geral (ou Memorando de Entendimento).",
+        "Convênio de Cooperação Técnica e Financeira."
+      ],
+      "correta": 2,
+      "explicacao": "O Convênio de Cooperação Geral (ou Memorando de Entendimento/Protocolo de Intenções) define apenas intenções gerais, sem ações específicas ou repasses financeiros.",
+      "tema": "Convênios - Tipos",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 82,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para a celebração de parcerias com entidades privadas (com ou sem fins lucrativos), o Manual exige que a entidade comprove existência mínima de:",
+      "alternativas": [
+        "1 ano.",
+        "2 anos.",
+        "3 anos.",
+        "5 anos."
+      ],
+      "correta": 2,
+      "explicacao": "É exigido o Ato Constitutivo (Estatuto ou Contrato Social) comprovando no mínimo 3 anos de existência para entidades privadas.",
+      "tema": "Convênios - Habilitação",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 83,
+      "tipo": "multipla_escolha",
+      "enunciado": "O 'Termo de Parceria' é um instrumento utilizado para ações pontuais e específicas. Sua principal característica temporal é:",
+      "alternativas": [
+        "Ser executado em até 1 (um) mês, contado da assinatura.",
+        "Ter vigência indeterminada.",
+        "Ser executado no prazo máximo de 12 meses.",
+        "Permitir prorrogações sucessivas por até 60 meses."
+      ],
+      "correta": 0,
+      "explicacao": "O Termo de Parceria assemelha-se à cooperação técnica, mas é executado em até 1 (um) mês contado da data de assinatura.",
+      "tema": "Convênios - Prazos",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 84,
+      "tipo": "multipla_escolha",
+      "enunciado": "Nos convênios que envolvem repasse de recursos (Cooperação Técnica e Financeira), a participação financeira do Sistema Sebrae e a contrapartida mínima do parceiro são, respectivamente, limitadas a:",
+      "alternativas": [
+        "Sebrae até 50% e Parceiro no mínimo 50%.",
+        "Sebrae até 90% e Parceiro no mínimo 10%.",
+        "Sebrae até 85% e Parceiro no mínimo 15%.",
+        "Sebrae 100% e Parceiro isento de contrapartida."
+      ],
+      "correta": 2,
+      "explicacao": "Os recursos devem observar os limites de até 85% do Sistema Sebrae e no mínimo 15% do parceiro (contrapartida).",
+      "tema": "Convênios - Contrapartida",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 85,
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre as despesas administrativas do Executor no Convênio de Cooperação Técnica e Financeira, é correto afirmar:",
+      "alternativas": [
+        "São vedadas em qualquer hipótese.",
+        "Serão aceitas se estabelecidas no plano de trabalho, limitadas a 15% do valor total do projeto.",
+        "Não possuem limite percentual, desde que justificadas.",
+        "São limitadas a 50% do valor do repasse."
+      ],
+      "correta": 1,
+      "explicacao": "As despesas administrativas do Executor serão aceitas apenas se estabelecido no plano de trabalho e limitadas a 15% do valor total do projeto.",
+      "tema": "Convênios - Custos",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 86,
+      "tipo": "multipla_escolha",
+      "enunciado": "No que tange à liberação de recursos (cronograma de desembolso), a regra para o aporte de recursos pelo Sebrae e pelo Parceiro é:",
+      "alternativas": [
+        "O Sebrae aporta tudo no início e o parceiro no final.",
+        "O parceiro deve aportar 100% da contrapartida antes do Sebrae.",
+        "O desembolso deve ser concomitante (ao mesmo tempo).",
+        "O desembolso é opcional para o parceiro."
+      ],
+      "correta": 2,
+      "explicacao": "O desembolso deve ser concomitante, ou seja, o Sebrae e o parceiro devem aportar recursos ao mesmo tempo, conforme cronograma.",
+      "tema": "Convênios - Financeiro",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 87,
+      "tipo": "multipla_escolha",
+      "enunciado": "Durante a vigência de um Convênio de Cooperação Geral ou Técnica, é possível apresentar novas ações por meio de:",
+      "alternativas": [
+        "Aditivos contratuais de valor.",
+        "Planos de Trabalho.",
+        "Novos convênios obrigatórios.",
+        "Memorandos simples sem formalização."
+      ],
+      "correta": 1,
+      "explicacao": "É possível apresentar ações por meio de Planos de Trabalho. Se houver transferência de recursos, o Plano segue o rito de aprovação da DIREX.",
+      "tema": "Convênios - Gestão",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 88,
+      "tipo": "multipla_escolha",
+      "enunciado": "Quem são as autoridades competentes para assinar os instrumentos jurídicos (convênios) no Sebrae, segundo o fluxo apresentado?",
+      "alternativas": [
+        "O gerente da unidade demandante e o parceiro.",
+        "Apenas o Diretor Presidente.",
+        "Dois chefes de gabinete (ou dois diretores), sendo um obrigatoriamente o da Presidência (ou Diretor Presidente).",
+        "O advogado da UASJUR e o gestor do contrato."
+      ],
+      "correta": 2,
+      "explicacao": "Dois chefes de gabinete assinam o instrumento, sendo um, obrigatoriamente, o chefe de gabinete da Presidência (ou Diretores, conforme alçada).",
+      "tema": "Convênios - Formalização",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 89,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para a elaboração do Plano de Aplicação financeiro do projeto, é obrigatória a realização de:",
+      "alternativas": [
+        "Pesquisa de mercado com cotação de preços de no mínimo três empresas.",
+        "Contratação de auditoria externa.",
+        "Apenas estimativa baseada em projetos anteriores.",
+        "Consulta informal a fornecedores."
+      ],
+      "correta": 0,
+      "explicacao": "Deve-se apresentar planilha com pesquisa de mercado referente às despesas previstas (cotação de no mínimo três empresas).",
+      "tema": "Convênios - Orçamento",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 90,
+      "tipo": "multipla_escolha",
+      "enunciado": "No Convênio de Cooperação Técnica (sem repasse financeiro), os custos assumidos pelo Sebrae para executar suas próprias ações devem ser informados no sistema como:",
+      "alternativas": [
+        "Recursos financeiros a repassar.",
+        "Recursos econômicos.",
+        "Doação pura.",
+        "Investimento a fundo perdido."
+      ],
+      "correta": 1,
+      "explicacao": "Os recursos do Sebrae para execução das ações sob sua responsabilidade (no convênio técnico) devem ser informados no ATP como recursos econômicos.",
+      "tema": "Convênios - Tipos",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 91,
+      "tipo": "discursiva",
+      "enunciado": "Qual documento específico é exigido na instrução do processo caso um projeto preveja ações regionais ou estaduais?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Deve-se anexar documento comprovando ciência à Diretoria Executiva da respectiva Unidade do Sistema Sebrae (Sebrae/UF) onde a ação ocorrerá, para evitar sobreposição.",
+      "tema": "Convênios - Articulação",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 92,
+      "tipo": "discursiva",
+      "enunciado": "Nas parcerias com a Administração Pública (Direta ou Indireta), quais documentos são dispensados na instrução?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "São dispensados atestados de capacidade técnica e certidões de regularidade fiscal.",
+      "tema": "Convênios - Dispensas",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 93,
+      "tipo": "discursiva",
+      "enunciado": "Qual o papel do 'Questionário de Criticidade' no fluxo de aprovação de convênios?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "É elaborado na instrução e enviado ao Conselho Deliberativo Nacional (CDN) pelo gabinete da Presidência após a deliberação da DIREX, para monitoramento de riscos.",
+      "tema": "Convênios - Governança",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 94,
+      "tipo": "discursiva",
+      "enunciado": "A contrapartida financeira do parceiro pode ser composta por recursos econômicos (bens e serviços)?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Não. Todos os recursos (do limite mínimo de 15%) deverão ser financeiros. É vedada a participação de recursos econômicos na contrapartida mínima exigida.",
+      "tema": "Convênios - Financeiro",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 95,
+      "tipo": "discursiva",
+      "enunciado": "O 'Termo de Parceria' dispensa o parecer de qual unidade em seu fluxo simplificado de instrução?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Dispensa os pareceres da Unidade de Assessoria Jurídica (UASJUR) e da Unidade de Estratégia e Transformação (UET) na fase de instrução (a UASJUR atua na elaboração final).",
+      "tema": "Convênios - Termo Parceria",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 96,
+      "tipo": "discursiva",
+      "enunciado": "Se houver repasse de recursos do Parceiro para o Sebrae (entrada de receita), quais regras de compras o Sebrae deve seguir?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "O Sebrae deve observar as regras do Parceiro.",
+      "tema": "Convênios - Recursos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 97,
+      "tipo": "discursiva",
+      "enunciado": "Qual unidade é responsável por emitir parecer sobre a 'regularidade de prestação de contas' do parceiro?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Compete à UGOC (Unidade de Gestão Operacional de Convênios) emitir parecer quanto a regularidade de contas (nada consta).",
+      "tema": "Convênios - Competências",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 98,
+      "tipo": "discursiva",
+      "enunciado": "Quais são as vedações de contratação com recursos do convênio em relação a parentesco?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "É vedado contratar empresas que tenham como sócios: conselheiros, diretores e gestores de quaisquer dos parceiros, bem como seus parentes até o 3º grau.",
+      "tema": "Convênios - Vedações",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 99,
+      "tipo": "discursiva",
+      "enunciado": "Qual a responsabilidade do executor sobre a captação de recursos de terceiros informada no projeto?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "O executor deverá responsabilizar-se pelos recursos dos eventuais inadimplentes. Se prometeu captar e não captou, deve cobrir o valor.",
+      "tema": "Convênios - Responsabilidade",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 100,
+      "tipo": "discursiva",
+      "enunciado": "Em um Plano de Trabalho vinculado a um Convênio Geral, se houver previsão de transferência de recursos, qual rito de aprovação deve ser seguido?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Deve-se abrir um novo processo virtual e seguir os mesmos trâmites de aprovação de Convênio de Cooperação Técnica e Financeira (aprovação pela DIREX).",
+      "tema": "Convênios - Fluxo",
+      "dificuldade": "Difícil"
+    }
+  ],
+  "flashcards": [
+    {
+      "frente": "PMBOK: Project Charter",
+      "verso": "Termo de Abertura. Oficializa o projeto e dá autoridade ao GP."
+    },
+    {
+      "frente": "GlobalGap",
+      "verso": "Foco em Boas Práticas Agrícolas, Segurança Alimentar e Sustentabilidade."
+    },
+    {
+      "frente": "PDCA",
+      "verso": "Plan, Do, Check, Act."
+    },
+    {
+      "frente": "EAP (WBS)",
+      "verso": "Decomposição hierárquica do escopo."
+    },
+    {
+      "frente": "Sebraetec",
+      "verso": "Subsídio para acesso a serviços tecnológicos e inovação."
+    },
+    {
+      "frente": "Limite Dispensa (Compras)",
+      "verso": "Até R$ 92.000,00."
+    },
+    {
+      "frente": "Limite Dispensa (Obras)",
+      "verso": "Até R$ 166.000,00."
+    },
+    {
+      "frente": "Vigência Máxima Contrato (Regra)",
+      "verso": "10 anos."
+    },
+    {
+      "frente": "Vigência Máxima Ata SRP",
+      "verso": "36 meses."
+    },
+    {
+      "frente": "Limite Aditivo",
+      "verso": "50% do valor inicial atualizado."
+    },
+    {
+      "frente": "Empate Ficto MPE (Pregão)",
+      "verso": "5%."
+    },
+    {
+      "frente": "Empate Ficto MPE (Outros)",
+      "verso": "10%."
+    },
+    {
+      "frente": "Convênio Cooperação Geral",
+      "verso": "Apenas intenções. Sem repasse."
+    },
+    {
+      "frente": "Termo de Parceria",
+      "verso": "Execução em até 1 mês."
+    },
+    {
+      "frente": "Contrapartida Mínima (Convênio)",
+      "verso": "15% (Financeiro)."
+    },
+    {
+      "frente": "Limite Despesas Adm (Convênio)",
+      "verso": "15% do valor do projeto."
+    },
+    {
+      "frente": "Desembolso (Convênio)",
+      "verso": "Concomitante."
+    },
+    {
+      "frente": "Habilitação Entidade Privada",
+      "verso": "Mínimo 3 anos de existência."
+    },
+    {
+      "frente": "Due Diligence",
+      "verso": "Análise de integridade na instrução."
+    },
+    {
+      "frente": "RACI: A (Accountable)",
+      "verso": "Quem aprova/responde final."
+    }
+  ]
+}
