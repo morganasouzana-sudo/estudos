@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Estudos SEBRAE 2026 - Multiparser</title>
+    <title>Sistema de Estudos SEBRAE 2026 - AutoLoad</title>
     <style>
         :root {
             --primary: #005DAA; --primary-dark: #004580; --secondary: #FFD200;
@@ -32,8 +32,16 @@
         button.primary:hover { background: var(--primary-dark); }
         button.secondary { background: transparent; border: 2px solid #ccc; color: #666; }
         button.secondary:hover { border-color: var(--primary); color: var(--primary); background: #f9f9f9; }
-        select { padding: 12px; border-radius: 8px; border: 1px solid #ccc; width: 100%; font-size: 1rem; margin-bottom: 15px; background: white; }
+        select, input[type="text"] { padding: 12px; border-radius: 8px; border: 1px solid #ccc; width: 100%; font-size: 1rem; margin-bottom: 15px; background: white; }
         
+        /* Login Screen Specifics */
+        .login-box { text-align: center; max-width: 400px; margin: 0 auto; padding-top: 40px; }
+        .user-list { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; max-height: 200px; overflow-y: auto; }
+        .user-card { background: #f8f9fa; border: 1px solid #eee; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.2s; }
+        .user-card:hover { background: #eef5fa; border-color: var(--primary); }
+        .user-card span { font-weight: 600; }
+        .delete-user { color: var(--error); font-size: 0.8rem; padding: 5px; cursor: pointer; }
+
         /* Setup Area */
         .setup-box { border: 2px dashed #ccc; padding: 30px; text-align: center; border-radius: 12px; margin: 20px 0; cursor: pointer; transition: 0.2s; }
         .setup-box:hover { border-color: var(--primary); background: #f9f9f9; }
@@ -44,6 +52,7 @@
         .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 30px; }
         .stat-card { background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #eee; }
         .stat-value { font-size: 1.8rem; font-weight: bold; color: var(--primary); display: block; }
+        .stat-label { font-size: 0.85rem; color: #777; }
         
         /* Mode Toggle */
         .mode-toggle { display: flex; background: #eee; padding: 5px; border-radius: 10px; margin-bottom: 25px; }
@@ -90,33 +99,55 @@
             <h1>Estudos SEBRAE</h1>
             <div style="font-size: 0.8rem; opacity: 0.8;">Analista Técnico I - Projetos</div>
         </div>
-        <span class="badge" id="header-status">Início</span>
+        <div style="display:flex; align-items:center; gap:10px;">
+            <span class="badge" id="user-display" style="display:none; background: var(--secondary); color:#333;">Visitante</span>
+            <span class="badge" id="header-status">Login</span>
+        </div>
     </header>
 
+    <!-- TELA -1: LOGIN (NOVA) -->
+    <div id="screen-login" class="screen active">
+        <div class="login-box">
+            <h2>Quem vai estudar?</h2>
+            <p style="color: #666; margin-bottom: 20px;">Selecione seu perfil ou crie um novo.</p>
+            
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <input type="text" id="new-user-name" placeholder="Nome do novo utilizador" onkeypress="if(event.key === 'Enter') app.createUser()">
+                <button class="primary" onclick="app.createUser()" style="width: auto;">Criar</button>
+            </div>
+
+            <div id="user-list" class="user-list">
+                <!-- Lista de utilizadores preenchida via JS -->
+            </div>
+        </div>
+    </div>
+
     <!-- TELA 0: SETUP -->
-    <div id="screen-setup" class="screen active">
+    <div id="screen-setup" class="screen">
         <div style="text-align: center; margin-top: 20px;">
             <h2>Carregar Conteúdo</h2>
-            <p style="color: #666;">O sistema tentará ler as Partes 1 a 7 automaticamente.</p>
+            <p style="color: #666;">Tentando carregar arquivos da pasta...</p>
         </div>
 
-        <div class="setup-box" onclick="app.loadPartsFromRepo()">
-            <div style="font-size: 2.5rem; margin-bottom: 10px;">📚</div>
-            <h3>Carregar Todas as Partes</h3>
-            <p>Busca <i>simulado_parte1.json</i> até <i>simulado_parte7.json</i> na pasta.</p>
+        <div class="setup-box" style="border: none;">
             <div id="loader-github" class="loader"></div>
+            <p id="loading-text" style="margin-top: 15px; color: #888;">Buscando arquivos...</p>
         </div>
         
-        <div id="file-status-list" class="file-status-list"></div>
+        <div id="file-status-list" class="file-status-list" style="display: block;"></div>
 
-        <div style="margin: 20px 0; border-top: 1px solid #eee; padding-top: 20px;">
-            <p style="font-size: 0.9rem; color: #888; text-align: center; margin-bottom: 10px;">Ou selecione arquivos manualmente:</p>
-            <button class="secondary" onclick="document.getElementById('file-input').click()">📂 Upload Manual (Múltiplos)</button>
+        <div style="margin-top: 30px; text-align: center;">
+            <p style="font-size: 0.9rem; color: #888;">Falha no automático? Tente manual:</p>
+            <button class="secondary" onclick="document.getElementById('file-input').click()">📂 Upload Manual</button>
             <input type="file" id="file-input" multiple accept=".json" style="display: none;" onchange="app.handleFileUpload(this.files)">
+            <br><br>
+            <button class="secondary" onclick="app.useEmbeddedData()" style="font-size: 0.8rem; border: none; color: #999;">
+                Usar Base de Emergência (Offline)
+            </button>
         </div>
-
-        <button class="secondary" onclick="app.useEmbeddedData()" style="font-size: 0.8rem; border: none; color: #999;">
-            Usar Base de Emergência (Offline)
+        
+        <button class="secondary" onclick="app.logout()" style="margin-top: 20px; color: var(--error); border-color: #ddd;">
+            ← Voltar para Login
         </button>
     </div>
 
@@ -151,8 +182,8 @@
 
         <button class="primary" onclick="app.startSession()">INICIAR ESTUDOS</button>
         <div style="display: flex; gap: 10px; margin-top: 10px;">
-            <button class="secondary" onclick="app.resetStats()">Zerar</button>
-            <button class="secondary" onclick="location.reload()">Sair</button>
+            <button class="secondary" onclick="app.resetStats()">Zerar Meu Progresso</button>
+            <button class="secondary" onclick="app.logout()">Sair / Trocar User</button>
         </div>
     </div>
 
@@ -200,13 +231,8 @@
 <script>
 // --- LISTA DE ARQUIVOS PARA BUSCAR ---
 const PART_FILES = [
-    'simulado_parte1.json',
-    'simulado_parte2.json',
-    'simulado_parte3.json',
-    'simulado_parte4.json',
-    'simulado_parte5.json',
-    'simulado_parte6.json',
-    'simulado_parte7.json'
+    'simulado_parte1.json', 'simulado_parte2.json', 'simulado_parte3.json',
+    'simulado_parte4.json', 'simulado_parte5.json', 'simulado_parte6.json', 'simulado_parte7.json'
 ];
 
 // --- FALLBACK (EMBEDDED) ---
@@ -221,24 +247,102 @@ const EMBEDDED_DB = {
 
 const app = {
     data: { questoes: [], flashcards: [] },
-    state: { mode: 'quiz', currentItems: [], index: 0, score: 0, answered: false },
+    state: { mode: 'quiz', currentItems: [], index: 0, score: 0, answered: false, currentUser: null },
     
-    init() { this.loadStats(); },
+    init() { 
+        this.renderUserList(); 
+    },
+
+    // --- GESTÃO DE UTILIZADORES ---
+    getUsers() {
+        return JSON.parse(localStorage.getItem('sebrae_users') || '[]');
+    },
+
+    createUser() {
+        const nameInput = document.getElementById('new-user-name');
+        const name = nameInput.value.trim();
+        if (!name) return;
+
+        const users = this.getUsers();
+        if (users.includes(name)) {
+            alert("Utilizador já existe!");
+            return;
+        }
+
+        users.push(name);
+        localStorage.setItem('sebrae_users', JSON.stringify(users));
+        nameInput.value = '';
+        this.renderUserList();
+    },
+
+    deleteUser(e, name) {
+        e.stopPropagation();
+        if(!confirm(`Apagar progresso de ${name}?`)) return;
+        
+        let users = this.getUsers();
+        users = users.filter(u => u !== name);
+        localStorage.setItem('sebrae_users', JSON.stringify(users));
+        localStorage.removeItem(`sebrae_stats_${name}`); // Remove dados específicos
+        this.renderUserList();
+    },
+
+    login(name) {
+        this.state.currentUser = name;
+        document.getElementById('user-display').innerText = name;
+        document.getElementById('user-display').style.display = 'inline-block';
+        
+        // Verifica se já temos dados carregados na memória
+        if (this.data.questoes.length > 0) {
+            this.loadStats(); 
+            this.showScreen('screen-home');
+        } else {
+            // Se não tem dados, vai para o setup e carrega AUTOMATICAMENTE
+            this.showScreen('screen-setup');
+            this.loadPartsFromRepo(); // <<-- AUTO LOAD AQUI
+        }
+    },
+
+    logout() {
+        this.state.currentUser = null;
+        document.getElementById('user-display').style.display = 'none';
+        this.showScreen('screen-login');
+    },
+
+    renderUserList() {
+        const list = document.getElementById('user-list');
+        list.innerHTML = '';
+        const users = this.getUsers();
+
+        if (users.length === 0) {
+            list.innerHTML = '<div style="color:#999; font-style:italic;">Nenhum utilizador criado.</div>';
+            return;
+        }
+
+        users.forEach(u => {
+            const div = document.createElement('div');
+            div.className = 'user-card';
+            div.onclick = () => this.login(u);
+            div.innerHTML = `
+                <span>👤 ${u}</span>
+                <span class="delete-user" onclick="app.deleteUser(event, '${u}')">✖</span>
+            `;
+            list.appendChild(div);
+        });
+    },
 
     // --- CARREGAMENTO MÚLTIPLO (AUTO) ---
     async loadPartsFromRepo() {
         const loader = document.getElementById('loader-github');
         const statusList = document.getElementById('file-status-list');
+        const loadingText = document.getElementById('loading-text');
         
         loader.style.display = 'block';
-        statusList.style.display = 'block';
-        statusList.innerHTML = ''; // Limpa lista anterior
+        statusList.innerHTML = ''; 
         
         let loadedQ = [];
         let loadedF = [];
         let successCount = 0;
 
-        // Dispara todos os fetches
         const promises = PART_FILES.map(filename => 
             fetch(filename)
                 .then(res => {
@@ -246,16 +350,16 @@ const app = {
                     return res.json();
                 })
                 .then(json => {
-                    // Acumula dados
                     if(json.questoes) loadedQ = loadedQ.concat(json.questoes);
                     if(json.flashcards) loadedF = loadedF.concat(json.flashcards);
-                    
-                    // UI Log
                     statusList.innerHTML += `<div class="status-item"><span>${filename}</span><span style="color:green">✔ Sucesso</span></div>`;
                     successCount++;
                 })
                 .catch(err => {
-                    statusList.innerHTML += `<div class="status-item"><span>${filename}</span><span style="color:red">✘ Erro/Não encontrado</span></div>`;
+                    // Não mostra erro visual para não poluir se for apenas 1 arquivo faltando, 
+                    // mas loga no console.
+                    console.log(`Arquivo ${filename} não encontrado ou erro.`);
+                    statusList.innerHTML += `<div class="status-item"><span>${filename}</span><span style="color:#ccc">⚠ Não encontrado</span></div>`;
                 })
         );
 
@@ -266,13 +370,16 @@ const app = {
             this.data.questoes = loadedQ;
             this.data.flashcards = loadedF;
             
-            // Pequeno delay para usuário ler o status
+            loadingText.innerText = "Carregamento concluído!";
+            loadingText.style.color = "green";
+            
+            // Auto-transition para home após breve delay
             setTimeout(() => {
-                alert(`Carregados ${successCount} arquivos com sucesso!\nTotal: ${loadedQ.length} questões e ${loadedF.length} flashcards.`);
                 this.prepareData();
-            }, 500);
+            }, 800);
         } else {
-            alert("Nenhum arquivo foi encontrado. Verifique se estão na mesma pasta.");
+            loadingText.innerText = "Nenhum arquivo encontrado automaticamente.";
+            loadingText.style.color = "red";
         }
     },
 
@@ -291,9 +398,8 @@ const app = {
                     const json = JSON.parse(e.target.result);
                     if(json.questoes) loadedQ = loadedQ.concat(json.questoes);
                     if(json.flashcards) loadedF = loadedF.concat(json.flashcards);
-                } catch (err) {
-                    console.error("Erro no arquivo " + file.name);
-                } finally {
+                } catch (err) { console.error("Erro no arquivo " + file.name); } 
+                finally {
                     filesRead++;
                     if(filesRead === files.length) {
                         this.data.questoes = loadedQ;
@@ -315,11 +421,11 @@ const app = {
     prepareData() {
         // Atualiza UI da Home
         document.getElementById('st-db-size').innerText = this.data.questoes.length + this.data.flashcards.length;
+        this.loadStats(); // Carrega stats do utilizador atual para este novo banco
         
-        // Popula Filtros de Disciplina
+        // Popula Filtros
         const subjects = new Set();
         this.data.questoes.forEach(q => subjects.add(q.tema));
-        
         const sel = document.getElementById('sel-subject');
         sel.innerHTML = '<option value="all">Todas as Disciplinas</option>';
         Array.from(subjects).sort().forEach(s => {
@@ -428,25 +534,36 @@ const app = {
     finishSession() {
         const total = this.state.currentItems.length;
         const score = this.state.score;
-        const stats = JSON.parse(localStorage.getItem('sebrae_stats') || '{"total":0, "hits":0}');
+        
+        // Salvar stats ESPECÍFICOS DO UTILIZADOR
+        const userKey = `sebrae_stats_${this.state.currentUser}`;
+        const stats = JSON.parse(localStorage.getItem(userKey) || '{"total":0, "hits":0}');
         stats.total += total;
         stats.hits += score;
-        localStorage.setItem('sebrae_stats', JSON.stringify(stats));
-        alert(`Fim! Acertos: ${score}/${total}`);
+        localStorage.setItem(userKey, JSON.stringify(stats));
+
+        alert(`Sessão finalizada!\nVocê acertou ${score} de ${total}.`);
         this.goHome();
     },
 
     goHome() { this.updateStatsUI(); this.showScreen('screen-home'); },
     
     updateStatsUI() {
-        const stats = JSON.parse(localStorage.getItem('sebrae_stats') || '{"total":0, "hits":0}');
+        if (!this.state.currentUser) return;
+        const userKey = `sebrae_stats_${this.state.currentUser}`;
+        const stats = JSON.parse(localStorage.getItem(userKey) || '{"total":0, "hits":0}');
+        
         document.getElementById('st-total').innerText = stats.total;
         const pct = stats.total === 0 ? 0 : Math.round((stats.hits / stats.total) * 100);
         document.getElementById('st-score').innerText = pct + '%';
     },
     
     resetStats() {
-        if(confirm("Zerar estatísticas?")) { localStorage.removeItem('sebrae_stats'); this.updateStatsUI(); }
+        if(confirm("Zerar estatísticas deste utilizador?")) { 
+            const userKey = `sebrae_stats_${this.state.currentUser}`;
+            localStorage.removeItem(userKey); 
+            this.updateStatsUI(); 
+        }
     },
 
     loadStats() { this.updateStatsUI(); },
@@ -454,7 +571,13 @@ const app = {
     showScreen(id) {
         document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
         document.getElementById(id).classList.add('active');
-        document.getElementById('header-status').innerText = id === 'screen-home' ? 'Início' : (id === 'screen-setup' ? 'Config' : 'Estudando');
+        
+        let status = 'Início';
+        if(id === 'screen-setup') status = 'Config';
+        else if(id === 'screen-login') status = 'Login';
+        else if(id.includes('quiz') || id.includes('flash')) status = 'Estudando';
+        
+        document.getElementById('header-status').innerText = status;
     }
 };
 
