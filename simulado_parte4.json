@@ -1,0 +1,641 @@
+{
+  "prova": "Simulado SEBRAE 2026 - Parte 4 (Gestão Financeira - IN 07/2019)",
+  "disciplinas": [
+    "Instrução Normativa 07/2019",
+    "Gestão Financeira e Contratos"
+  ],
+  "questoes": [
+    {
+      "id": 101,
+      "tipo": "multipla_escolha",
+      "enunciado": "Segundo a IN 07/2019, o cadastro de contratos e convênios no sistema informatizado deve ser realizado pela Unidade de Gestão Financeira:",
+      "alternativas": [
+        "Até 5 dias úteis após a assinatura.",
+        "Imediatamente após a assinatura das partes.",
+        "Antes da assinatura, para reserva orçamentária.",
+        "Mensalmente, no fechamento contábil."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 4º. Todos os contratos e convênios... deverão ser obrigatoriamente registrados... imediatamente após a assinatura das partes.",
+      "tema": "Cadastro de Contratos",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 102,
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre os saldos de contratos não realizados durante a vigência, a IN 07 determina que:",
+      "alternativas": [
+        "Podem ser utilizados automaticamente na renovação do contrato.",
+        "Devem ser transferidos para o Fundo Fixo da unidade.",
+        "Em hipótese alguma poderão ser utilizados em eventual aditivo de renovação.",
+        "Podem ser utilizados para compra de materiais de escritório sem licitação."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 6º. Em hipótese alguma o saldo de um contrato poderá ser utilizado em eventual aditivo de renovação.",
+      "tema": "Saldos Contratuais",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 103,
+      "tipo": "multipla_escolha",
+      "enunciado": "Caso um fornecedor apresente irregularidade fiscal após a prestação do serviço (exceto cessão de mão de obra), o Sebrae deve:",
+      "alternativas": [
+        "Reter o pagamento até a regularização.",
+        "Cancelar o contrato imediatamente e não pagar.",
+        "Realizar o pagamento, pois a irregularidade não autoriza a retenção, cabendo ao gestor aplicar penalidades contratuais.",
+        "Pagar apenas 50% do valor devido."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 12. O caso de irregularidade fiscal, após a prestação do serviço, não autoriza a retenção do pagamento... Parágrafo único: A retenção somente poderá ocorrer nos contratos de cessão de mão de obra.",
+      "tema": "Pagamentos e Regularidade Fiscal",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 104,
+      "tipo": "multipla_escolha",
+      "enunciado": "A solicitação de pagamento protocolada no Sebrae com atraso superior a 2 (dois) meses da realização do objeto deve:",
+      "alternativas": [
+        "Ser rejeitada sumariamente.",
+        "Vir acompanhada de justificativa para o atraso, emitida pelo gestor com 'de acordo' do gerente.",
+        "Ser paga com multa de 10% a favor do fornecedor.",
+        "Ser convertida em Fundo Fixo."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 13. A solicitação... após 2 meses... deverá vir acompanhada da justificativa para o atraso, emitida pelo gestor...",
+      "tema": "Prazos de Pagamento",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 105,
+      "tipo": "multipla_escolha",
+      "enunciado": "O pagamento da remuneração dos empregados do Sebrae é realizado em duas parcelas mensais. As datas limites e os percentuais da primeira parcela são, respectivamente:",
+      "alternativas": [
+        "Dia 05 (50%) e dia 20 (restante).",
+        "Dia 15 (40%) e dia 30 (restante).",
+        "Dia 10 (30%) e dia 25 (restante).",
+        "Dia 10 (50%) e dia 25 (restante)."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 17. I. Primeira parcela até dia 10 (30%). II. Segunda parcela até dia 25 (restante).",
+      "tema": "Folha de Pagamento",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 106,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para a liberação das parcelas subsequentes à primeira em um convênio de repasse financeiro, é obrigatória a comprovação da execução física e financeira de, no mínimo:",
+      "alternativas": [
+        "50% da parcela anterior.",
+        "80% das etapas anteriores.",
+        "100% da parcela anterior.",
+        "30% do total do projeto."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 22, I. Obrigatoriedade de comprovação da execução... de, no mínimo, 80% das etapas anteriores como condição de liberação da parcela posterior.",
+      "tema": "Convênios - Liberação de Recursos",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 107,
+      "tipo": "multipla_escolha",
+      "enunciado": "Os recursos de Suprimento de Fundo Fixo podem ser utilizados para despesas de pequena monta e pronto pagamento, limitadas individualmente a:",
+      "alternativas": [
+        "R$ 100,00.",
+        "R$ 300,00.",
+        "R$ 500,00.",
+        "R$ 1.000,00."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 24, I e II. Pequena monta e Pronto pagamento são limitados a R$ 500,00.",
+      "tema": "Fundo Fixo",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 108,
+      "tipo": "multipla_escolha",
+      "enunciado": "É VEDADA a utilização do Fundo Fixo para pagamento de:",
+      "alternativas": [
+        "Combustíveis em casos não previstos em contrato.",
+        "Despesas de transporte urbano (táxi/aplicativo).",
+        "Compra de bens para o patrimônio e diárias.",
+        "Despesas de representação da Diretoria."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 25. Não poderá ser utilizado para: a) compra de bens para o patrimônio; ... e) diárias.",
+      "tema": "Fundo Fixo - Vedações",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 109,
+      "tipo": "multipla_escolha",
+      "enunciado": "Em relação aos prazos processuais internos, a Unidade de Gestão Financeira (UGF) tem qual prazo para protocolar e tramitar o documento fiscal após o recebimento?",
+      "alternativas": [
+        "1 dia útil.",
+        "2 dias úteis.",
+        "4 dias úteis.",
+        "5 dias úteis."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 33. A UGF terá até 4 dias úteis após o recebimento do documento fiscal para protocolo e tramitação.",
+      "tema": "Prazos Internos",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 110,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para reembolso de viagens de fornecedores, a IN 07 exige:",
+      "alternativas": [
+        "Apenas relatório de viagem.",
+        "Comprovantes originais (notas/recibos) constando o nome do viajante e/ou do Sebrae.",
+        "Cópia simples dos recibos.",
+        "Declaração de próprio punho sem notas fiscais."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 14, VIII. Reembolsadas mediante apresentação dos comprovantes originais... nos quais deverá constar o nome do viajante e/ou do Sebrae.",
+      "tema": "Reembolso de Despesas",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 111,
+      "tipo": "multipla_escolha",
+      "enunciado": "A primeira parcela de recursos de um convênio será liberada condicionada a:",
+      "alternativas": [
+        "Prestação de contas parcial.",
+        "Abertura de conta corrente única e depósito da primeira parcela dos demais concedentes (se houver).",
+        "Execução de 50% do objeto.",
+        "Aprovação do Conselho Deliberativo."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 21. Condicionada à: I. abertura de conta corrente única... II. ao depósito da primeira parcela dos demais concedentes...",
+      "tema": "Convênios - Liberação de Recursos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 112,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para pagamentos de serviços de publicidade, a comprovação de veiculação em TV e Rádio exige:",
+      "alternativas": [
+        "Apenas a nota fiscal da agência.",
+        "Declaração do diretor de marketing.",
+        "Pedido de Inserção (PI) e comprovante de veiculação (checking) da emissora.",
+        "Cópia do roteiro do comercial."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 14, VII, a.2. TV, Cinema, Rádio...: objeto do pedido de inserção (PI) e comprovante de veiculação...",
+      "tema": "Liquidação de Despesa",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 113,
+      "tipo": "multipla_escolha",
+      "enunciado": "A utilização do suprimento de Fundo Fixo tem um limite temporal anual. Em nenhuma hipótese poderá ultrapassar:",
+      "alternativas": [
+        "O dia 30 de novembro.",
+        "O dia 15 de dezembro.",
+        "O dia 31 de dezembro.",
+        "O encerramento do exercício contábil em janeiro."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 27. ...em nenhuma hipótese a utilização do suprimento poderá ultrapassar o dia 15 de dezembro de cada ano.",
+      "tema": "Fundo Fixo",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 114,
+      "tipo": "multipla_escolha",
+      "enunciado": "O prazo geral para processamento de pagamentos, contados após o aceite do objeto (ateste), é de:",
+      "alternativas": [
+        "5 dias úteis.",
+        "10 dias corridos.",
+        "30 dias.",
+        "60 dias."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 36. Os pagamentos serão... processados em até 30 dias após o aceite do objeto...",
+      "tema": "Prazos de Pagamento",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 115,
+      "tipo": "multipla_escolha",
+      "enunciado": "No caso de devolução de pagamento por inconsistência de dados bancários do fornecedor, as despesas bancárias serão:",
+      "alternativas": [
+        "Arcadas pelo Sebrae.",
+        "Divididas entre as partes.",
+        "Cobradas do fornecedor.",
+        "Isentas pelo banco."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 41. ...serão cobradas do fornecedor todas as despesas bancárias incorridas.",
+      "tema": "Disposições Finais",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 116,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para cadastro de fornecedor Pessoa Jurídica, exige-se declaração de inexistência de participação de:",
+      "alternativas": [
+        "Parentes de até 5º grau.",
+        "Empregado, diretor e conselheiro do Sistema SEBRAE na composição societária.",
+        "Pessoas politicamente expostas.",
+        "Estrangeiros sem visto."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 3º, I, g. Declaração... de que inexiste participação de empregado, diretor e conselheiro do Sistema SEBRAE...",
+      "tema": "Cadastro de Fornecedores",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 117,
+      "tipo": "multipla_escolha",
+      "enunciado": "A forma preferencial de pagamento no Sebrae deve ser:",
+      "alternativas": [
+        "Cheque nominal.",
+        "Dinheiro em espécie via Fundo Fixo.",
+        "Via sistema informatizado com certificação digital.",
+        "Autorização de pagamento física."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 10. O pagamento via sistema informatizado deverá ser sempre a opção preferencial...",
+      "tema": "Formas de Pagamento",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 118,
+      "tipo": "multipla_escolha",
+      "enunciado": "Quem é competente para autorizar pagamentos e repasses de recursos no Sebrae?",
+      "alternativas": [
+        "Apenas o Diretor Presidente.",
+        "Qualquer gerente.",
+        "Diretores e, por delegação, Chefes de Gabinete, Gerentes e Assessores.",
+        "Analistas técnicos seniores."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 2º. Diretores; II. Chefes de Gabinete, Gerentes... detentores de delegação...",
+      "tema": "Alçadas de Aprovação",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 119,
+      "tipo": "multipla_escolha",
+      "enunciado": "A prestação de contas do Fundo Fixo deve ocorrer com qual periodicidade?",
+      "alternativas": [
+        "Semanalmente.",
+        "Mensalmente, durante o mês de competência.",
+        "Trimestralmente.",
+        "Ao final do exercício apenas."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 28. Os gestores... deverão prestar contas... mensalmente, durante o mês de competência.",
+      "tema": "Fundo Fixo",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 120,
+      "tipo": "multipla_escolha",
+      "enunciado": "Se houver ação judicial envolvendo um contrato, o saldo residual deste deve:",
+      "alternativas": [
+        "Ser devolvido ao Tesouro.",
+        "Ser remanejado para uma iniciativa que represente o tema processos judiciais (resp. UASJUR).",
+        "Ser gasto em publicidade.",
+        "Ficar congelado na conta do gestor."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 7º. ...providenciar o remanejamento do saldo residual para uma iniciativa que represente o tema processos judiciais...",
+      "tema": "Gestão Orçamentária",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 121,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para cadastro de Contratos, NÃO é exigida a apresentação de:",
+      "alternativas": [
+        "Resolução da Diretoria que aprovou.",
+        "Via original do instrumento.",
+        "Comprovante de consulta ao CEIS (Empresas Inidôneas).",
+        "Declaração de Imposto de Renda dos sócios."
+      ],
+      "correta": 3,
+      "explicacao": "Art. 4º lista os documentos exigidos. Declaração de IR dos sócios não consta no rol.",
+      "tema": "Cadastro de Contratos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 122,
+      "tipo": "multipla_escolha",
+      "enunciado": "O atesto de notas fiscais, nos casos em que o gerente estiver impedido, poderá ser realizado pelo:",
+      "alternativas": [
+        "Analista mais antigo.",
+        "Chefe de Gabinete da Diretoria.",
+        "Fornecedor.",
+        "Estagiário."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 29, Parágrafo único. ...o mesmo poderá ser assinado pelo Chefe de Gabinete da Diretoria.",
+      "tema": "Atesto",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 123,
+      "tipo": "multipla_escolha",
+      "enunciado": "Em contratos de fornecimento de Bens, a nota fiscal deve conter aceite da Unidade de Administração e Suprimentos quando:",
+      "alternativas": [
+        "O valor for superior a R$ 10.000,00.",
+        "Os bens pertencerem ao patrimônio ou forem controlados pelo almoxarifado.",
+        "O bem for importado.",
+        "Sempre."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 14, I, a. ...No caso de bens pertencentes ao patrimônio ou controlados pelo almoxarifado, a nota fiscal deve conter o aceite... pela Unidade de Administração...",
+      "tema": "Recebimento de Bens",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 124,
+      "tipo": "multipla_escolha",
+      "enunciado": "Para reembolso de atividades educacionais, a Universidade Corporativa deve enviar o movimento financeiro à UGF, que terá o prazo de liberação de:",
+      "alternativas": [
+        "2 dias úteis.",
+        "5 dias úteis.",
+        "7 dias úteis.",
+        "10 dias úteis."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 40, b. O prazo de liberação do reembolso pela UGF será de 7 dias úteis...",
+      "tema": "Prazos Internos",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 125,
+      "tipo": "multipla_escolha",
+      "enunciado": "A aquisição de materiais de consumo via Fundo Fixo é permitida excepcionalmente quando houver:",
+      "alternativas": [
+        "Preguiça de fazer licitação.",
+        "Ausência temporária no almoxarifado, impossibilidade de estoque ou urgência.",
+        "Saldo sobrando no fundo.",
+        "Pedido verbal do Diretor."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 24, Parágrafo único. Observar: ausência no almoxarifado, impossibilidade de estocar, urgência.",
+      "tema": "Fundo Fixo",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 126,
+      "tipo": "multipla_escolha",
+      "enunciado": "Nos pagamentos de 'Cessão de mão de obra', além da nota fiscal, é obrigatória a apresentação de:",
+      "alternativas": [
+        "Fotos dos funcionários trabalhando.",
+        "Comprovantes de pagamento de salários, benefícios e tributos trabalhistas (FGTS/INSS).",
+        "Declaração de satisfação dos empregados.",
+        "Atestado de saúde ocupacional mensal."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 14, III. b e c. Cópia dos comprovantes de pagamento de salários... e recolhimentos... FGTS...",
+      "tema": "Terceirização",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 127,
+      "tipo": "multipla_escolha",
+      "enunciado": "O cronograma financeiro de convênios deve obedecer à obrigatoriedade de que os aportes dos concedentes sejam:",
+      "alternativas": [
+        "Antecipados pelo Sebrae.",
+        "Concomitantes, nas mesmas proporções pactuadas.",
+        "Feitos apenas no final.",
+        "Livres, conforme disponibilidade de caixa."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 20. ...aportes de recursos financeiros deverão ser concomitantes...",
+      "tema": "Convênios - Financeiro",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 128,
+      "tipo": "multipla_escolha",
+      "enunciado": "As unidades gestoras têm o prazo de quantos dias para atestar o documento fiscal e devolvê-lo à UGF?",
+      "alternativas": [
+        "1 dia útil.",
+        "3 dias úteis.",
+        "5 dias úteis.",
+        "10 dias corridos."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 34. As unidades gestoras terão o prazo de 3 dias úteis para atestar...",
+      "tema": "Prazos Internos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 129,
+      "tipo": "multipla_escolha",
+      "enunciado": "Multas e juros imputados ao Sebrae por erro ou imperícia de empregados:",
+      "alternativas": [
+        "Serão absorvidos como despesa operacional.",
+        "Serão perdoados.",
+        "Serão ressarcidos ao Sebrae pelo responsável.",
+        "Serão descontados do fornecedor."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 42. Multas, juros... imputados ao Sebrae... por imperícia... serão ressarcidos ao Sebrae.",
+      "tema": "Responsabilidade",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 130,
+      "tipo": "multipla_escolha",
+      "enunciado": "A nota técnica de prestação de contas parcial sobre recursos executados em convênios é obrigatória a cada:",
+      "alternativas": [
+        "Mês.",
+        "Duas parcelas liberadas.",
+        "Ano.",
+        "Final do projeto."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 22, V. ...nota técnica de prestação de contas parcial... a cada duas parcelas liberadas...",
+      "tema": "Convênios - Prestação de Contas",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 131,
+      "tipo": "discursiva",
+      "enunciado": "Explique a regra para retenção de pagamentos em caso de irregularidade fiscal do fornecedor, diferenciando contratos gerais de contratos de cessão de mão de obra.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Regra Geral (Art. 12): A irregularidade fiscal NÃO autoriza a retenção do pagamento por serviço já prestado (evita enriquecimento ilícito do Sebrae). O gestor deve aplicar penalidades. Exceção (Parágrafo único): Em contratos de cessão de mão de obra (terceirização), a retenção É PERMITIDA e deve ocorrer para proteger o Sebrae de responsabilidade subsidiária trabalhista.",
+      "tema": "Gestão de Contratos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 132,
+      "tipo": "discursiva",
+      "enunciado": "Quais são as condições estabelecidas na IN 07 para a liberação das parcelas subsequentes à primeira em um convênio de repasse financeiro?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "1) Comprovação da execução física e financeira de no mínimo 80% das etapas anteriores; 2) Comprovação do depósito da contrapartida do parceiro para a etapa seguinte; 3) Registro dos atendimentos; 4) Análise técnica do gestor; 5) Nota técnica parcial da UGO a cada duas parcelas.",
+      "tema": "Convênios - Financeiro",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 133,
+      "tipo": "discursiva",
+      "enunciado": "Descreva as restrições de uso do Suprimento de Fundo Fixo (o que NÃO pode ser pago com ele).",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Não pode ser usado para: compra de bens patrimoniais (imobilizado), serviços com retenção de impostos, pagamento de impostos, consignações de folha e diárias de viagem.",
+      "tema": "Fundo Fixo",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 134,
+      "tipo": "discursiva",
+      "enunciado": "Como deve proceder o gestor caso necessite cadastrar um aditivo de renovação de contrato que possui saldo financeiro não utilizado? Esse saldo pode ser aproveitado?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Não. Em hipótese alguma o saldo de um contrato pode ser utilizado no aditivo de renovação (Art. 6º). O saldo deve ser encerrado/anulado, e o aditivo deve prever novos recursos orçamentários para o novo período.",
+      "tema": "Gestão de Contratos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 135,
+      "tipo": "discursiva",
+      "enunciado": "Qual o procedimento para solicitação de pagamento protocolada com mais de 2 meses de atraso em relação à prestação do serviço?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "O processo deve ser instruído normalmente, mas deve conter obrigatoriamente uma justificativa formal para o atraso, emitida pelo gestor do contrato e com o 'de acordo' (anuência) do gerente da área.",
+      "tema": "Pagamentos",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 136,
+      "tipo": "discursiva",
+      "enunciado": "Quais documentos devem instruir um processo de pagamento de 'Evento de Mercado'?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Nota fiscal ou fatura devidamente atestada pelo gestor e cópia do formulário de evento autorizado pelo Diretor competente.",
+      "tema": "Liquidação de Despesa",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 137,
+      "tipo": "discursiva",
+      "enunciado": "Explique o conceito de 'Aporte Concomitante' em convênios.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Significa que os concedentes (Sebrae e Parceiros) devem depositar os recursos financeiros na conta do convênio ao mesmo tempo (ou em prazos muito próximos), respeitando as proporções pactuadas originalmente, para garantir o fluxo de caixa equilibrado do projeto.",
+      "tema": "Convênios",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 138,
+      "tipo": "discursiva",
+      "enunciado": "Quais são as datas de pagamento da folha de pessoal do Sebrae e o que compõe cada parcela?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "1ª Parcela: Até dia 10 (Adiantamento de 30% da remuneração). 2ª Parcela: Até dia 25 (Saldo restante, deduzidos os descontos legais e consignações).",
+      "tema": "Gestão de Pessoas",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 139,
+      "tipo": "discursiva",
+      "enunciado": "O que é necessário para o cadastro de um fornecedor Pessoa Jurídica em relação a vínculos com o Sebrae?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "É necessária uma declaração assinada pelo representante legal afirmando que inexiste participação de empregado, diretor ou conselheiro do Sistema SEBRAE na composição societária da empresa (Anexo A da IN).",
+      "tema": "Compliance",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 140,
+      "tipo": "discursiva",
+      "enunciado": "Qual o prazo que a Unidade de Gestão Financeira (UGF) tem para realizar a baixa dos pagamentos e enviar a documentação para a contabilidade?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "A UGF tem o prazo de 3 (três) dias úteis para realizar esses procedimentos após o pagamento.",
+      "tema": "Prazos Internos",
+      "dificuldade": "Difícil"
+    }
+  ],
+  "flashcards": [
+    {
+      "frente": "Prazo Cadastro Contrato",
+      "verso": "Imediatamente após assinatura."
+    },
+    {
+      "frente": "Saldo de Contrato na Renovação",
+      "verso": "Vedado uso. Deve ser encerrado."
+    },
+    {
+      "frente": "Retenção Pagamento (Irregularidade Fiscal)",
+      "verso": "Apenas permitido em Cessão de Mão de Obra."
+    },
+    {
+      "frente": "Limite Fundo Fixo (Pequena Monta)",
+      "verso": "R$ 500,00."
+    },
+    {
+      "frente": "Data Limite Uso Fundo Fixo",
+      "verso": "15 de Dezembro."
+    },
+    {
+      "frente": "Pagamento Folha (Datas)",
+      "verso": "Dia 10 (30%) e Dia 25 (Restante)."
+    },
+    {
+      "frente": "Liberação Parcela Convênio (Regra 80%)",
+      "verso": "Execução de mín. 80% das etapas anteriores."
+    },
+    {
+      "frente": "Aporte Concomitante",
+      "verso": "Sebrae e Parceiro depositam juntos."
+    },
+    {
+      "frente": "Prazo Atesto Gestor",
+      "verso": "3 dias úteis."
+    },
+    {
+      "frente": "Prazo Pagamento (Regra Geral)",
+      "verso": "30 dias após atesto."
+    },
+    {
+      "frente": "Reembolso Viagem (Documento)",
+      "verso": "Original (Nota/Recibo) em nome do viajante/Sebrae."
+    },
+    {
+      "frente": "Pagamento Atrasado (>2 meses)",
+      "verso": "Exige justificativa formal do gestor."
+    },
+    {
+      "frente": "Vedação Fundo Fixo (Exemplos)",
+      "verso": "Patrimônio, Impostos, Diárias."
+    },
+    {
+      "frente": "Cadastro PJ (Vínculo)",
+      "verso": "Declaração de não vínculo com empregados/dirigentes Sebrae."
+    },
+    {
+      "frente": "Prazo Liberação Reembolso Educacional",
+      "verso": "7 dias úteis (pela UGF)."
+    },
+    {
+      "frente": "Forma Pagamento Preferencial",
+      "verso": "Sistema informatizado (crédito em conta)."
+    },
+    {
+      "frente": "Responsável Multas/Juros por Erro",
+      "verso": "O empregado causador (ressarcimento)."
+    },
+    {
+      "frente": "Comprovante Publicidade (TV)",
+      "verso": "Pedido de Inserção (PI) + Checking."
+    },
+    {
+      "frente": "Saldo Contrato com Ação Judicial",
+      "verso": "Remanejar para iniciativa de processos judiciais."
+    },
+    {
+      "frente": "Periodicidade Prestação Contas Fundo Fixo",
+      "verso": "Mensal."
+    }
+  ]
+}
