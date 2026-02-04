@@ -1,0 +1,244 @@
+{
+  "prova": "Simulado SEBRAE 2026 - Parte 6 (IN 51/2025 - Gestão de Contratos)",
+  "disciplinas": [
+    "Instrução Normativa 51/2025",
+    "Gestão e Fiscalização de Contratos"
+  ],
+  "questoes": [
+    {
+      "id": 171,
+      "tipo": "multipla_escolha",
+      "enunciado": "Conforme a IN 51/2025, a responsabilidade por indicar formalmente os gestores (administrativo e técnico) e fiscais dos contratos é do:",
+      "alternativas": [
+        "Diretor de Administração e Finanças.",
+        "Gerente da Unidade de Aquisições.",
+        "Gerente da unidade demandante.",
+        "Próprio empregado designado."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 3º. Compete à Gerência da unidade demandante: I - indicar os gestores (administrativo e técnico), fiscais e prepostos...",
+      "tema": "Responsabilidades - Gerência",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 172,
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre a acumulação de funções na gestão de contratos, a IN 51 estabelece que:",
+      "alternativas": [
+        "É estritamente proibida em qualquer caso.",
+        "As funções de gestor administrativo e gestor técnico poderão ser exercidas pelo mesmo empregado, observada a complexidade do objeto.",
+        "O gestor do contrato deve ser sempre um funcionário da Unidade Financeira.",
+        "O fiscal do contrato deve ser sempre terceirizado."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 4º, § 1º. As funções de gestor administrativo e gestor técnico poderão ser exercidas pelo mesmo empregado, observada a complexidade do objeto.",
+      "tema": "Gestores de Contrato",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 173,
+      "tipo": "multipla_escolha",
+      "enunciado": "Compete ao Gestor Administrativo do contrato, dentre outras atribuições:",
+      "alternativas": [
+        "Aprovar a licitação.",
+        "Controlar a vigência e o saldo do contrato, solicitando prorrogações ou aditivos tempestivamente.",
+        "Assinar o contrato em nome do Sebrae.",
+        "Realizar o pagamento bancário diretamente."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 5º. Compete ao Gestor Administrativo: ... II - controlar os prazos de vigência... III - controlar o saldo...",
+      "tema": "Atribuições do Gestor",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 174,
+      "tipo": "multipla_escolha",
+      "enunciado": "Quando o objeto do contrato envolver avaliação de qualidade técnica especializada, deve ser designado um:",
+      "alternativas": [
+        "Gestor Financeiro.",
+        "Auditor Externo.",
+        "Gestor Técnico.",
+        "Consultor Jurídico."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 6º. O Gestor Técnico será designado quando a natureza e a complexidade do objeto exigirem avaliação técnica específica...",
+      "tema": "Gestor Técnico",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 175,
+      "tipo": "multipla_escolha",
+      "enunciado": "Sobre os saldos dos contratos não utilizados durante a vigência, a IN 51 determina que:",
+      "alternativas": [
+        "Devem ser transferidos automaticamente para o contrato seguinte.",
+        "Poderão ser utilizados em eventual aditivo de renovação.",
+        "Deverão ser encerrados/anulados, sendo vedada sua utilização em aditivos de renovação.",
+        "Ficam como crédito para o fornecedor."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 18. Os saldos... deverão ser encerrados... Parágrafo único. Em hipótese alguma o saldo de um contrato poderá ser utilizado em eventual aditivo de renovação.",
+      "tema": "Saldo Contratual",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 176,
+      "tipo": "multipla_escolha",
+      "enunciado": "A aplicação de penalidades (advertência, multa, suspensão) a fornecedores inadimplentes é competência de quem?",
+      "alternativas": [
+        "Do Gestor do Contrato.",
+        "Do Gerente da área demandante.",
+        "Da autoridade competente para a assinatura do contrato, mediante proposta do gestor/gerente.",
+        "Da Unidade de Auditoria."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 19. A aplicação de penalidades... é de competência da autoridade que assinou o contrato... mediante processo administrativo instruído pelo gestor.",
+      "tema": "Penalidades",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 177,
+      "tipo": "multipla_escolha",
+      "enunciado": "O recebimento provisório do objeto do contrato deve ser realizado:",
+      "alternativas": [
+        "Pelo Diretor.",
+        "Pelo Gestor ou Fiscal, mediante termo circunstanciado ou recibo.",
+        "Pela portaria do prédio.",
+        "Automaticamente pelo sistema."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 12. O recebimento do objeto... I - provisoriamente, pelo responsável por seu acompanhamento e fiscalização...",
+      "tema": "Recebimento do Objeto",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 178,
+      "tipo": "multipla_escolha",
+      "enunciado": "Caso o serviço prestado esteja em desacordo com o contrato, o gestor deve:",
+      "alternativas": [
+        "Atestar a nota fiscal para não prejudicar o fornecedor.",
+        "Recusar o atesto e notificar a empresa para correção.",
+        "Pagar parcialmente sem notificar.",
+        "Solicitar a rescisão imediata sem defesa prévia."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 16. O gestor deverá recusar o atesto... caso o objeto não tenha sido executado conforme o contratado...",
+      "tema": "Fiscalização",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 179,
+      "tipo": "multipla_escolha",
+      "enunciado": "A 'Glosa' no pagamento é um procedimento que consiste em:",
+      "alternativas": [
+        "Pagar antecipadamente.",
+        "Reter total ou parcialmente o pagamento correspondente a serviços não prestados ou prestados em desconformidade.",
+        "Adicionar um bônus por desempenho.",
+        "Cancelar o contrato."
+      ],
+      "correta": 1,
+      "explicacao": "Art. 16, § 1º. ...poderá haver a glosa (retenção) de valores correspondentes à parte não executada ou executada incorretamente.",
+      "tema": "Pagamentos - Glosa",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 180,
+      "tipo": "multipla_escolha",
+      "enunciado": "É dever do Gestor do Contrato manter o processo de contratação:",
+      "alternativas": [
+        "Em sua gaveta pessoal.",
+        "Arquivado na Unidade Financeira apenas.",
+        "Devidamente instruído e atualizado com todos os registros de ocorrências, notificações e atestos.",
+        "Em sigilo absoluto."
+      ],
+      "correta": 2,
+      "explicacao": "Art. 5º, V. Manter o processo... devidamente instruído com toda a documentação relativa à execução...",
+      "tema": "Deveres do Gestor",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 181,
+      "tipo": "discursiva",
+      "enunciado": "Diferencie as competências do 'Gestor Administrativo' e do 'Gestor Técnico' segundo a IN 51.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Gestor Administrativo: Foca nos aspectos formais, prazos, vigência, saldo, pagamentos, aditivos e documentação. Gestor Técnico: Foca na qualidade da entrega, aferição do cumprimento das especificações técnicas, níveis de serviço (SLA) e aceitação do objeto.",
+      "tema": "Papéis na Gestão",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 182,
+      "tipo": "discursiva",
+      "enunciado": "O que a IN 51 estabelece sobre a responsabilização dos gestores de contrato?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Art. 15. Os gestores respondem administrativa, civil e penalmente pelas ações ou omissões que resultem em prejuízo ao Sebrae, decorrentes de negligência, imprudência, imperícia ou dolo na fiscalização do contrato.",
+      "tema": "Responsabilidade",
+      "dificuldade": "Difícil"
+    },
+    {
+      "id": 183,
+      "tipo": "discursiva",
+      "enunciado": "Quais são as penalidades que podem ser aplicadas aos contratados em caso de inexecução total ou parcial do contrato?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Art. 19. I - Advertência; II - Multa (moratória ou compensatória); III - Suspensão temporária de licitar/contratar (prazo não superior a 2 anos na lei geral ou prazos específicos do regulamento); IV - Impedimento de licitar/contratar.",
+      "tema": "Sanções",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 184,
+      "tipo": "discursiva",
+      "enunciado": "Como deve proceder o gestor se identificar a necessidade de alterar o contrato (ex: prorrogação de prazo ou acréscimo de valor)?",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Deve elaborar justificativa técnica fundamentada, verificar a disponibilidade orçamentária (para acréscimos), obter anuência da contratada e submeter à aprovação da autoridade competente antes do término da vigência, formalizando via Termo Aditivo ou Apostilamento.",
+      "tema": "Alteração Contratual",
+      "dificuldade": "Média"
+    },
+    {
+      "id": 185,
+      "tipo": "discursiva",
+      "enunciado": "O gestor pode atestar uma nota fiscal sem a comprovação da execução do serviço? Justifique.",
+      "alternativas": [],
+      "correta": 0,
+      "explicacao": "Não. O atesto é a declaração formal de que o serviço foi prestado ou o bem entregue conforme contratado. Atestar sem execução constitui falta grave e pode gerar responsabilização e dever de ressarcimento (Art. 13 e 15).",
+      "tema": "Liquidação de Despesa",
+      "dificuldade": "Fácil"
+    },
+    {
+      "id": 186,
+      "tipo": "flashcard",
+      "enunciado": "Flashcard 1",
+      "frente": "Quem indica o Gestor do Contrato?",
+      "verso": "Gerente da Unidade Demandante."
+    },
+    {
+      "id": 187,
+      "tipo": "flashcard",
+      "enunciado": "Flashcard 2",
+      "frente": "Acúmulo Gestor Técnico e Administrativo",
+      "verso": "Permitido, dependendo da complexidade."
+    },
+    {
+      "id": 188,
+      "tipo": "flashcard",
+      "enunciado": "Flashcard 3",
+      "frente": "Saldo de Contrato na Renovação",
+      "verso": "Deve ser encerrado. Vedado uso no aditivo."
+    },
+    {
+      "id": 189,
+      "tipo": "flashcard",
+      "enunciado": "Flashcard 4",
+      "frente": "Glosa",
+      "verso": "Retenção de pagamento por serviço não/mal executado."
+    },
+    {
+      "id": 190,
+      "tipo": "flashcard",
+      "enunciado": "Flashcard 5",
+      "frente": "Aplicação de Multa",
+      "verso": "Competência da autoridade signatária do contrato."
+    }
+  ]
+}
