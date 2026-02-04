@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estudos SEBRAE 2026</title>
+    <style>
+        :root {
+            --primary: #005DAA;
+            --primary-dark: #004580;
+            --secondary: #FFD200;
+            --text: #333;
+            --text-light: #666;
+            --bg: #f4f7f6;
+            --card-bg: #ffffff;
+            --success: #28a745;
+            --error: #dc3545;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+
+        .container {
+            width: 100%; max-width: 800px; background: var(--card-bg); border-radius: var(--border-radius);
+            box-shadow: var(--shadow); overflow: hidden; min-height: 600px; display: flex; flex-direction: column; position: relative;
+        }
+
+        header { background: var(--primary); color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        h1 { font-size: 1.2rem; font-weight: 600; }
+        .badge { background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; }
+
+        .screen { display: none; flex-direction: column; flex: 1; padding: 20px; animation: fadeIn 0.3s ease; }
+        .screen.active { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Setup Screen (Upload) */
+        .upload-area {
+            border: 2px dashed #ccc; padding: 40px; text-align: center; border-radius: 12px;
+            margin: 20px 0; cursor: pointer; transition: 0.2s; background: #fafafa;
+        }
+        .upload-area:hover { border-color: var(--primary); background: #eef5fa; }
+        .upload-area p { color: var(--text-light); margin-top: 10px; }
+        .file-list { margin-bottom: 20px; font-size: 0.9rem; color: #555; text-align: left; }
+        .file-item { padding: 5px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
+
+        /* Home Screen */
+        .stats-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 30px; }
+        .stat-card { background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #e0e0e0; }
+        .stat-value { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .stat-label { font-size: 0.8rem; color: var(--text-light); }
+        .filters { margin-bottom: 20px; display: flex; flex-direction: column; gap: 15px; }
+        select, button, input[type="file"] { padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; width: 100%; }
+        button { background: var(--primary); color: white; border: none; cursor: pointer; transition: background 0.2s; font-weight: 600; }
+        button:hover { background: var(--primary-dark); }
+        button.secondary { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+        button.secondary:hover { background: #eef5fa; }
+        .mode-toggle { display: flex; gap: 10px; margin-bottom: 20px; }
+        .mode-btn { flex: 1; opacity: 0.6; }
+        .mode-btn.selected { opacity: 1; border: 2px solid var(--primary); background: #eef5fa; color: var(--primary); }
+
+        /* Quiz Screen */
+        .progress-bar { height: 6px; background: #e0e0e0; border-radius: 3px; margin-bottom: 20px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--success); width: 0%; transition: width 0.3s ease; }
+        .question-meta { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 0.9rem; color: var(--text-light); }
+        .question-text { font-size: 1.2rem; line-height: 1.6; margin-bottom: 25px; }
+        .options { display: flex; flex-direction: column; gap: 10px; }
+        .option-btn { background: white; border: 1px solid #ddd; color: var(--text); text-align: left; padding: 15px; transition: all 0.2s; position: relative; }
+        .option-btn:hover:not(:disabled) { background: #f0f0f0; border-color: #bbb; }
+        .option-btn.correct { background: #d4edda; border-color: var(--success); color: #155724; }
+        .option-btn.wrong { background: #f8d7da; border-color: var(--error); color: #721c24; }
+        .feedback-area { margin-top: 20px; padding: 15px; background: #eef5fa; border-left: 4px solid var(--primary); border-radius: 4px; display: none; }
+        .feedback-area h4 { color: var(--primary); margin-bottom: 5px; }
+
+        /* Flashcard Screen */
+        .flashcard-container { flex: 1; perspective: 1000px; display: flex; justify-content: center; align-items: center; margin: 20px 0; cursor: pointer; }
+        .flashcard { width: 100%; height: 300px; position: relative; transform-style: preserve-3d; transition: transform 0.6s; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 12px; }
+        .flashcard.flipped { transform: rotateY(180deg); }
+        .card-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center; border-radius: 12px; background: white; border: 1px solid #eee; }
+        .card-front { background: white; color: var(--primary); font-size: 1.3rem; font-weight: bold; }
+        .card-back { background: var(--primary); color: white; transform: rotateY(180deg); font-size: 1.1rem; }
+        .card-hint { position: absolute; bottom: 15px; font-size: 0.8rem; opacity: 0.7; }
+        .flashcard-controls { display: flex; justify-content: space-between; gap: 10px; }
+        .footer-actions { margin-top: auto; display: flex; justify-content: flex-end; gap: 10px; }
+
+        @media (max-width: 600px) {
+            .stats-container { grid-template-columns: 1fr; }
+            h1 { font-size: 1rem; }
+            .question-text { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="app">
+    <header>
+        <h1>SEBRAE Study System</h1>
+        <div id="header-badges">
+            <span class="badge" id="mode-badge">Configuração</span>
+        </div>
+    </header>
+
+    <!-- 0. Tela de Carregamento (Setup) -->
+    <div id="setup-screen" class="screen active">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <h2>Bem-vindo!</h2>
+            <p style="color: #666;">Para começar, carregue seus arquivos de questões.</p>
+        </div>
+
+        <div class="upload-area" onclick="document.getElementById('file-input').click()">
+            <div style="font-size: 3rem;">📂</div>
+            <h3>Clique para selecionar arquivos JSON</h3>
+            <p>Você pode selecionar múltiplos arquivos (Parte 1, Parte 2, etc.)</p>
+        </div>
+        <input type="file" id="file-input" multiple accept=".json" style="display: none;" onchange="app.handleFiles(this.files)">
+
+        <div id="file-list-container" class="file-list"></div>
+
+        <div style="margin-top: auto;">
+            <button id="btn-load-data" onclick="app.processLoadedFiles()" disabled>Carregar e Iniciar</button>
+            <button class="secondary" onclick="app.loadDemoData()" style="margin-top: 10px;">Usar Dados de Demonstração</button>
+        </div>
+    </div>
+
+    <!-- 1. Tela Inicial (Home) -->
+    <div id="home-screen" class="screen">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-value" id="stat-total">0</div>
+                <div class="stat-label">Respondidas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-correct">0</div>
+                <div class="stat-label">Acertos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-accuracy">0%</div>
+                <div class="stat-label">Precisão</div>
+            </div>
+        </div>
+
+        <div class="mode-toggle">
+            <button class="mode-btn selected" onclick="app.setMode('quiz')">Modo Quiz</button>
+            <button class="mode-btn" onclick="app.setMode('flashcard')">Modo Flashcards</button>
+        </div>
+
+        <div class="filters">
+            <label>Disciplina:</label>
+            <select id="subject-select"><option value="all">Todas as Disciplinas</option></select>
+
+            <div id="difficulty-filter-container">
+                <label>Dificuldade:</label>
+                <select id="difficulty-select">
+                    <option value="all">Todas</option>
+                    <option value="Fácil">Fácil</option>
+                    <option value="Média">Média</option>
+                    <option value="Difícil">Difícil</option>
+                </select>
+            </div>
+
+            <label><input type="checkbox" id="shuffle-check" checked> Embaralhar questões</label>
+        </div>
+
+        <button onclick="app.startSession()">INICIAR SESSÃO</button>
+        <button class="secondary" onclick="app.resetProgress()" style="margin-top: 10px; border-color: #ccc; color: #666;">Zerar Estatísticas</button>
+        <button class="secondary" onclick="location.reload()" style="margin-top: 10px; border-color: #ccc; color: #666;">Carregar Novos Arquivos</button>
+    </div>
+
+    <!-- 2. Tela de Quiz -->
+    <div id="quiz-screen" class="screen">
+        <div class="progress-bar"><div class="progress-fill" id="quiz-progress"></div></div>
+        <div class="question-meta">
+            <span id="q-subject">Tema</span>
+            <span id="q-difficulty" class="badge" style="background:#ccc; color:#333">Média</span>
+        </div>
+        <div class="question-text" id="q-text">Texto da pergunta aqui...</div>
+        <div class="options" id="q-options"></div>
+        <div class="feedback-area" id="q-feedback">
+            <h4 id="feedback-title">Resposta Correta!</h4>
+            <p id="feedback-text">Explicação detalhada...</p>
+        </div>
+        <div class="footer-actions">
+            <button id="btn-next-q" onclick="app.nextQuestion()" style="display:none;">Próxima</button>
+            <button class="secondary" onclick="app.quitSession()">Sair</button>
+        </div>
+    </div>
+
+    <!-- 3. Tela de Flashcards -->
+    <div id="flashcard-screen" class="screen">
+        <div class="question-meta" style="justify-content: center;"><span id="fc-counter">1 / 10</span></div>
+        <div class="flashcard-container" onclick="app.flipCard()">
+            <div class="flashcard" id="flashcard-el">
+                <div class="card-face card-front"><span id="fc-front">Frente</span><span class="card-hint">Clique para virar</span></div>
+                <div class="card-face card-back"><span id="fc-back">Verso</span></div>
+            </div>
+        </div>
+        <div class="flashcard-controls">
+            <button class="secondary" onclick="app.prevFlashcard()">Anterior</button>
+            <button onclick="app.nextFlashcard()">Próximo</button>
+        </div>
+        <button class="secondary" onclick="app.quitSession()" style="margin-top: 15px; width: 100%;">Encerrar</button>
+    </div>
+
+    <!-- 4. Tela de Resultados -->
+    <div id="result-screen" class="screen">
+        <div style="text-align: center; padding: 40px 0;">
+            <h2 style="margin-bottom: 20px; color: var(--primary);">Sessão Finalizada!</h2>
+            <div class="stats-container" style="margin: 30px 0;">
+                <div class="stat-card"><div class="stat-value" id="res-total">0</div><div class="stat-label">Questões</div></div>
+                <div class="stat-card"><div class="stat-value" id="res-correct" style="color: var(--success)">0</div><div class="stat-label">Acertos</div></div>
+            </div>
+            <p id="res-msg" style="margin-bottom: 30px; font-size: 1.1rem; color: #555;">Bom trabalho!</p>
+            <button onclick="app.goHome()">Voltar ao Início</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Dados de demonstração caso o usuário não tenha arquivos
+    const DEMO_DATA = {
+        "disciplinas": ["Demonstração"],
+        "questoes": [
+            { "id": 1, "tipo": "multipla_escolha", "enunciado": "Esta é uma questão de demonstração. Carregue seus arquivos JSON para ver as questões reais.", "alternativas": ["Entendi", "Não entendi", "Talvez", "Ignorar"], "correta": 0, "explicacao": "Você deve usar o botão 'Carregar Arquivos' na tela inicial.", "tema": "Demonstração", "dificuldade": "Fácil" }
+        ],
+        "flashcards": [
+            { "frente": "Como usar este sistema?", "verso": "Carregue os arquivos JSON gerados pelo assistente." }
+        ]
+    };
+
+    const app = {
+        data: { questoes: [], flashcards: [], disciplinas: [] },
+        tempFilesContent: [], // Armazena conteúdo dos arquivos carregados antes de processar
+        state: { mode: 'quiz', currentQuestions: [], currentIndex: 0, score: 0, isAnswered: false },
+        storageKey: 'sebrae_study_v2',
+
+        init() {
+            this.loadStats();
+        },
+
+        // --- Lógica de Arquivos (Upload) ---
+        handleFiles(files) {
+            const container = document.getElementById('file-list-container');
+            container.innerHTML = '';
+            this.tempFilesContent = [];
+            const btn = document.getElementById('btn-load-data');
+            
+            if (files.length === 0) {
+                btn.disabled = true;
+                btn.innerText = "Carregar e Iniciar";
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerText = "Lendo arquivos...";
+
+            let filesRead = 0;
+            
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    try {
+                        const json = JSON.parse(e.target.result);
+                        this.tempFilesContent.push({ name: file.name, data: json });
+                        
+                        // UI Update
+                        const div = document.createElement('div');
+                        div.className = 'file-item';
+                        div.innerHTML = `<span>${file.name}</span><span style="color:green">✓</span>`;
+                        container.appendChild(div);
+
+                    } catch (err) {
+                        const div = document.createElement('div');
+                        div.className = 'file-item';
+                        div.innerHTML = `<span>${file.name}</span><span style="color:red">Erro JSON</span>`;
+                        container.appendChild(div);
+                    } finally {
+                        filesRead++;
+                        if (filesRead === files.length) {
+                            btn.disabled = false;
+                            btn.innerText = `Carregar ${this.tempFilesContent.length} Arquivos`;
+                        }
+                    }
+                };
+                reader.readAsText(file);
+            });
+        },
+
+        processLoadedFiles() {
+            // Unificar dados
+            let allQuestions = [];
+            let allFlashcards = [];
+            let allDisciplines = new Set();
+
+            this.tempFilesContent.forEach(fileObj => {
+                const json = fileObj.data;
+                if (json.questoes) allQuestions = allQuestions.concat(json.questoes);
+                if (json.flashcards) allFlashcards = allFlashcards.concat(json.flashcards);
+                if (json.disciplinas) json.disciplinas.forEach(d => allDisciplines.add(d));
+                
+                // Extrair disciplinas das questões se não houver lista explicita
+                if (json.questoes) {
+                    json.questoes.forEach(q => { if(q.tema) allDisciplines.add(q.tema); });
+                }
+            });
+
+            this.data = {
+                questoes: allQuestions,
+                flashcards: allFlashcards,
+                disciplinas: Array.from(allDisciplines).sort()
+            };
+
+            if (this.data.questoes.length === 0 && this.data.flashcards.length === 0) {
+                alert("Nenhuma questão ou flashcard encontrado nos arquivos.");
+                return;
+            }
+
+            this.renderHome();
+        },
+
+        loadDemoData() {
+            this.data = DEMO_DATA;
+            this.renderHome();
+        },
+
+        // --- Renderização Principal ---
+        renderHome() {
+            this.showScreen('home-screen');
+            document.getElementById('mode-badge').innerText = "Início";
+            
+            // Popular Select
+            const select = document.getElementById('subject-select');
+            select.innerHTML = '<option value="all">Todas as Disciplinas</option>';
+            this.data.disciplinas.forEach(subj => {
+                const opt = document.createElement('option');
+                opt.value = subj; opt.innerText = subj;
+                select.appendChild(opt);
+            });
+
+            // Reset UI states
+            this.updateHomeStats();
+            this.setMode('quiz');
+        },
+
+        updateHomeStats() {
+            const stats = JSON.parse(localStorage.getItem(this.storageKey) || '{"total":0, "correct":0}');
+            document.getElementById('stat-total').innerText = stats.total;
+            document.getElementById('stat-correct').innerText = stats.correct;
+            const accuracy = stats.total === 0 ? 0 : Math.round((stats.correct / stats.total) * 100);
+            document.getElementById('stat-accuracy').innerText = accuracy + '%';
+        },
+
+        setMode(mode) {
+            this.state.mode = mode;
+            document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('selected'));
+            const idx = mode === 'quiz' ? 0 : 1;
+            document.querySelectorAll('.mode-btn')[idx].classList.add('selected');
+            document.getElementById('difficulty-filter-container').style.display = mode === 'quiz' ? 'block' : 'none';
+        },
+
+        // --- Sessão ---
+        startSession() {
+            const subject = document.getElementById('subject-select').value;
+            const difficulty = document.getElementById('difficulty-select').value;
+            const shuffle = document.getElementById('shuffle-check').checked;
+
+            let items = (this.state.mode === 'quiz') ? this.data.questoes : this.data.flashcards;
+
+            // Filtros
+            items = items.filter(item => {
+                const matchSubj = subject === 'all' || (item.tema && item.tema.includes(subject)) || (this.state.mode === 'flashcard'); // Flashcards as vezes não tem tema explícito no JSON simples
+                const matchDiff = this.state.mode === 'flashcard' ? true : (difficulty === 'all' || item.dificuldade === difficulty);
+                return matchSubj && matchDiff;
+            });
+
+            if (items.length === 0) { alert('Nenhum item encontrado com esses filtros.'); return; }
+            if (shuffle) items = items.sort(() => Math.random() - 0.5);
+
+            this.state.currentQuestions = items;
+            this.state.currentIndex = 0;
+            this.state.score = 0;
+            
+            if (this.state.mode === 'quiz') {
+                this.showScreen('quiz-screen');
+                this.renderQuizQuestion();
+            } else {
+                this.showScreen('flashcard-screen');
+                this.renderFlashcard();
+            }
+        },
+
+        // --- Quiz ---
+        renderQuizQuestion() {
+            const q = this.state.currentQuestions[this.state.currentIndex];
+            const total = this.state.currentQuestions.length;
+            
+            const pct = ((this.state.currentIndex) / total) * 100;
+            document.querySelector('.progress-fill').style.width = pct + '%';
+
+            document.getElementById('q-subject').innerText = `${this.state.currentIndex + 1}/${total} - ${q.tema || 'Geral'}`;
+            document.getElementById('q-difficulty').innerText = q.dificuldade || '-';
+            document.getElementById('q-text').innerText = q.enunciado;
+            
+            const optsContainer = document.getElementById('q-options');
+            optsContainer.innerHTML = '';
+            document.getElementById('q-feedback').style.display = 'none';
+            document.getElementById('btn-next-q').style.display = 'none';
+            this.state.isAnswered = false;
+
+            q.alternativas.forEach((optText, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.innerText = optText;
+                btn.onclick = () => this.handleAnswer(idx, btn);
+                optsContainer.appendChild(btn);
+            });
+        },
+
+        handleAnswer(selectedIndex, btnElement) {
+            if (this.state.isAnswered) return;
+            this.state.isAnswered = true;
+            const q = this.state.currentQuestions[this.state.currentIndex];
+            
+            const buttons = document.querySelectorAll('.option-btn');
+            buttons[q.correta].classList.add('correct');
+            
+            if (selectedIndex === q.correta) {
+                this.state.score++;
+                this.setFeedback(true);
+            } else {
+                btnElement.classList.add('wrong');
+                this.setFeedback(false);
+            }
+            
+            document.getElementById('feedback-text').innerText = q.explicacao;
+            document.getElementById('q-feedback').style.display = 'block';
+            document.getElementById('btn-next-q').style.display = 'block';
+            buttons.forEach(b => b.disabled = true);
+        },
+
+        setFeedback(isCorrect) {
+            const title = document.getElementById('feedback-title');
+            title.innerText = isCorrect ? "Correto!" : "Incorreto";
+            title.style.color = isCorrect ? "var(--success)" : "var(--error)";
+        },
+
+        nextQuestion() {
+            this.state.currentIndex++;
+            if (this.state.currentIndex < this.state.currentQuestions.length) this.renderQuizQuestion();
+            else this.finishSession();
+        },
+
+        // --- Flashcards ---
+        renderFlashcard() {
+            const fc = this.state.currentQuestions[this.state.currentIndex];
+            document.getElementById('fc-counter').innerText = `${this.state.currentIndex + 1} / ${this.state.currentQuestions.length}`;
+            document.getElementById('fc-front').innerText = fc.frente;
+            document.getElementById('fc-back').innerText = fc.verso;
+            document.getElementById('flashcard-el').classList.remove('flipped');
+        },
+        flipCard() { document.getElementById('flashcard-el').classList.toggle('flipped'); },
+        nextFlashcard() {
+            if (this.state.currentIndex < this.state.currentQuestions.length - 1) {
+                this.state.currentIndex++;
+                this.renderFlashcard();
+            } else { this.finishSession(); }
+        },
+        prevFlashcard() {
+            if (this.state.currentIndex > 0) {
+                this.state.currentIndex--;
+                this.renderFlashcard();
+            }
+        },
+
+        // --- Geral ---
+        finishSession() {
+            this.saveStats();
+            this.showScreen('result-screen');
+            document.getElementById('res-total').innerText = this.state.currentQuestions.length;
+            document.getElementById('res-correct').innerText = this.state.score;
+            const p = (this.state.score / this.state.currentQuestions.length) * 100;
+            document.getElementById('res-msg').innerText = p >= 80 ? "Excelente!" : (p >= 50 ? "Bom trabalho!" : "Continue estudando!");
+        },
+        saveStats() {
+            const stats = JSON.parse(localStorage.getItem(this.storageKey) || '{"total":0, "correct":0}');
+            stats.total += this.state.currentQuestions.length;
+            stats.correct += this.state.score;
+            localStorage.setItem(this.storageKey, JSON.stringify(stats));
+        },
+        quitSession() { if(confirm("Sair agora?")) this.renderHome(); },
+        goHome() { this.renderHome(); },
+        resetProgress() { if(confirm("Zerar estatísticas?")) { localStorage.removeItem(this.storageKey); this.updateHomeStats(); } },
+        showScreen(id) { document.querySelectorAll('.screen').forEach(s => s.classList.remove('active')); document.getElementById(id).classList.add('active'); },
+        loadStats() { /* Carregado no updateHomeStats */ }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => app.init());
+</script>
+</body>
+</html>
