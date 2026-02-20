@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Estudos SEBRAE 2026 - Responsivo</title>
+    <title>Sistema de Estudos SEBRAE 2026 - Repetição Espaçada</title>
     <style>
         :root {
             --primary: #005DAA; --primary-dark: #004580; --secondary: #FFD200;
@@ -70,23 +70,16 @@
         .delete-user:hover { color: var(--error); }
 
         /* Setup Area */
-        .setup-box { 
-            border: 2px dashed #ccc; padding: 30px 20px; text-align: center; 
-            border-radius: 12px; margin: 15px 0; cursor: pointer; transition: 0.2s; 
-        }
+        .setup-box { border: 2px dashed #ccc; padding: 30px 20px; text-align: center; border-radius: 12px; margin: 15px 0; cursor: pointer; transition: 0.2s; }
         .setup-box:hover { border-color: var(--primary); background: #f9f9f9; }
-        .file-status-list { 
-            max-height: 150px; overflow-y: auto; margin-top: 15px; text-align: left; 
-            font-size: 0.85rem; border: 1px solid #eee; padding: 10px; border-radius: 8px; 
-            background: #fafafa; display: none; 
-        }
+        .file-status-list { max-height: 150px; overflow-y: auto; margin-top: 15px; text-align: left; font-size: 0.85rem; border: 1px solid #eee; padding: 10px; border-radius: 8px; background: #fafafa; display: none; }
         .status-item { display: flex; justify-content: space-between; margin-bottom: 5px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
         
         /* Home Stats */
-        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 25px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
         .stat-card { background: #f8f9fa; padding: 15px 10px; border-radius: 8px; text-align: center; border: 1px solid #eee; }
         .stat-value { font-size: 1.5rem; font-weight: bold; color: var(--primary); display: block; margin-bottom: 5px; }
-        .stat-label { font-size: 0.75rem; color: #777; text-transform: uppercase; letter-spacing: 0.5px; }
+        .stat-label { font-size: 0.70rem; color: #777; text-transform: uppercase; letter-spacing: 0.5px; }
         
         /* Mode Toggle */
         .mode-toggle { display: flex; background: #eee; padding: 4px; border-radius: 10px; margin-bottom: 20px; }
@@ -105,6 +98,13 @@
         .opt-btn.correct { background: #d4edda; border-color: var(--success); color: #155724; }
         .opt-btn.wrong { background: #f8d7da; border-color: var(--error); color: #721c24; }
         
+        /* Discursive Inputs */
+        .discursive-input { width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; margin-bottom: 15px; resize: vertical; font-family: inherit; background: #fdfdfd; }
+        .discursive-input:focus { outline: none; border-color: var(--primary); background: #fff; }
+        .self-assess-box { margin-top: 20px; padding: 15px; background: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; text-align: center; }
+        .self-assess-buttons { display: flex; gap: 10px; margin-top: 10px; justify-content: center; }
+        .self-assess-buttons button { width: auto; padding: 10px 20px; }
+
         .feedback { 
             margin-top: 20px; padding: 15px; background: #eef5fa; 
             border-left: 4px solid var(--primary); border-radius: 4px; display: none; font-size: 0.95rem;
@@ -112,10 +112,7 @@
         .feedback h4 { color: var(--primary); margin: 0 0 5px 0; font-size: 1rem; }
         
         /* Flashcards */
-        .fc-container { 
-            flex: 1; display: flex; justify-content: center; align-items: center; 
-            perspective: 1000px; margin: 10px 0; cursor: pointer; min-height: 250px;
-        }
+        .fc-container { flex: 1; display: flex; justify-content: center; align-items: center; perspective: 1000px; margin: 10px 0; cursor: pointer; min-height: 250px; }
         .flashcard { width: 100%; max-width: 500px; height: 100%; min-height: 280px; position: relative; transform-style: preserve-3d; transition: transform 0.6s; }
         .flashcard.flipped { transform: rotateY(180deg); }
         .fc-face { 
@@ -143,7 +140,7 @@
             header { padding: 15px; position: sticky; top: 0; z-index: 10; }
             h1 { font-size: 1rem; }
             .screen { padding: 15px; }
-            .stats-grid { gap: 8px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
             .stat-value { font-size: 1.2rem; }
             .question-text { font-size: 1rem; }
             .opt-btn { padding: 12px; font-size: 0.9rem; }
@@ -227,21 +224,29 @@
                 <span class="stat-value" id="st-db-size">0</span>
                 <span class="stat-label">Total Banco</span>
             </div>
+            <div class="stat-card" style="background: #eef6fc; border-color: var(--primary);">
+                <span class="stat-value" id="st-reviews">0</span>
+                <span class="stat-label" style="color: var(--primary); font-weight: bold;">P/ Revisar</span>
+            </div>
         </div>
 
+        <button class="primary" id="btn-review-session" onclick="app.startReviewSession()" style="margin-bottom: 20px; display: none; background: #28a745;">
+            🔄 Fazer Revisões Pendentes
+        </button>
+
         <div class="mode-toggle">
-            <button class="mode-btn selected" onclick="app.setMode('quiz')">📝 Quiz</button>
+            <button class="mode-btn selected" onclick="app.setMode('quiz')">📝 Quiz Geral</button>
             <button class="mode-btn" onclick="app.setMode('flashcard')">🔄 Flashcards</button>
         </div>
 
-        <label style="font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; display: block; color: #555;">Filtrar por Disciplina:</label>
+        <label style="font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; display: block; color: #555;">Filtrar por Disciplina (Modo Geral):</label>
         <select id="sel-subject">
             <option value="all">Todas as Disciplinas</option>
         </select>
 
         <div style="flex: 1;"></div>
 
-        <button class="primary" onclick="app.startSession()" style="margin-bottom: 10px;">INICIAR ESTUDOS</button>
+        <button class="primary" onclick="app.startSession()" style="margin-bottom: 10px;">INICIAR ESTUDOS (NOVAS)</button>
         
         <div style="display: flex; gap: 10px;">
             <button class="secondary" onclick="app.resetStats()">Zerar Progresso</button>
@@ -251,16 +256,38 @@
 
     <!-- TELA 2: QUIZ -->
     <div id="screen-quiz" class="screen">
+        <div class="progress-bar"><div class="progress-fill" id="quiz-progress"></div></div>
+        
         <div class="question-meta">
             <span id="q-topic">Tema</span>
             <span id="q-counter">1/10</span>
         </div>
+        
         <div class="question-text" id="q-text">Carregando...</div>
+        
+        <!-- Área para Múltipla Escolha -->
         <div class="options" id="q-options"></div>
+
+        <!-- Área para Discursiva -->
+        <div id="q-discursive-area" style="display: none;">
+            <textarea id="discursive-input" class="discursive-input" rows="5" placeholder="Digite aqui o seu raciocínio/resposta..."></textarea>
+            <button class="primary" id="btn-verify-disc" onclick="app.checkDiscursive()">Verificar Gabarito</button>
+        </div>
+
+        <!-- Feedback e Autoavaliação -->
         <div class="feedback" id="q-feedback">
             <h4 id="fb-title">Explicação</h4>
             <p id="fb-text">...</p>
+            
+            <div id="q-self-assess" class="self-assess-box" style="display: none;">
+                <p style="margin-bottom: 10px; font-weight: 600; color: #856404;">A sua resposta escrita contemplou os principais pontos do gabarito oficial?</p>
+                <div class="self-assess-buttons">
+                    <button class="opt-btn correct" onclick="app.answerDiscursive(true)">✅ Sim, Acertei</button>
+                    <button class="opt-btn wrong" onclick="app.answerDiscursive(false)">❌ Não, Errei</button>
+                </div>
+            </div>
         </div>
+
         <div class="footer">
             <button class="secondary" onclick="app.goHome()">Parar</button>
             <button class="primary" id="btn-next-q" onclick="app.nextQuestion()" style="display: none;">Próxima ➡</button>
@@ -300,7 +327,8 @@ const PART_FILES = [
 // --- FALLBACK (EMBEDDED) ---
 const EMBEDDED_DB = {
   "questoes": [
-    {"id":1,"tema":"Gestão de Projetos","enunciado":"(Fallback) No PMI, o documento que autoriza formalmente o projeto é:","alternativas":["EAP","Termo de Abertura","Plano","Escopo"],"correta":1,"explicacao":"O Termo de Abertura (TAP) oficializa o projeto."}
+    {"id":1,"tema":"Gestão de Projetos","tipo":"multipla_escolha","enunciado":"(Fallback) No PMI, o documento que autoriza formalmente o projeto é:","alternativas":["EAP","Termo de Abertura","Plano","Escopo"],"correta":1,"explicacao":"O Termo de Abertura (TAP) oficializa o projeto."},
+    {"id":2,"tema":"Gestão de Projetos","tipo":"discursiva","enunciado":"(Fallback Discursiva) O que é e para que serve o TAP (Termo de Abertura do Projeto)?","alternativas":[],"correta":0,"explicacao":"O TAP é o documento emitido pelo patrocinador que autoriza formalmente a existência do projeto e dá autoridade ao gerente de projetos."}
   ],
   "flashcards": [
     {"frente":"(Fallback) Prazo Cadastro Contrato","verso":"Imediatamente"}
@@ -309,14 +337,13 @@ const EMBEDDED_DB = {
 
 const app = {
     data: { questoes: [], flashcards: [] },
-    state: { mode: 'quiz', currentItems: [], index: 0, score: 0, answered: false, currentUser: null },
-    subjectMapping: {}, // Armazena o mapeamento Categoria -> Temas Originais
+    state: { mode: 'quiz', currentItems: [], index: 0, score: 0, answered: false, currentUser: null, reviews: {}, isReviewSession: false },
+    subjectMapping: {}, 
     
     init() { 
-        // Verifica sessão ativa ao carregar
         const activeUser = localStorage.getItem('sebrae_active_session');
         if (activeUser) {
-            this.login(activeUser, true); // true = auto login
+            this.login(activeUser, true);
         } else {
             this.renderUserList(); 
         }
@@ -352,26 +379,23 @@ const app = {
         users = users.filter(u => u !== name);
         localStorage.setItem('sebrae_users', JSON.stringify(users));
         localStorage.removeItem(`sebrae_stats_${name}`); 
+        localStorage.removeItem(`sebrae_rev_${name}`); 
         
-        // Se apagou o user logado, faz logout
         if (this.state.currentUser === name) this.logout();
         else this.renderUserList();
     },
 
     login(name, isAuto = false) {
         this.state.currentUser = name;
-        localStorage.setItem('sebrae_active_session', name); // Persiste sessão
+        localStorage.setItem('sebrae_active_session', name); 
         
         document.getElementById('user-display').innerText = name;
         document.getElementById('user-display').style.display = 'inline-block';
         
-        // Verifica se já temos dados carregados na memória (apenas se não for refresh da página)
-        // Se for refresh (isAuto), precisamos recarregar os dados de qualquer jeito
         if (!isAuto && this.data.questoes.length > 0) {
             this.loadStats(); 
             this.showScreen('screen-home');
         } else {
-            // Se não tem dados, vai para o setup e carrega AUTOMATICAMENTE
             this.showScreen('screen-setup');
             this.loadPartsFromRepo(); 
         }
@@ -379,9 +403,9 @@ const app = {
 
     logout() {
         this.state.currentUser = null;
-        localStorage.removeItem('sebrae_active_session'); // Limpa sessão
+        localStorage.removeItem('sebrae_active_session'); 
         document.getElementById('user-display').style.display = 'none';
-        this.renderUserList(); // Atualiza lista
+        this.renderUserList(); 
         this.showScreen('screen-login');
     },
 
@@ -407,7 +431,7 @@ const app = {
         });
     },
 
-    // --- CARREGAMENTO MÚLTIPLO (AUTO) ---
+    // --- CARREGAMENTO DE ARQUIVOS ---
     async loadPartsFromRepo() {
         const loader = document.getElementById('loader-github');
         const statusList = document.getElementById('file-status-list');
@@ -434,7 +458,6 @@ const app = {
                     successCount++;
                 })
                 .catch(err => {
-                    // Falha silenciosa para não travar o fluxo, apenas loga
                     console.log(`Arquivo ${filename} não encontrado.`);
                 })
         );
@@ -449,20 +472,15 @@ const app = {
             loadingText.innerText = "Carregamento concluído!";
             loadingText.style.color = "green";
             
-            // Auto-transition rápida para home
-            setTimeout(() => {
-                this.prepareData();
-            }, 500);
+            setTimeout(() => { this.prepareData(); }, 500);
         } else {
             loadingText.innerText = "Nenhum arquivo encontrado. Use o upload manual.";
             loadingText.style.color = "#d9534f";
         }
     },
 
-    // --- CARREGAMENTO MÚLTIPLO (MANUAL) ---
     handleFileUpload(files) {
         if (files.length === 0) return;
-        
         let loadedQ = [];
         let loadedF = [];
         let filesRead = 0;
@@ -495,19 +513,14 @@ const app = {
     },
 
     prepareData() {
-        // Atualiza UI da Home
         document.getElementById('st-db-size').innerText = this.data.questoes.length + this.data.flashcards.length;
         this.loadStats(); 
+        this.loadReviews();
         
-        // --- LOGICA DE AGRUPAMENTO (NORMALIZE SUBJECTS) ---
         const mapping = {};
-        
-        // Função auxiliar para categorizar
         const getCategory = (fullTheme) => {
             if (!fullTheme) return "Geral";
             const t = fullTheme.toUpperCase();
-            
-            // Regras de Agrupamento
             if (t.includes("IN 07") || t.includes("FINANCEIRO")) return "Gestão Financeira (IN 07)";
             if (t.includes("IN 36") || t.includes("CONTRATAÇÕES")) return "Contratações (IN 36)";
             if (t.includes("IN 51") || t.includes("GESTÃO DE CONTRATOS")) return "Gestão de Contratos (IN 51)";
@@ -517,21 +530,17 @@ const app = {
             if (t.includes("PROJETO") || t.includes("PMI") || t.includes("ÁGIL")) return "Gestão de Projetos";
             if (t.includes("PORTUGUÊS") || t.includes("LÍNGUA")) return "Língua Portuguesa";
             if (t.includes("SEBRAE") || t.includes("ESG") || t.includes("LGPD")) return "Conhecimentos Gerais Sebrae";
-            
-            return "Outros Temas"; // Fallback
+            return "Outros Temas"; 
         };
 
-        // Processa todas as questões para montar o mapa
         this.data.questoes.forEach(q => {
             const cat = getCategory(q.tema);
             if (!mapping[cat]) mapping[cat] = [];
-            // Guarda o tema original na lista dessa categoria
             if (!mapping[cat].includes(q.tema)) mapping[cat].push(q.tema);
         });
 
-        this.subjectMapping = mapping; // Salva para uso no startSession
+        this.subjectMapping = mapping; 
 
-        // Popula o Select com as Categorias (chaves do mapa)
         const sel = document.getElementById('sel-subject');
         sel.innerHTML = '<option value="all">Todas as Disciplinas</option>';
         Object.keys(mapping).sort().forEach(cat => {
@@ -541,10 +550,71 @@ const app = {
             sel.appendChild(opt);
         });
 
+        this.updateStatsUI();
         this.showScreen('screen-home');
     },
 
-    // --- LÓGICA DE ESTUDO ---
+    // --- REPETIÇÃO ESPAÇADA (REVISÕES) ---
+    loadReviews() {
+        if(!this.state.currentUser) return;
+        this.state.reviews = JSON.parse(localStorage.getItem(`sebrae_rev_${this.state.currentUser}`) || '{}');
+    },
+
+    saveReviews() {
+        if(!this.state.currentUser) return;
+        localStorage.setItem(`sebrae_rev_${this.state.currentUser}`, JSON.stringify(this.state.reviews));
+    },
+
+    getPendingReviews() {
+        let now = Date.now();
+        let pendingIds = [];
+        for(let id in this.state.reviews) {
+            if(this.state.reviews[id].nextDate <= now) {
+                pendingIds.push(parseInt(id));
+            }
+        }
+        return pendingIds;
+    },
+
+    updateReviewLogic(qId, isCorrect) {
+        let now = Date.now();
+        let rev = this.state.reviews[qId];
+
+        if (!isCorrect) {
+            // Errou: marca para 24h
+            this.state.reviews[qId] = { step: 1, nextDate: now + (24 * 60 * 60 * 1000) };
+        } else if (rev) {
+            // Acertou na revisão (move para a próxima etapa ou conclui)
+            if (rev.step === 1) {
+                this.state.reviews[qId] = { step: 2, nextDate: now + (72 * 60 * 60 * 1000) }; // 72h
+            } else if (rev.step === 2) {
+                this.state.reviews[qId] = { step: 3, nextDate: now + (7 * 24 * 60 * 60 * 1000) }; // 1 semana
+            } else {
+                delete this.state.reviews[qId]; // Terminadas as 3 revisões
+            }
+        }
+        this.saveReviews();
+    },
+
+    startReviewSession() {
+        let pendingIds = this.getPendingReviews();
+        if(pendingIds.length === 0) return;
+        
+        this.state.mode = 'quiz'; 
+        this.state.isReviewSession = true;
+        
+        let items = this.data.questoes.filter(q => pendingIds.includes(q.id));
+        
+        this.state.currentItems = items.sort(() => Math.random() - 0.5);
+        this.state.index = 0;
+        this.state.score = 0;
+        this.state.answered = false;
+
+        this.showScreen('screen-quiz');
+        this.renderQuiz();
+    },
+
+    // --- LÓGICA DE ESTUDO (GERAL) ---
     setMode(mode) {
         this.state.mode = mode;
         document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('selected'));
@@ -553,12 +623,12 @@ const app = {
     },
 
     startSession() {
+        this.state.isReviewSession = false;
         const mode = this.state.mode;
         const subj = document.getElementById('sel-subject').value;
         let items = mode === 'quiz' ? this.data.questoes : this.data.flashcards;
 
         if (mode === 'quiz' && subj !== 'all') {
-            // Filtra usando o mapeamento: se o tema da questão estiver na lista da categoria selecionada
             const allowedThemes = this.subjectMapping[subj] || [];
             items = items.filter(i => allowedThemes.includes(i.tema));
         }
@@ -574,47 +644,118 @@ const app = {
         mode === 'quiz' ? this.renderQuiz() : this.renderFlashcard();
     },
 
-    // Quiz
+    // --- QUIZ & DISCURSIVAS ---
     renderQuiz() {
         const q = this.state.currentItems[this.state.index];
         const total = this.state.currentItems.length;
         
-        document.getElementById('q-topic').innerText = q.tema || 'Geral';
+        // Header infos
+        let preTitle = this.state.isReviewSession ? "[REVISÃO] " : "";
+        document.getElementById('q-topic').innerText = preTitle + (q.tema || 'Geral');
         document.getElementById('q-counter').innerText = `${this.state.index + 1}/${total}`;
         document.getElementById('q-text').innerText = q.enunciado;
         
+        // Progress Bar
+        const pct = ((this.state.index) / total) * 100;
+        document.getElementById('quiz-progress').style.width = pct + '%';
+        
+        // Elements
         const optsDiv = document.getElementById('q-options');
+        const discArea = document.getElementById('q-discursive-area');
+        const feedbackArea = document.getElementById('q-feedback');
+        const selfAssess = document.getElementById('q-self-assess');
+        const btnNext = document.getElementById('btn-next-q');
+        
+        // Reset state
         optsDiv.innerHTML = '';
-        document.getElementById('q-feedback').style.display = 'none';
-        document.getElementById('btn-next-q').style.display = 'none';
+        feedbackArea.style.display = 'none';
+        selfAssess.style.display = 'none';
+        btnNext.style.display = 'none';
         this.state.answered = false;
 
-        q.alternativas.forEach((alt, idx) => {
-            const btn = document.createElement('button');
-            btn.className = 'opt-btn';
-            btn.innerText = alt;
-            btn.onclick = () => this.answer(idx, btn, q.correta, q.explicacao);
-            optsDiv.appendChild(btn);
-        });
+        // Render baseado no tipo
+        if (q.tipo === 'discursiva') {
+            optsDiv.style.display = 'none';
+            discArea.style.display = 'block';
+            document.getElementById('discursive-input').value = '';
+            document.getElementById('btn-verify-disc').style.display = 'block';
+        } else {
+            discArea.style.display = 'none';
+            optsDiv.style.display = 'flex';
+            
+            q.alternativas.forEach((alt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'opt-btn';
+                btn.innerText = alt;
+                btn.onclick = () => this.answerMC(idx, btn, q.correta, q.explicacao);
+                optsDiv.appendChild(btn);
+            });
+        }
     },
 
-    answer(idx, btn, correctIdx, explanation) {
+    // Resposta Múltipla Escolha
+    answerMC(idx, btn, correctIdx, explanation) {
         if (this.state.answered) return;
         this.state.answered = true;
 
+        let isCorrect = (idx === correctIdx);
         const allBtns = document.querySelectorAll('.opt-btn');
         allBtns[correctIdx].classList.add('correct');
 
-        if (idx === correctIdx) {
+        if (isCorrect) {
             this.state.score++;
         } else {
             btn.classList.add('wrong');
         }
+        
+        allBtns.forEach(b => b.disabled = true);
+        this.handlePostAnswer(isCorrect, explanation);
+    },
 
+    // Fluxo Discursiva (Verificar)
+    checkDiscursive() {
+        if(!document.getElementById('discursive-input').value.trim()) {
+            if(!confirm("Você não digitou nada. Deseja ver o gabarito mesmo assim?")) return;
+        }
+        document.getElementById('btn-verify-disc').style.display = 'none';
+        
+        const q = this.state.currentItems[this.state.index];
+        
+        document.getElementById('fb-title').innerText = "Gabarito Oficial";
+        document.getElementById('fb-title').style.color = "var(--primary)";
+        document.getElementById('fb-text').innerText = q.explicacao;
+        
+        document.getElementById('q-feedback').style.display = 'block';
+        document.getElementById('q-self-assess').style.display = 'block';
+    },
+
+    // Fluxo Discursiva (Autoavaliação)
+    answerDiscursive(isCorrect) {
+        if (this.state.answered) return;
+        this.state.answered = true;
+
+        document.getElementById('q-self-assess').style.display = 'none';
+        if (isCorrect) this.state.score++;
+
+        const q = this.state.currentItems[this.state.index];
+        this.handlePostAnswer(isCorrect, q.explicacao);
+    },
+
+    // Processamento pós resposta (Comum para MC e Discursiva)
+    handlePostAnswer(isCorrect, explanation) {
+        const q = this.state.currentItems[this.state.index];
+        
+        // Feedback Visual
+        const title = document.getElementById('fb-title');
+        title.innerText = isCorrect ? "Correto!" : "Incorreto";
+        title.style.color = isCorrect ? "var(--success)" : "var(--error)";
         document.getElementById('fb-text').innerText = explanation;
+        
         document.getElementById('q-feedback').style.display = 'block';
         document.getElementById('btn-next-q').style.display = 'block';
-        allBtns.forEach(b => b.disabled = true);
+
+        // Lógica de Repetição Espaçada
+        this.updateReviewLogic(q.id, isCorrect);
     },
 
     nextQuestion() {
@@ -644,6 +785,7 @@ const app = {
         const total = this.state.currentItems.length;
         const score = this.state.score;
         
+        // Atualiza stats
         const userKey = `sebrae_stats_${this.state.currentUser}`;
         const stats = JSON.parse(localStorage.getItem(userKey) || '{"total":0, "hits":0}');
         stats.total += total;
@@ -658,18 +800,32 @@ const app = {
     
     updateStatsUI() {
         if (!this.state.currentUser) return;
+        
+        // 1. Atualizar Score Global
         const userKey = `sebrae_stats_${this.state.currentUser}`;
         const stats = JSON.parse(localStorage.getItem(userKey) || '{"total":0, "hits":0}');
-        
         document.getElementById('st-total').innerText = stats.total;
         const pct = stats.total === 0 ? 0 : Math.round((stats.hits / stats.total) * 100);
         document.getElementById('st-score').innerText = pct + '%';
+        
+        // 2. Atualizar Avisos de Revisão
+        this.loadReviews();
+        let pending = this.getPendingReviews();
+        document.getElementById('st-reviews').innerText = pending.length;
+        
+        let btnRev = document.getElementById('btn-review-session');
+        if(pending.length > 0) {
+            btnRev.style.display = 'block';
+            btnRev.innerText = `🔄 Fazer ${pending.length} Revisões Pendentes`;
+        } else {
+            btnRev.style.display = 'none';
+        }
     },
     
     resetStats() {
-        if(confirm("Zerar estatísticas deste utilizador?")) { 
-            const userKey = `sebrae_stats_${this.state.currentUser}`;
-            localStorage.removeItem(userKey); 
+        if(confirm("Zerar TODAS as estatísticas e fila de revisão deste utilizador?")) { 
+            localStorage.removeItem(`sebrae_stats_${this.state.currentUser}`); 
+            localStorage.removeItem(`sebrae_rev_${this.state.currentUser}`); 
             this.updateStatsUI(); 
         }
     },
