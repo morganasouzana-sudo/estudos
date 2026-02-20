@@ -99,8 +99,8 @@
         .opt-btn.wrong { background: #f8d7da; border-color: var(--error); color: #721c24; }
         
         /* Discursive Inputs */
-        .discursive-input { width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; margin-bottom: 15px; resize: vertical; font-family: inherit; background: #fdfdfd; }
-        .discursive-input:focus { outline: none; border-color: var(--primary); background: #fff; }
+        .discursive-input { width: 100%; padding: 15px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; margin-bottom: 15px; resize: vertical; font-family: inherit; background: #fff; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
+        .discursive-input:focus { outline: none; border-color: var(--primary); box-shadow: inset 0 2px 4px rgba(0,0,0,0.05), 0 0 0 3px rgba(0,93,170,0.2); }
         .self-assess-box { margin-top: 20px; padding: 15px; background: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; text-align: center; }
         .self-assess-buttons { display: flex; gap: 10px; margin-top: 10px; justify-content: center; }
         .self-assess-buttons button { width: auto; padding: 10px 20px; }
@@ -269,8 +269,10 @@
         <div class="options" id="q-options"></div>
 
         <!-- Área para Discursiva -->
-        <div id="q-discursive-area" style="display: none;">
-            <textarea id="discursive-input" class="discursive-input" rows="5" placeholder="Digite aqui o seu raciocínio/resposta..."></textarea>
+        <div id="q-discursive-area" style="display: none; background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0; margin-bottom: 20px;">
+            <p style="margin-bottom: 10px; font-weight: 600; color: var(--primary);">📝 Questão Discursiva</p>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">Utilize o espaço abaixo para estruturar a sua resposta antes de verificar o gabarito.</p>
+            <textarea id="discursive-input" class="discursive-input" rows="6" placeholder="Digite aqui a sua resposta ou tópicos do seu raciocínio..."></textarea>
             <button class="primary" id="btn-verify-disc" onclick="app.checkDiscursive()">Verificar Gabarito</button>
         </div>
 
@@ -673,6 +675,9 @@ const app = {
         btnNext.style.display = 'none';
         this.state.answered = false;
 
+        // Reabilitar botões discursivos caso tenham sido desativados no passo anterior
+        document.querySelectorAll('#q-self-assess .opt-btn').forEach(b => b.disabled = false);
+
         // Render baseado no tipo
         if (q.tipo === 'discursiva') {
             optsDiv.style.display = 'none';
@@ -699,7 +704,8 @@ const app = {
         this.state.answered = true;
 
         let isCorrect = (idx === correctIdx);
-        const allBtns = document.querySelectorAll('.opt-btn');
+        // Aplica o disabled apenas nos botões de múltipla escolha para não quebrar a discursiva
+        const allBtns = document.querySelectorAll('#q-options .opt-btn');
         allBtns[correctIdx].classList.add('correct');
 
         if (isCorrect) {
@@ -756,6 +762,15 @@ const app = {
 
         // Lógica de Repetição Espaçada
         this.updateReviewLogic(q.id, isCorrect);
+
+        // Atualiza estatísticas globais em TEMPO REAL (Garante que clicar em 'Parar' não perde o progresso)
+        if (this.state.currentUser) {
+            const userKey = `sebrae_stats_${this.state.currentUser}`;
+            const stats = JSON.parse(localStorage.getItem(userKey) || '{"total":0, "hits":0}');
+            stats.total += 1;
+            if (isCorrect) stats.hits += 1;
+            localStorage.setItem(userKey, JSON.stringify(stats));
+        }
     },
 
     nextQuestion() {
@@ -785,12 +800,8 @@ const app = {
         const total = this.state.currentItems.length;
         const score = this.state.score;
         
-        // Atualiza stats
-        const userKey = `sebrae_stats_${this.state.currentUser}`;
-        const stats = JSON.parse(localStorage.getItem(userKey) || '{"total":0, "hits":0}');
-        stats.total += total;
-        stats.hits += score;
-        localStorage.setItem(userKey, JSON.stringify(stats));
+        // As estatísticas já foram salvas progressivamente no handlePostAnswer,
+        // logo, não precisamos adicionar tudo de novo aqui, apenas dar o feedback.
 
         alert(`Sessão finalizada!\nVocê acertou ${score} de ${total}.`);
         this.goHome();
